@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="">
   <profileName>TUD</profileName>
-  <profileDescription>Profile created on December 15 2014 at 10:34:16 by CollectiveAccess Administrator</profileDescription>
+  <profileDescription></profileDescription>
   <locales>
     <locale lang="en" country="US">English</locale>
-	<locale lang="de" country="DE">Deutsch</locale>
+    <locale lang="de" country="DE" dontUseForCataloguing="1">Deutsch</locale>
   </locales>
   <lists>
     <list code="list_item_types" hierarchical="0" system="0" vocabulary="0">
@@ -12,8 +12,8 @@
         <label locale="en_US">
           <name>List item types</name>
         </label>
-		<label locale="de_DE">
-          <name>List-Elementtypen</name>
+        <label locale="de_DE">
+          <name>List Elementtypen</name>
         </label>
       </labels>
       <items>
@@ -23,7 +23,7 @@
               <name_singular>category</name_singular>
               <name_plural>categories</name_plural>
             </label>
-			<label locale="de_DE" preferred="0">
+            <label locale="de_DE" preferred="1">
               <name_singular>Kategorie</name_singular>
               <name_plural>Kategorien</name_plural>
             </label>
@@ -31,13 +31,13 @@
         </item>
         <item idno="tag" enabled="1" default="0">
           <labels>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Schlagwort</name_singular>
+              <name_plural>Schlagwörter</name_plural>
+            </label>
             <label locale="en_US" preferred="1">
               <name_singular>tag</name_singular>
               <name_plural>tags</name_plural>
-            </label>
-			<label locale="de_DE" preferred="0">
-              <name_singular>Schlagwort</name_singular>
-              <name_plural>Schlagwörter</name_plural>
             </label>
           </labels>
         </item>
@@ -48,84 +48,36 @@
         <label locale="en_US">
           <name>Object Types</name>
         </label>
-		<label locale="de_DE" preferred="0">
-           <name>Objekttypen</name>
+        <label locale="de_DE">
+          <name>Objekttypen</name>
         </label>
       </labels>
       <items>
-          <item idno="book" enabled="1" default="1">
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Book</name_singular>
-                  <name_plural>Books</name_plural>
-                </label>
-                <label locale="de_DE" preferred="1">
-                  <name_singular>Buch</name_singular>
-                  <name_plural>Bücher</name_plural>
-                </label>				
-              </labels>
-            </item>
-            <item idno="journalIssue" enabled="1" default="0">
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Journal Issue</name_singular>
-                  <name_plural>Journal Issues</name_plural>
-                </label>
-                <label locale="de_DE" preferred="1">
-                  <name_singular>Zeitungsausgabe</name_singular>
-                  <name_plural>Zeitungsausgaben</name_plural>
-                </label>				
-              </labels>
-            </item>
-            <item idno="paper" enabled="1" default="0">
-              <labels>
-                <label locale="en_US" preferred="1">
-                  <name_singular>Paper</name_singular>
-                  <name_plural>Paper</name_plural>
-                </label>
-                <label locale="de_DE" preferred="1">
-                  <name_singular>Artikel</name_singular>
-                  <name_plural>Artikel</name_plural>
-                </label>				
-              </labels>
-              <items>
-                <item idno="paper_thesis" enabled="1" default="0">
-                  <labels>
-                    <label locale="en_US" preferred="1">
-                      <name_singular>Thesis</name_singular>
-                      <name_plural>Theses</name_plural>
-                    </label>
-                    <label locale="de_DE" preferred="1">
-                      <name_singular>wissenschaftlicher Aufsatz</name_singular>
-                      <name_plural>wiisenschaftliche Aufsätze</name_plural>
-                    </label>					
-                  </labels>
-                </item>
-                <item idno="paper_dissertation" enabled="1" default="0">
-                  <labels>
-                    <label locale="en_US" preferred="1">
-                      <name_singular>Dissertation</name_singular>
-                      <name_plural>Dissertations</name_plural>
-                    </label>
-	                <label locale="de_DE" preferred="1">
-                      <name_singular>Dissertation</name_singular>
-                      <name_plural>Dissertationen</name_plural>
-                    </label>				
-                  </labels>
-                </item>
-              </items>
+        <item idno="book" enabled="1" default="1">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Book</name_singular>
+              <name_plural>Books</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Buch</name_singular>
+              <name_plural>Bücher</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="paper" enabled="1" default="0">
+          <labels>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Artikel</name_singular>
+              <name_plural>Artikel</name_plural>
+            </label>
+            <label locale="en_US" preferred="1">
+              <name_singular>Paper</name_singular>
+              <name_plural>Paper</name_plural>
+            </label>
+          </labels>
         </item>
       </items>
-    </list>
-    <list code="object_sources" hierarchical="1" system="0" vocabulary="0">
-      <labels>
-        <label locale="en_US">
-          <name>Object sources</name>
-        </label>
-        <label locale="de_DE">
-          <name>Objektquellen</name>
-        </label>		
-      </labels>
     </list>
     <list code="entity_types" hierarchical="1" system="0" vocabulary="0">
       <labels>
@@ -134,7 +86,7 @@
         </label>
         <label locale="de_DE">
           <name>Entitätstyp</name>
-        </label>		
+        </label>
       </labels>
       <items>
         <item idno="ind" enabled="1" default="0">
@@ -146,7 +98,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Autor</name_singular>
               <name_plural>Autoren</name_plural>
-            </label>			
+            </label>
           </labels>
           <settings>
             <setting name="entity_class">IND</setting>
@@ -161,7 +113,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Verlag</name_singular>
               <name_plural>Verlage</name_plural>
-            </label>			
+            </label>
           </labels>
           <settings>
             <setting name="entity_class">ORG</setting>
@@ -176,19 +128,19 @@
         </label>
         <label locale="de_DE">
           <name>Entitätstyp</name>
-        </label>			
+        </label>
       </labels>
       <items>
         <item idno="tud" enabled="1" default="1">
           <labels>
+            <label locale="de_DE" preferred="1">
+              <name_singular>TUD Entitätsliste</name_singular>
+              <name_plural>TUD Entitätslisten</name_plural>
+            </label>
             <label locale="en_US" preferred="1">
               <name_singular>TUD entity list</name_singular>
               <name_plural>TUD entity lists</name_plural>
             </label>
-            <label locale="de_DE" preferred="1">
-              <name_singular>TUD Entitätsliste</name_singular>
-              <name_plural>TUD Entitätslisten</name_plural>
-            </label>			
           </labels>
         </item>
       </items>
@@ -200,7 +152,7 @@
         </label>
         <label locale="de_DE">
           <name>Ressourcenarten</name>
-        </label>		
+        </label>
       </labels>
       <items>
         <item idno="copy" enabled="1" default="1">
@@ -212,7 +164,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Exemplar</name_singular>
               <name_plural>Exemplare</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
       </items>
@@ -236,7 +188,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>SLUB</name_singular>
               <name_plural>SLUB</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="occ_src_own" enabled="1" default="1">
@@ -248,7 +200,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>WISE</name_singular>
               <name_plural>WISE</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
       </items>
@@ -260,31 +212,19 @@
         </label>
         <label locale="de_DE">
           <name>Ressourcenarten</name>
-        </label>		
+        </label>
       </labels>
       <items>
-        <item idno="volume" enabled="1" default="0">
-          <labels>
-            <label locale="en_US" preferred="1">
-              <name_singular>Volume</name_singular>
-              <name_plural>Volumes</name_plural>
-            </label>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Ausgabe</name_singular>
-              <name_plural>Ausgaben</name_plural>
-            </label>			
-          </labels>
-        </item>
         <item idno="series" enabled="1" default="0">
           <labels>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Reihe</name_singular>
+              <name_plural>Reihen</name_plural>
+            </label>
             <label locale="en_US" preferred="1">
               <name_singular>Series</name_singular>
               <name_plural>Series</name_plural>
             </label>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Reihe</name_singular>
-              <name_plural>Reihen</name_plural>
-            </label>			
           </labels>
         </item>
       </items>
@@ -296,7 +236,7 @@
         </label>
         <label locale="de_DE">
           <name>Kategorie</name>
-        </label>		
+        </label>
       </labels>
       <items>
         <item idno="bks" enabled="1" default="0">
@@ -308,7 +248,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Betriebliche Kommunikationssysteme</name_singular>
               <name_plural>Betriebliche Kommunikationssysteme</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="bs" enabled="1" default="0">
@@ -320,7 +260,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Betriebssysteme</name_singular>
               <name_plural>Bietriebssysteme</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="bwl" enabled="1" default="0">
@@ -332,7 +272,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Betriebswirtschaftslehre</name_singular>
               <name_plural>Betriebswirtschaftslehre</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="cim" enabled="1" default="0">
@@ -344,7 +284,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Computer Integrated Manufacturing (CIM)</name_singular>
               <name_plural>Computer Integrated Manufacturing (CIM)</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="csc" enabled="1" default="0">
@@ -356,7 +296,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Computer Integrated Cooperative Work (CSC)</name_singular>
               <name_plural>Computer Integrated Cooperative Work (CSC)</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="db" enabled="1" default="0">
@@ -368,7 +308,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Datenbanken</name_singular>
               <name_plural>Datenbanken</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="dm" enabled="1" default="0">
@@ -380,7 +320,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Datenmodellierung</name_singular>
               <name_plural>Datenmodellierung</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="ecm" enabled="1" default="0">
@@ -392,7 +332,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>E-Commerce</name_singular>
               <name_plural>E-Commerce</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="gpw" enabled="1" default="0">
@@ -404,7 +344,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Groupware</name_singular>
               <name_plural>Groupware</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="im" enabled="1" default="0">
@@ -416,7 +356,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Informationsmangement</name_singular>
               <name_plural>Informationsmangement</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="inf" enabled="1" default="0">
@@ -428,7 +368,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Informatik</name_singular>
               <name_plural>Informatik</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
       </items>
@@ -440,7 +380,7 @@
         </label>
         <label locale="de_DE">
           <name>Typ der wissenchaftlichen Arbeit</name>
-        </label>		
+        </label>
       </labels>
       <items>
         <item idno="bachelor" enabled="1" default="0">
@@ -452,7 +392,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Bachelorarbeit</name_singular>
               <name_plural>Bachelorarbeiten</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="master" enabled="1" default="0">
@@ -464,7 +404,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Masterarbeit</name_singular>
               <name_plural>Masterarbeiten</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="diploma" enabled="1" default="0">
@@ -476,19 +416,31 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Diplomarbeit</name_singular>
               <name_plural>Diplomarbeiten</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
         <item idno="phd" enabled="1" default="0">
           <labels>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Dissertation</name_singular>
+              <name_plural>Dissertationen</name_plural>
+            </label>
             <label locale="en_US" preferred="1">
               <name_singular>PhD Thesis</name_singular>
               <name_plural>PhD Theses</name_plural>
             </label>
+          </labels>
+        </item>
+        <item idno="rpt" enabled="1" default="0">
+          <labels>
             <label locale="de_DE" preferred="1">
-              <name_singular>Dissertation</name_singular>
-              <name_plural>Dissertationen</name_plural>
-            </label>			
+              <name_singular>Bericht</name_singular>
+              <name_plural>Berichte</name_plural>
+            </label>
+            <label locale="en_US" preferred="1">
+              <name_singular>Report</name_singular>
+              <name_plural>Reports</name_plural>
+            </label>
           </labels>
         </item>
       </items>
@@ -500,19 +452,19 @@
         </label>
         <label locale="de_DE">
           <name>Schlagwörter</name>
-        </label>		
+        </label>
       </labels>
       <items>
         <item idno="Root_node_for_tags" enabled="1" default="0">
           <labels>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Erstklassiges Buch</name_singular>
+              <name_plural>Erstklassige Bücher</name_plural>
+            </label>
             <label locale="en_US" preferred="1">
               <name_singular>Great book</name_singular>
               <name_plural>Great books</name_plural>
             </label>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Erstklassiges Buch</name_singular>
-              <name_plural>Erstklassige Bücher</name_plural>
-            </label>			
           </labels>
         </item>
         <item idno="mediocre_book" enabled="1" default="0">
@@ -524,7 +476,7 @@
             <label locale="de_DE" preferred="1">
               <name_singular>Zweitklassiges Buch</name_singular>
               <name_plural>Zweitklassige Bücher</name_plural>
-            </label>			
+            </label>
           </labels>
         </item>
       </items>
@@ -538,7 +490,7 @@
         </label>
         <label locale="de_DE">
           <name>Jahr</name>
-        </label>		
+        </label>
       </labels>
       <settings>
         <setting name="fieldWidth">10</setting>
@@ -546,7 +498,6 @@
       <typeRestrictions>
         <restriction>
           <table>ca_objects</table>
-          <type>item</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
             <setting name="minAttributesPerRow">0</setting>
@@ -563,7 +514,7 @@
         </label>
         <label locale="de_DE">
           <name>ISBN</name>
-        </label>		
+        </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -589,7 +540,7 @@
         </label>
         <label locale="de_DE">
           <name>Abstract</name>
-        </label>		
+        </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -608,33 +559,6 @@
         </restriction>
       </typeRestrictions>
     </metadataElement>
-    <metadataElement code="issn" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>ISSN</name>
-        </label>
-        <label locale="de_DE">
-          <name>ISSN</name>
-        </label>		
-      </labels>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="minChars">17</setting>
-        <setting name="maxChars">17</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction>
-          <table>ca_objects</table>
-          <type>journalIssue</type>
-          <includeSubtypes>1</includeSubtypes>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
     <metadataElement code="item_volume" datatype="List" list="collection_types">
       <labels>
         <label locale="en_US">
@@ -642,7 +566,7 @@
         </label>
         <label locale="de_DE">
           <name>Ausgabe</name>
-        </label>		
+        </label>
       </labels>
       <settings>
         <setting name="render">select</setting>
@@ -668,10 +592,11 @@
         <label locale="de_DE">
           <name>Barcode</name>
           <description>Akzeptiert einen 8 Zahlen langen Barcode für SLUB Exemplare.</description>
-        </label>		
+        </label>
       </labels>
       <settings>
         <setting name="canBeUsedInSort">0</setting>
+        <setting name="doesNotTakeLocale">1</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -693,7 +618,7 @@
         </label>
         <label locale="de_DE">
           <name>Reihenname</name>
-        </label>		
+        </label>
       </labels>
       <typeRestrictions>
         <restriction>
@@ -715,7 +640,7 @@
         </label>
         <label locale="de_DE">
           <name>Standort</name>
-        </label>		
+        </label>
       </labels>
       <typeRestrictions>
         <restriction>
@@ -739,7 +664,7 @@
         </label>
         <label locale="de_DE">
           <name>Buch</name>
-        </label>			
+        </label>
       </labels>
       <screens>
         <screen idno="book_edt_scr" default="1">
@@ -747,9 +672,9 @@
             <label locale="en_US">
               <name>Book</name>
             </label>
-			  <label locale="de_DE">
-			<name>Buch</name>
-			</label>
+            <label locale="de_DE">
+              <name>Buch</name>
+            </label>
           </labels>
           <typeRestrictions>
             <restriction type="book"/>
@@ -758,8 +683,8 @@
             <placement code="preferred_labels1">
               <bundle>preferred_labels</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Titel</setting>
                 <setting name="label" locale="en_US">Title</setting>
-				<setting name="label" locale="de_DE">Titel</setting>
                 <setting name="width">95</setting>
                 <setting name="height">1</setting>
                 <setting name="readonly"/>
@@ -769,8 +694,8 @@
             <placement code="ca_entities6">
               <bundle>ca_entities</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Autor</setting>
                 <setting name="label" locale="en_US">Author</setting>
-				<setting name="label" locale="de_DE">Autor</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
@@ -793,9 +718,9 @@
             <placement code="ca_entities4">
               <bundle>ca_entities</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Herausgeber</setting>
                 <setting name="label" locale="en_US">Editor</setting>
-				<setting name="label" locale="de_DE">Herausgeber</setting>
-                <setting name="restrict_to_relationship_types">author</setting>
+                <setting name="restrict_to_relationship_types">editor</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -807,26 +732,20 @@
                 <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
-            <placement code="ca_list_items6">
+            <placement code="ca_list_items5">
               <bundle>ca_list_items</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Kategorie</setting>
                 <setting name="label" locale="en_US">Category</setting>
-				<setting name="label" locale="de_DE">Kategorie</setting>
                 <setting name="restrict_to_relationship_types">object_category</setting>
-                <setting name="restrict_to_types">category</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_list_items.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="minRelationshipsPerRow"/>
+                <setting name="maxRelationshipsPerRow"/>
                 <setting name="restrict_to_lists">category</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
                 <setting name="hierarchicalBrowserHeight">200px</setting>
                 <setting name="restrictToTermsOnCollectionUseRelationshipType">103</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">1</setting>
-                <setting name="dontShowDeleteButton">0</setting>
-                <setting name="restrictToTermsRelatedToCollection">0</setting>
-                <setting name="readonly"/>
               </settings>
             </placement>
             <placement code="ca_attribute_isbn5">
@@ -839,8 +758,8 @@
             <placement code="ca_occurrences5">
               <bundle>ca_occurrences</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Exemplare</setting>
                 <setting name="label" locale="en_US">Copies</setting>
-				<setting name="label" locale="de_DE">Exemplare</setting>
                 <setting name="restrict_to_relationship_types">book_copy</setting>
                 <setting name="restrict_to_types">copy</setting>
                 <setting name="list_format">list</setting>
@@ -856,8 +775,8 @@
             <placement code="ca_entities7">
               <bundle>ca_entities</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Verlag</setting>
                 <setting name="label" locale="en_US">Publisher</setting>
-				<setting name="label" locale="de_DE">Verlag</setting>
                 <setting name="restrict_to_relationship_types">published</setting>
                 <setting name="restrict_to_types">org</setting>
                 <setting name="list_format">list</setting>
@@ -873,8 +792,8 @@
             <placement code="ca_collections7">
               <bundle>ca_collections</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Reihe</setting>
                 <setting name="label" locale="en_US">Series</setting>
-				<setting name="label" locale="de_DE">Reihe</setting>
                 <setting name="restrict_to_relationship_types">item_series</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -898,7 +817,7 @@
         </label>
         <label locale="de_DE">
           <name>Verlag</name>
-        </label>		
+        </label>
       </labels>
       <screens>
         <screen idno="screen_16_0" default="1">
@@ -906,9 +825,9 @@
             <label locale="en_US">
               <name>Publisher</name>
             </label>
-			<label locale="de_DE">
-			  <name>Verlag</name>
-			</label>		
+            <label locale="de_DE">
+              <name>Verlag</name>
+            </label>
           </labels>
           <typeRestrictions>
             <restriction type="org"/>
@@ -918,90 +837,13 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Name</setting>
-				<setting name="label" locale="de_DE">Name</setting>
+                <setting name="label" locale="de_DE">Name</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_publisher_locatio">
               <bundle>ca_attribute_publisher_location</bundle>
               <settings>
                 <setting name="sortDirection">ASC</setting>
-              </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface>
-    <userInterface code="journal_edt" type="ca_objects">
-      <labels>
-        <label locale="en_US">
-          <name>Journal Issue</name>
-        </label>
-        <label locale="de_DE">
-          <name>Zeitungsausgabe</name>
-        </label>		
-      </labels>
-      <screens>
-        <screen idno="screen_19_0" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Journal</name>
-            </label>
-            <label locale="de_DE">
-              <name>Zeitung</name>
-            </label>			
-          </labels>
-          <typeRestrictions>
-            <restriction type="journalIssue"/>
-          </typeRestrictions>
-          <bundlePlacements>
-            <placement code="preferred_labels1">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Title</setting>
-				<setting name="label" locale="de_DE">Titel</setting>
-              </settings>
-            </placement>
-            <placement code="ca_attribute_year2">
-              <bundle>ca_attribute_year</bundle>
-              <settings>
-                <setting name="sortDirection">ASC</setting>
-              </settings>
-            </placement>
-            <placement code="ca_attribute_issn3">
-              <bundle>ca_attribute_issn</bundle>
-              <settings>
-                <setting name="sortDirection">ASC</setting>
-              </settings>
-            </placement>
-            <placement code="ca_entities4">
-              <bundle>ca_entities</bundle>
-              <settings>            
-                <setting name="label" locale="en_US">Publisher</setting>
-				<setting name="label" locale="de_DE">Herausgeber</setting>
-                <setting name="restrict_to_relationship_types">published</setting>
-                <setting name="restrict_to_types">org</setting>
-                <setting name="list_format">list</setting>
-                <setting name="sortDirection">ASC</setting>
-                <setting name="display_template">^ca_entities.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
-                <setting name="dontShowDeleteButton">0</setting>
-              </settings>
-            </placement>
-            <placement code="ca_collections5">
-              <bundle>ca_collections</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Journal</setting>
-                <setting name="label" locale="de_DE">Zeitung</setting>				
-                <setting name="restrict_to_relationship_types">journal_journal_issue</setting>
-                <setting name="list_format">list</setting>
-                <setting name="sortDirection">ASC</setting>
-                <setting name="display_template">^ca_collections.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
-                <setting name="dontShowDeleteButton">0</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1015,7 +857,7 @@
         </label>
         <label locale="de_DE">
           <name>Artikel</name>
-        </label>		
+        </label>
       </labels>
       <screens>
         <screen idno="screen_20_0" default="1">
@@ -1023,9 +865,9 @@
             <label locale="en_US">
               <name>Paper</name>
             </label>
-			<label locale="de_DE">
-			  <name>Artikel</name>
-			</label>				
+            <label locale="de_DE">
+              <name>Artikel</name>
+            </label>
           </labels>
           <typeRestrictions>
             <restriction type="paper_dissertation"/>
@@ -1033,21 +875,33 @@
             <restriction type="paper_thesis"/>
           </typeRestrictions>
           <bundlePlacements>
+            <placement code="ca_list_items5">
+              <bundle>ca_list_items</bundle>
+              <settings>
+                <setting name="restrict_to_relationship_types">object_category</setting>
+                <setting name="list_format">bubbles</setting>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="display_template">^ca_list_items.preferred_labels</setting>
+                <setting name="minRelationshipsPerRow"/>
+                <setting name="maxRelationshipsPerRow"/>
+                <setting name="hierarchicalBrowserHeight">200px</setting>
+                <setting name="restrictToTermsOnCollectionUseRelationshipType">103</setting>
+                <setting name="readonly"/>
+                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dontShowDeleteButton">0</setting>
+                <setting name="restrict_to_lists">thesis_type</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="restrictToTermsRelatedToCollection">0</setting>
+              </settings>
+            </placement>
             <placement code="preferred_labels1">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Titel</setting>
                 <setting name="label" locale="en_US">Title</setting>
+                <setting name="readonly"/>
+                <setting name="usewysiwygeditor"/>
               </settings>
-            </placement>
-            <placement code="ca_attribute_year2">
-              <bundle>ca_attribute_year</bundle>
-              <settings>
-                <setting name="sortDirection">ASC</setting>
-              </settings>
-            </placement>
-            <placement code="ca_attribute_barcode_paper3">
-              <bundle>ca_attribute_barcode_paper</bundle>
             </placement>
             <placement code="ca_entities5">
               <bundle>ca_entities</bundle>
@@ -1062,32 +916,35 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
+                <setting name="readonly"/>
+                <setting name="maxRelationshipsPerRow"/>
+              </settings>
+            </placement>
+            <placement code="ca_attribute_year2">
+              <bundle>ca_attribute_year</bundle>
+              <settings>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="readonly"/>
+              </settings>
+            </placement>
+            <placement code="ca_occurrences5">
+              <bundle>ca_occurrences</bundle>
+              <settings>
+                <setting name="label" locale="de_DE">Exemplare</setting>
+                <setting name="label" locale="en_US">Copies</setting>
+                <setting name="restrict_to_relationship_types">paper_copies</setting>
+                <setting name="restrict_to_types">copy</setting>
+                <setting name="list_format">list</setting>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="display_template">^ca_occurrences.preferred_labels</setting>
+                <setting name="minRelationshipsPerRow"/>
+                <setting name="maxRelationshipsPerRow"/>
+                <setting name="readonly"/>
+                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dontShowDeleteButton">0</setting>
               </settings>
             </placement>
           </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface>
-    <userInterface code="Journal" type="ca_collections">
-      <labels>
-        <label locale="en_US">
-          <name>Journal</name>
-        </label>
-        <label locale="de_DE">
-          <name>Zeitung</name>
-        </label>		
-      </labels>
-      <screens>
-        <screen idno="screen_21_0" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Journal</name>
-            </label>
-			<label locale="de_DE">
-			  <name>Zeitung</name>
-			</label>
-          </labels>
-          <bundlePlacements/>
         </screen>
       </screens>
     </userInterface>
@@ -1098,7 +955,7 @@
         </label>
         <label locale="de_DE">
           <name>Reihe</name>
-        </label>		
+        </label>
       </labels>
       <screens>
         <screen idno="series_edt_scr" default="1">
@@ -1108,7 +965,7 @@
             </label>
             <label locale="de_DE">
               <name>Reihe</name>
-            </label>			
+            </label>
           </labels>
           <typeRestrictions>
             <restriction type="series"/>
@@ -1117,8 +974,10 @@
             <placement code="preferred_labels1">
               <bundle>preferred_labels</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Name</setting>
                 <setting name="label" locale="en_US">Name</setting>
-				<setting name="label" locale="de_DE">Name</setting>
+                <setting name="readonly"/>
+                <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
             <placement code="ca_objects2">
@@ -1131,6 +990,9 @@
                 <setting name="display_template">^ca_objects.preferred_labels</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
+                <setting name="readonly"/>
+                <setting name="minRelationshipsPerRow"/>
+                <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1144,7 +1006,7 @@
         </label>
         <label locale="de_DE">
           <name>Exemplar</name>
-        </label>		
+        </label>
       </labels>
       <screens>
         <screen idno="copy_edt_barcode_scr" default="1">
@@ -1154,7 +1016,7 @@
             </label>
             <label locale="de_DE">
               <name>Exemplar</name>
-            </label>			
+            </label>
           </labels>
           <typeRestrictions>
             <restriction type="copy"/>
@@ -1162,19 +1024,14 @@
           <bundlePlacements>
             <placement code="source_id4">
               <bundle>source_id</bundle>
-              <settings>
-                <setting name="readonly"/>
-              </settings>
             </placement>
             <placement code="preferred_labels2">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Barcode</setting>
-				<setting name="label" locale="de_DE">Barcode</setting>
+                <setting name="label" locale="de_DE">Barcode</setting>
                 <setting name="width">100</setting>
                 <setting name="height">1</setting>
-                <setting name="usewysiwygeditor"/>
-                <setting name="readonly"/>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1198,7 +1055,7 @@
             </label>
             <label locale="de_DE">
               <name>Entität</name>
-            </label>			
+            </label>
           </labels>
           <typeRestrictions>
             <restriction type="ind"/>
@@ -1219,7 +1076,7 @@
         </label>
         <label locale="de_DE">
           <name>Autor</name>
-        </label>		
+        </label>
       </labels>
       <screens>
         <screen idno="author_edt_scr" default="1">
@@ -1229,7 +1086,7 @@
             </label>
             <label locale="de_DE">
               <name>Autor</name>
-            </label>			
+            </label>
           </labels>
           <typeRestrictions>
             <restriction type="ind"/>
@@ -1238,8 +1095,10 @@
             <placement code="preferred_labels1">
               <bundle>preferred_labels</bundle>
               <settings>
+                <setting name="label" locale="de_DE">Name</setting>
                 <setting name="label" locale="en_US">Name</setting>
-				<setting name="label" locale="de_DE">Name</setting>
+                <setting name="readonly"/>
+                <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1253,7 +1112,7 @@
         </label>
         <label locale="de_DE">
           <name>Herausgeber</name>
-        </label>		
+        </label>
       </labels>
       <screens>
         <screen idno="editor_edt_scr" default="1">
@@ -1263,7 +1122,7 @@
             </label>
             <label locale="de_DE">
               <name>Herausgeber</name>
-            </label>			
+            </label>
           </labels>
           <typeRestrictions>
             <restriction type="ind"/>
@@ -1273,7 +1132,7 @@
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="en_US">Name</setting>
-				<setting name="label" locale="de_DE">Name</setting>
+                <setting name="label" locale="de_DE">Name</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1284,7 +1143,7 @@
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_entities">
       <types>
-        <type code="author" default="1">
+        <type code="author" default="0">
           <labels>
             <label locale="en_US">
               <typename>written by</typename>
@@ -1293,7 +1152,7 @@
             <label locale="de_DE">
               <typename>geschrieben von</typename>
               <typename_reverse>ist Autor</typename_reverse>
-            </label>			
+            </label>
           </labels>
           <subTypeRight>ind</subTypeRight>
         </type>
@@ -1306,7 +1165,7 @@
             <label locale="de_DE">
               <typename>Herausgeber von</typename>
               <typename_reverse>ist Herausgeber</typename_reverse>
-            </label>			
+            </label>
           </labels>
           <subTypeLeft>book</subTypeLeft>
           <subTypeRight>ind</subTypeRight>
@@ -1320,7 +1179,7 @@
             <label locale="de_DE">
               <typename>veröffentlicht von</typename>
               <typename_reverse>ist Verleger</typename_reverse>
-            </label>			
+            </label>
           </labels>
           <subTypeRight>org</subTypeRight>
         </type>
@@ -1328,7 +1187,7 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_occurrences">
       <types>
-        <type code="book_copy" default="1">
+        <type code="book_copy" default="0">
           <labels>
             <label locale="en_US">
               <typename>book has copies</typename>
@@ -1337,9 +1196,10 @@
             <label locale="de_DE">
               <typename>Buch hat Exemplare</typename>
               <typename_reverse>ist Exemplar von Buch</typename_reverse>
-            </label>			
+            </label>
           </labels>
           <subTypeLeft>book</subTypeLeft>
+          <subTypeRight>copy</subTypeRight>
         </type>
         <type code="paper_copies" default="0">
           <labels>
@@ -1350,7 +1210,7 @@
             <label locale="de_DE">
               <typename>Artikel hat Exemplare</typename>
               <typename_reverse>ist Exemplar von Artikel</typename_reverse>
-            </label>			
+            </label>
           </labels>
           <subTypeLeft>paper</subTypeLeft>
           <subTypeRight>copy</subTypeRight>
@@ -1368,8 +1228,9 @@
             <label locale="de_DE">
               <typename>Objekt ist in Kategorie</typename>
               <typename_reverse>Kategorie enthält Objekte</typename_reverse>
-            </label>			
+            </label>
           </labels>
+          <subTypeRight>category</subTypeRight>
         </type>
         <type code="object_tag" default="0">
           <labels>
@@ -1380,26 +1241,24 @@
             <label locale="de_DE">
               <typename>Objekt hat Schlagwort</typename>
               <typename_reverse>Schlagwort ist zugeordnet zu Objekt</typename_reverse>
-            </label>			
+            </label>
           </labels>
           <subTypeRight>tag</subTypeRight>
+        </type>
+        <type code="obj_type" default="0">
+          <labels>
+            <label locale="de_DE">
+              <typename>Objekt ist von Typ</typename>
+              <typename_reverse>Type Object</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>paper</subTypeLeft>
+          <subTypeRight>category</subTypeRight>
         </type>
       </types>
     </relationshipTable>
     <relationshipTable name="ca_objects_x_collections">
       <types>
-        <type code="item_volume" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>object_is_part_of_volume</typename>
-              <typename_reverse>volume_has_object</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>Objekt ist Teil von Ausgabe</typename>
-              <typename_reverse>Ausgabe hat Objekt</typename_reverse>
-            </label>			
-          </labels>
-        </type>
         <type code="item_series" default="0">
           <labels>
             <label locale="en_US">
@@ -1409,160 +1268,13 @@
             <label locale="de_DE">
               <typename>Objekt ist Teil der Reihe</typename>
               <typename_reverse>Reihe hat Objekt</typename_reverse>
-            </label>			
+            </label>
           </labels>
           <subTypeRight>series</subTypeRight>
-        </type>
-        <type code="journal_journal_issue" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>journal_issue_is_part_of_journal</typename>
-              <typename_reverse>journal_has_journal_issue</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>Zeitungsausgabe ist Teil der Zeitung</typename>
-              <typename_reverse>Zeitung hat Zeitungsausgabe</typename_reverse>
-            </label>			
-          </labels>
-          <subTypeLeft>journalIssue</subTypeLeft>
         </type>
       </types>
     </relationshipTable>
   </relationshipTypes>
-  <displays>
-    <display code="series_dspl" type="ca_collections" system="1">
-      <labels>
-        <label locale="en_US">
-          <name>Series Display</name>
-        </label>
-        <label locale="de_DE">
-          <name>Reihenübersicht</name>
-        </label>		
-      </labels>
-      <bundlePlacements>
-        <placement code="ca_objects">
-          <bundle>ca_objects</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Item</setting>
-			<setting name="label" locale="de_DE">Item</setting>
-            <setting name="format"/>
-            <setting name="restrict_to_relationship_types">106</setting>
-            <setting name="restrict_to_types">19</setting>
-            <setting name="delimiter"/>
-            <setting name="remove_first_items"/>
-            <setting name="hierarchy_order">ASC</setting>
-            <setting name="hierarchy_limit"/>
-            <setting name="hierarchical_delimiter"> ? </setting>
-          </settings>
-        </placement>
-      </bundlePlacements>
-    </display>
-    <display code="book_dspl" type="ca_objects" system="1">
-      <labels>
-        <label locale="en_US">
-          <name>Book Display</name>
-        </label>
-        <label locale="de_DE">
-          <name>Buchübersicht</name>
-        </label>		
-      </labels>
-      <bundlePlacements>
-        <placement code="ca_objects_preferred_labels">
-          <bundle>ca_objects.preferred_labels</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Title</setting>
-			<setting name="label" locale="de_DE">Titel</setting>
-            <setting name="format"/>
-            <setting name="delimiter"/>
-            <setting name="maximum_length">100</setting>
-          </settings>
-        </placement>
-        <placement code="ca_list_items">
-          <bundle>ca_list_items</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Category</setting>
-			<setting name="label" locale="de_DE">Kategorie</setting>
-            <setting name="format"/>
-            <setting name="restrict_to_relationship_types">103</setting>
-            <setting name="restrict_to_types">2</setting>
-            <setting name="delimiter"/>
-            <setting name="remove_first_items"/>
-            <setting name="hierarchy_order">ASC</setting>
-            <setting name="hierarchy_limit"/>
-            <setting name="hierarchical_delimiter"> ? </setting>
-          </settings>
-        </placement>
-        <placement code="ca_objects_isbn">
-          <bundle>ca_objects.isbn</bundle>
-          <settings>
-            <setting name="label" locale="en_US">ISBN</setting>
-			<setting name="label" locale="de_DE">ISBN</setting>
-            <setting name="format"/>
-            <setting name="delimiter"/>
-            <setting name="maximum_length">2048</setting>
-            <setting name="filter"/>
-          </settings>
-        </placement>
-        <placement code="ca_objects_year">
-          <bundle>ca_objects.year</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Year</setting>
-			<setting name="label" locale="de_DE">Jahr</setting>
-            <setting name="format"/>
-            <setting name="delimiter"/>
-            <setting name="maximum_length">2048</setting>
-            <setting name="filter"/>
-          </settings>
-        </placement>
-        <placement code="ca_entities">
-          <bundle>ca_entities</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Author(s)</setting>
-			<setting name="label" locale="de_DE">Autor(en)</setting>
-            <setting name="format"/>
-            <setting name="restrict_to_relationship_types">96</setting>
-            <setting name="restrict_to_types">71</setting>
-            <setting name="delimiter"/>
-            <setting name="remove_first_items"/>
-            <setting name="hierarchy_order">ASC</setting>
-            <setting name="hierarchy_limit"/>
-            <setting name="hierarchical_delimiter"> ? </setting>
-            <setting name="show_hierarchy"/>
-          </settings>
-        </placement>
-        <placement code="ca_entities">
-          <bundle>ca_entities</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Editor(s)</setting>
-			<setting name="label" locale="de_DE">Herausgeber</setting>
-            <setting name="format"/>
-            <setting name="restrict_to_relationship_types">97</setting>
-            <setting name="restrict_to_types">72</setting>
-            <setting name="delimiter"/>
-            <setting name="remove_first_items"/>
-            <setting name="hierarchy_order">ASC</setting>
-            <setting name="hierarchy_limit"/>
-            <setting name="hierarchical_delimiter"> ? </setting>
-          </settings>
-        </placement>
-        <placement code="ca_occurrences">
-          <bundle>ca_occurrences</bundle>
-          <settings>
-            <setting name="label" locale="en_US">Copies</setting>
-			<setting name="label" locale="en_US">Exemplare</setting>
-            <setting name="format"/>
-            <setting name="restrict_to_relationship_types">100</setting>
-            <setting name="restrict_to_types">94</setting>
-            <setting name="delimiter"/>
-            <setting name="remove_first_items"/>
-            <setting name="hierarchy_order">ASC</setting>
-            <setting name="hierarchy_limit"/>
-            <setting name="hierarchical_delimiter"> ? </setting>
-          </settings>
-        </placement>
-      </bundlePlacements>
-    </display>
-  </displays>
   <searchForms>
     <searchForm code="object_srch" type="ca_objects" system="1">
       <labels>
@@ -1571,7 +1283,7 @@
         </label>
         <label locale="de_DE">
           <name>Buchsuche</name>
-        </label>		
+        </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
@@ -1581,7 +1293,7 @@
           <bundle>ca_objects.type_id</bundle>
           <settings>
             <setting name="label" locale="en_US">Type</setting>
-			<setting name="label" locale="de_DE">Typ</setting>
+            <setting name="label" locale="de_DE">Typ</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
@@ -1589,7 +1301,7 @@
           <bundle>ca_object_labels.name</bundle>
           <settings>
             <setting name="label" locale="en_US">Name</setting>
-			<setting name="label" locale="de_DE">Name</setting>
+            <setting name="label" locale="de_DE">Name</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
@@ -1597,7 +1309,7 @@
           <bundle>ca_objects.isbn</bundle>
           <settings>
             <setting name="label" locale="en_US">ISBN</setting>
-			<setting name="label" locale="de_DE">ISBN</setting>
+            <setting name="label" locale="de_DE">ISBN</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
@@ -1605,7 +1317,7 @@
           <bundle>ca_objects.year</bundle>
           <settings>
             <setting name="label" locale="en_US">Year</setting>
-			<setting name="label" locale="de_DE">Jahr</setting>
+            <setting name="label" locale="de_DE">Jahr</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
@@ -1613,7 +1325,7 @@
           <bundle>ca_occurrence_labels.name</bundle>
           <settings>
             <setting name="label" locale="en_US">Barcode</setting>
-			<setting name="label" locale="de_DE">Barcode</setting>
+            <setting name="label" locale="de_DE">Barcode</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
@@ -1626,7 +1338,7 @@
         </label>
         <label locale="de_DE">
           <name>Suche</name>
-        </label>		
+        </label>
       </labels>
       <settings>
         <setting name="form_width">2</setting>
@@ -1635,32 +1347,24 @@
         <placement code="p36">
           <bundle>_fulltext</bundle>
           <settings>
-            <setting name="label" locale="en_US"/>
-			<setting name="label" locale="de_DE"/>
             <setting name="width">100px</setting>
           </settings>
         </placement>
         <placement code="p37">
           <bundle>ca_objects.year</bundle>
           <settings>
-            <setting name="label" locale="en_US"/>
-			<setting name="label" locale="de_DE"/>
             <setting name="width">100px</setting>
           </settings>
         </placement>
         <placement code="p38">
           <bundle>ca_objects.isbn</bundle>
           <settings>
-            <setting name="label" locale="en_US"/>
-			<setting name="label" locale="de_DE"/>
             <setting name="width">100px</setting>
           </settings>
         </placement>
         <placement code="p39">
           <bundle>ca_object_labels.name</bundle>
           <settings>
-            <setting name="label" locale="en_US"/>
-			<setting name="label" locale="de_DE"/>
             <setting name="width">100px</setting>
           </settings>
         </placement>
@@ -1668,7 +1372,78 @@
           <bundle>ca_entity_labels.displayname</bundle>
           <settings>
             <setting name="label" locale="en_US">Author</setting>
-			<setting name="label" locale="de_DE">Autor</setting>
+            <setting name="label" locale="de_DE">Autor</setting>
+            <setting name="width">100px</setting>
+          </settings>
+        </placement>
+      </bundlePlacements>
+    </searchForm>
+    <searchForm code="std_srch_frm" type="ca_objects" system="1">
+      <labels>
+        <label locale="de_DE">
+          <name>Standardsuchformular</name>
+        </label>
+        <label locale="en_US">
+          <name>Default search form</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="form_width">3</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="p41">
+          <bundle>ca_item_tags.tag</bundle>
+          <settings>
+            <setting name="label" locale="2"/>
+            <setting name="label" locale="1"/>
+            <setting name="width">100px</setting>
+          </settings>
+        </placement>
+        <placement code="p42">
+          <bundle>ca_objects.type_id</bundle>
+          <settings>
+            <setting name="label" locale="2"/>
+            <setting name="label" locale="1"/>
+            <setting name="width">100px</setting>
+          </settings>
+        </placement>
+        <placement code="p43">
+          <bundle>ca_objects.year</bundle>
+          <settings>
+            <setting name="label" locale="2"/>
+            <setting name="label" locale="1"/>
+            <setting name="width">100px</setting>
+          </settings>
+        </placement>
+        <placement code="p44">
+          <bundle>_fulltext</bundle>
+          <settings>
+            <setting name="label" locale="2"/>
+            <setting name="label" locale="1"/>
+            <setting name="width">100px</setting>
+          </settings>
+        </placement>
+        <placement code="p45">
+          <bundle>ca_entity_labels.displayname</bundle>
+          <settings>
+            <setting name="label" locale="2"/>
+            <setting name="label" locale="1"/>
+            <setting name="width">100px</setting>
+          </settings>
+        </placement>
+        <placement code="p46">
+          <bundle>ca_objects.isbn</bundle>
+          <settings>
+            <setting name="label" locale="2"/>
+            <setting name="label" locale="1"/>
+            <setting name="width">100px</setting>
+          </settings>
+        </placement>
+        <placement code="p47">
+          <bundle>ca_objects.issn</bundle>
+          <settings>
+            <setting name="label" locale="2"/>
+            <setting name="label" locale="1"/>
             <setting name="width">100px</setting>
           </settings>
         </placement>
