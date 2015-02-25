@@ -183,17 +183,17 @@
       </items>
     </list>
     -->
-    <list code="occurrence_sources" hierarchical="1" system="0" vocabulary="0">
+    <list code="object_sources" hierarchical="1" system="0" vocabulary="0">
       <labels>
         <label locale="en_US">
-          <name>Occurrence sources</name>
+          <name>Object sources</name>
         </label>
         <label locale="de_DE">
-          <name>Ressourcenherkunft</name>
+          <name>Objektherkunft</name>
         </label>
       </labels>
       <items>
-        <item idno="occ_src_slub" enabled="1" default="0">
+        <item idno="obj_src_slub" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>SLUB</name_singular>
@@ -205,7 +205,7 @@
             </label>
           </labels>
         </item>
-        <item idno="occ_src_own" enabled="1" default="1">
+        <item idno="obj_src_own" enabled="1" default="1">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>WISE</name_singular>
@@ -680,6 +680,30 @@
         </restriction>
       </typeRestrictions>
     </metadataElement>
+    <metadataElement code="barcode" datatype="Text">
+      <labels>
+        <label locale="en_US">
+          <name>Barcode</name>
+        </label>
+        <label locale="de_DE">
+          <name>Barcode</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="maxChars">50</setting>
+      </settings>
+      <typeRestrictions>
+        <restriction>
+          <table>ca_objects</table>
+          <type>copy</type>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">0</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
   </elementSets>
   <userInterfaces>
     <userInterface code="book_edt" type="ca_objects">
@@ -787,11 +811,12 @@
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_list_items.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow"/>
-                <setting name="maxRelationshipsPerRow"/>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow">1</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
                 <setting name="restrict_to_lists">category</setting>
-                <setting name="hierarchicalBrowserHeight">200px</setting>
-                <setting name="restrictToTermsOnCollectionUseRelationshipType">103</setting>
+                <!-- <seeting name="restrict_to_type">category</seeting> -->
+                <!-- <setting name="restrictToTermsOnCollectionUseRelationshipType">103</setting> -->
               </settings>
             </placement>
             <placement code="ca_attribute_isbn5">
@@ -1095,12 +1120,22 @@
             <placement code="source_id4">
               <bundle>source_id</bundle>
             </placement>
+            <placement code="barcode_plcement">
+              <bundle>ca_attribute_barcode</bundle>
+              <settings>
+                <setting name="readonly"/>
+                <setting name="sort">1</setting>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="width">30</setting>
+                <setting name="height">1</setting>
+              </settings>
+            </placement>
             <placement code="preferred_labels2">
               <bundle>preferred_labels</bundle>
               <settings>
-                <setting name="label" locale="en_US">Barcode</setting>
-                <setting name="label" locale="de_DE">Barcode</setting>
-                <setting name="width">100</setting>
+                <setting name="label" locale="en_US">Shelfmark</setting>
+                <setting name="label" locale="de_DE">Signatur</setting>
+                <setting name="width">30</setting>
                 <setting name="height">1</setting>
               </settings>
             </placement>
