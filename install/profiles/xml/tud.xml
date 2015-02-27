@@ -7,7 +7,7 @@
     <locale lang="de" country="DE" dontUseForCataloguing="1">Deutsch</locale>
   </locales>
   <lists>
-    <list code="list_item_types" hierarchical="0" system="0" vocabulary="0">
+<!--    <list code="list_item_types" hierarchical="0" system="0" vocabulary="0">
       <labels>
         <label locale="en_US">
           <name>List item types</name>
@@ -42,7 +42,7 @@
           </labels>
         </item>
       </items>
-    </list>
+    </list>-->
     <list code="object_types" hierarchical="1" system="0" vocabulary="0">
       <labels>
         <label locale="en_US">
@@ -736,7 +736,7 @@
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Autor</setting>
-                <setting name="label" locale="en_US">Autor</setting>
+                <setting name="label" locale="en_US">Author</setting>
                 <setting name="restrict_to_relationship_types">book_author</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
@@ -771,7 +771,7 @@
               <settings>
                 <setting name="label" locale="de_DE">Kategorie</setting>
                 <setting name="label" locale="en_US">Category</setting>
-                <setting name="restrict_to_relationship_types">object_category</setting>
+                <setting name="restrict_to_relationship_types">book_category</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_list_items.preferred_labels</setting>
@@ -906,7 +906,7 @@
             <restriction type="paper_thesis"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="ca_list_items5">
+            <placement code="category_placement">
               <bundle>ca_list_items</bundle>
               <settings>
                 <setting name="restrict_to_relationship_types">object_category</setting>
@@ -1336,8 +1336,8 @@
         <type code="item_series" default="0">
           <labels>
             <label locale="en_US">
-              <typename>object_is_part_of_series</typename>
-              <typename_reverse>series_has_object</typename_reverse>
+              <typename>object is part of series</typename>
+              <typename_reverse>series has object</typename_reverse>
             </label>
             <label locale="de_DE">
               <typename>Objekt ist Teil der Reihe</typename>
@@ -1346,6 +1346,24 @@
           </labels>
           <subTypeLeft>book</subTypeLeft>
           <subTypeRight>series</subTypeRight>
+        </type>
+      </types>
+    </relationshipTable>
+    <relationshipTable name="ca_objects_x_vocabulary_terms">
+      <types>
+        <type code="book_category" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>book is in category</typename>
+              <typename_reverse>category contains book</typename_reverse>
+            </label>
+            <label locale="de_DE">
+              <typename>Buch ist in Kategorie</typename>
+              <typename_reverse>Kategorie enthält Buch</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>book</subTypeLeft>
+          <subTypeRight>category</subTypeRight>
         </type>
       </types>
     </relationshipTable>
