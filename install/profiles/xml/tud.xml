@@ -43,7 +43,7 @@
         </item>
       </items>
     </list>
-    <list code="object_types" hierarchical="1" system="0" vocabulary="1">
+    <list code="object_types" hierarchical="1" system="0" vocabulary="0">
       <labels>
         <label locale="en_US">
           <name>Object Types</name>
@@ -157,32 +157,6 @@
         </item>
       </items>
     </list>
-    <!--
-    <list code="occurrence_types" hierarchical="0" system="0" vocabulary="0">
-      <labels>
-        <label locale="en_US">
-          <name>Occurrence types</name>
-        </label>
-        <label locale="de_DE">
-          <name>Ressourcenarten</name>
-        </label>
-      </labels>
-      <items>
-        <item idno="copy" enabled="1" default="1">
-          <labels>
-            <label locale="en_US" preferred="1">
-              <name_singular>Copy</name_singular>
-              <name_plural>Copies</name_plural>
-            </label>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Exemplar</name_singular>
-              <name_plural>Exemplare</name_plural>
-            </label>
-          </labels>
-        </item>
-      </items>
-    </list>
-    -->
     <list code="object_sources" hierarchical="1" system="0" vocabulary="0">
       <labels>
         <label locale="en_US">
@@ -625,7 +599,7 @@
       </settings>
       <typeRestrictions>
         <restriction>
-          <table>ca_occurrences</table>
+          <table>ca_objects</table>
           <type>copy</type>
           <includeSubtypes>1</includeSubtypes>
           <settings>
@@ -739,53 +713,40 @@
                 <setting name="label" locale="en_US">Title</setting>
                 <setting name="width">95</setting>
                 <setting name="height">1</setting>
-                <setting name="readonly"/>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
-            <placement code="ca_primary_book_author">
+            <placement code="main_book_author_placement">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Hauptautor</setting>
                 <setting name="label" locale="en_US">First Author</setting>
+                <setting name="restrict_to_relationship_types">main_book_author</setting>
+                <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dontShowDeleteButton">1</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="restrict_to_relationship_types">primary_book_author</setting>
-                <setting name="restrict_to_types">ind</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
-                <setting name="dontShowDeleteButton">0</setting>
-                <setting name="readonly"/>
-                <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
-            <placement code="ca_book_author">
+            <placement code="book_author_placement">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Autor</setting>
-                <setting name="label" locale="en_US">Author</setting>
+                <setting name="label" locale="en_US">Autor</setting>
+                <setting name="restrict_to_relationship_types">book_author</setting>
+                <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="restrict_to_relationship_types">book_author</setting>
-                <setting name="restrict_to_types">ind</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="readonly"/>
-                <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
-            <placement code="ca_attribute_year3">
-              <bundle>ca_attribute_year</bundle>
-              <settings>
-                <setting name="sortDirection">ASC</setting>
-                <setting name="readonly"/>
-              </settings>
-            </placement>
-            <placement code="ca_entities4">
+            <placement code="editor_placement">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Herausgeber</setting>
@@ -797,12 +758,15 @@
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="readonly"/>
-                <setting name="minRelationshipsPerRow"/>
-                <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
-            <placement code="ca_list_items5">
+            <placement code="ca_attribute_year3">
+              <bundle>ca_attribute_year</bundle>
+              <settings>
+                <setting name="sortDirection">ASC</setting>
+              </settings>
+            </placement>
+            <placement code="category_placement">
               <bundle>ca_list_items</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Kategorie</setting>
@@ -815,19 +779,16 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
                 <setting name="restrict_to_lists">category</setting>
-                <!-- <seeting name="restrict_to_type">category</seeting> -->
-                <!-- <setting name="restrictToTermsOnCollectionUseRelationshipType">103</setting> -->
               </settings>
             </placement>
-            <placement code="ca_attribute_isbn5">
+            <placement code="book_isbn_placement">
               <bundle>ca_attribute_isbn</bundle>
               <settings>
                 <setting name="sortDirection">ASC</setting>
-                <setting name="readonly"/>
               </settings>
             </placement>
-            <placement code="ca_occurrences5">
-              <bundle>ca_occurrences</bundle>
+            <placement code="book_copies_placement">
+              <bundle>ca_objectss</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Exemplare</setting>
                 <setting name="label" locale="en_US">Copies</setting>
@@ -835,15 +796,13 @@
                 <setting name="restrict_to_types">copy</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
-                <setting name="display_template">^ca_occurrences.preferred_labels</setting>
+                <setting name="display_template">^ca_objects.preferred_labels</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="readonly"/>
-                <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
-            <placement code="ca_entities7">
+            <placement code="publisher_placement">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Verlag</setting>
@@ -856,11 +815,10 @@
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="readonly"/>
                 <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
-            <placement code="ca_collections7">
+            <placement code="series_placement">
               <bundle>ca_collections</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Reihe</setting>
@@ -873,7 +831,6 @@
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
                 <setting name="restrict_to_types">series</setting>
-                <setting name="readonly"/>
                 <setting name="minRelationshipsPerRow"/>
               </settings>
             </placement>
@@ -960,7 +917,6 @@
                 <setting name="maxRelationshipsPerRow"/>
                 <setting name="hierarchicalBrowserHeight">200px</setting>
                 <setting name="restrictToTermsOnCollectionUseRelationshipType">103</setting>
-                <setting name="readonly"/>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
                 <setting name="restrict_to_lists">thesis_type</setting>
@@ -973,16 +929,15 @@
               <settings>
                 <setting name="label" locale="de_DE">Titel</setting>
                 <setting name="label" locale="en_US">Title</setting>
-                <setting name="readonly"/>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
-            <placement code="primary_paper_author">
+            <placement code="main_paper_author">
               <bundle>ca_entities</bundle>
               <settings>
-                <setting name="label" locale="de_DE">Autor</setting>
-                <setting name="label" locale="en_US">Author</setting>
-                <setting name="restrict_to_relationship_types">primary_paper_author</setting>
+                <setting name="label" locale="de_DE">Hauptautor</setting>
+                <setting name="label" locale="en_US">Main Author</setting>
+                <setting name="restrict_to_relationship_types">main_paper_author</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">bubbles</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -991,7 +946,6 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="readonly"/>
                 <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
@@ -1008,7 +962,6 @@
                 <setting name="minRelationshipsPerRow">0</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="readonly"/>
                 <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
@@ -1016,7 +969,6 @@
               <bundle>ca_attribute_year</bundle>
               <settings>
                 <setting name="sortDirection">ASC</setting>
-                <setting name="readonly"/>
               </settings>
             </placement>
             <placement code="ca_occurrences5">
@@ -1031,7 +983,6 @@
                 <setting name="display_template">^ca_occurrences.preferred_labels</setting>
                 <setting name="minRelationshipsPerRow"/>
                 <setting name="maxRelationshipsPerRow"/>
-                <setting name="readonly"/>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
               </settings>
@@ -1068,7 +1019,6 @@
               <settings>
                 <setting name="label" locale="de_DE">Name</setting>
                 <setting name="label" locale="en_US">Name</setting>
-                <setting name="readonly"/>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -1082,7 +1032,6 @@
                 <setting name="display_template">^ca_objects.preferred_labels</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="readonly"/>
                 <setting name="minRelationshipsPerRow"/>
                 <setting name="maxRelationshipsPerRow"/>
               </settings>
@@ -1123,7 +1072,6 @@
             <placement code="barcode_plcement">
               <bundle>ca_attribute_barcode</bundle>
               <settings>
-                <setting name="readonly"/>
                 <setting name="sort">1</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="width">30</setting>
@@ -1205,7 +1153,6 @@
               <settings>
                 <setting name="label" locale="de_DE">Name</setting>
                 <setting name="label" locale="en_US">Name</setting>
-                <setting name="readonly"/>
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
@@ -1252,57 +1199,29 @@
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_entities">
       <types>
-        <type code="primary_author_book" default="0">
+        <type code="main_book_author" default="0">
           <labels>
             <label locale="en_US">
-              <typename>written by</typename>
-              <typename_reverse>is author</typename_reverse>
+              <typename>written by (main author)</typename>
+              <typename_reverse>is main author</typename_reverse>
             </label>
             <label locale="de_DE">
-              <typename>geschrieben von</typename>
-              <typename_reverse>ist Autor</typename_reverse>
+              <typename>geschrieben von (Hauptautor)</typename>
+              <typename_reverse>ist Hauptautor</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>book</subTypeLeft>
           <subTypeRight>ind</subTypeRight>
         </type>
-        <type code="primary_author_paper" default="0">
+        <type code="main_paper_author" default="0">
           <labels>
             <label locale="en_US">
-              <typename>written by</typename>
-              <typename_reverse>is author</typename_reverse>
+              <typename>written by (main author)</typename>
+              <typename_reverse>is main author</typename_reverse>
             </label>
             <label locale="de_DE">
-              <typename>geschrieben von</typename>
-              <typename_reverse>ist Autor</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>paper</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="author_book" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>written by</typename>
-              <typename_reverse>is author</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>geschrieben von</typename>
-              <typename_reverse>ist Autor</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>book</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="author_paper" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>written by</typename>
-              <typename_reverse>is author</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>geschrieben von</typename>
-              <typename_reverse>ist Autor</typename_reverse>
+              <typename>geschrieben von (Hauptautor)</typename>
+              <typename_reverse>ist Hauptautor</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>paper</subTypeLeft>
@@ -1311,8 +1230,8 @@
         <type code="editor" default="0">
           <labels>
             <label locale="en_US">
-              <typename>editor_of</typename>
-              <typename_reverse>is_editor</typename_reverse>
+              <typename>editor of</typename>
+              <typename_reverse>is editor</typename_reverse>
             </label>
             <label locale="de_DE">
               <typename>Herausgeber von</typename>
@@ -1320,6 +1239,34 @@
             </label>
           </labels>
           <subTypeLeft>book</subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="book_author" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>written by</typename>
+              <typename_reverse>is author</typename_reverse>
+            </label>
+            <label locale="de_DE">
+              <typename>geschrieben von</typename>
+              <typename_reverse>ist Autor</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>book</subTypeLeft>
+          <subTypeRight>ind</subTypeRight>
+        </type>
+        <type code="paper_author" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>written by</typename>
+              <typename_reverse>is author</typename_reverse>
+            </label>
+            <label locale="de_DE">
+              <typename>geschrieben von</typename>
+              <typename_reverse>ist Autor</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>paper</subTypeLeft>
           <subTypeRight>ind</subTypeRight>
         </type>
         <type code="book_published" default="0">
@@ -1381,46 +1328,6 @@
           </labels>
           <subTypeLeft>paper</subTypeLeft>
           <subTypeRight>copy</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
-    <relationshipTable name="ca_objects_x_vocabulary_terms">
-      <types>
-        <type code="object_category" default="1">
-          <labels>
-            <label locale="en_US">
-              <typename>object is in category</typename>
-              <typename_reverse>category contains object</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>Objekt ist in Kategorie</typename>
-              <typename_reverse>Kategorie enthält Objekte</typename_reverse>
-            </label>
-          </labels>
-          <subTypeRight>category</subTypeRight>
-        </type>
-        <type code="object_tag" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>object has tag</typename>
-              <typename_reverse>tag is assigned to object</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>Objekt hat Schlagwort</typename>
-              <typename_reverse>Schlagwort ist zugeordnet zu Objekt</typename_reverse>
-            </label>
-          </labels>
-          <subTypeRight>tag</subTypeRight>
-        </type>
-        <type code="obj_type" default="0">
-          <labels>
-            <label locale="de_DE">
-              <typename>Objekt ist von Typ</typename>
-              <typename_reverse>Type Object</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>paper</subTypeLeft>
-          <subTypeRight>category</subTypeRight>
         </type>
       </types>
     </relationshipTable>
@@ -1610,4 +1517,14 @@
       </bundlePlacements>
     </searchForm>
   </searchForms>
+ <logins>
+  <login email="info@foobar.com" password="adminadmin" user_name="admin" fname="admin" lname="admin">
+    <role code="admin"/>
+    <role code="cataloguer"/>
+    <role code="researcher"/>
+    <role code="moderator"/>
+    <group code="admin"/>
+    <group code="cataloguer"/>
+  </login>
+</logins>
 </profile>
