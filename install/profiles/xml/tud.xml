@@ -7,42 +7,6 @@
     <locale lang="de" country="DE" dontUseForCataloguing="1">Deutsch</locale>
   </locales>
   <lists>
-<!--    <list code="list_item_types" hierarchical="0" system="0" vocabulary="0">
-      <labels>
-        <label locale="en_US">
-          <name>List item types</name>
-        </label>
-        <label locale="de_DE">
-          <name>List Elementtypen</name>
-        </label>
-      </labels>
-      <items>
-        <item idno="category" enabled="1" default="1">
-          <labels>
-            <label locale="en_US" preferred="1">
-              <name_singular>category</name_singular>
-              <name_plural>categories</name_plural>
-            </label>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Kategorie</name_singular>
-              <name_plural>Kategorien</name_plural>
-            </label>
-          </labels>
-        </item>
-        <item idno="tag" enabled="1" default="0">
-          <labels>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Schlagwort</name_singular>
-              <name_plural>Schlagwörter</name_plural>
-            </label>
-            <label locale="en_US" preferred="1">
-              <name_singular>tag</name_singular>
-              <name_plural>tags</name_plural>
-            </label>
-          </labels>
-        </item>
-      </items>
-    </list>-->
     <list code="object_types" hierarchical="1" system="0" vocabulary="0">
       <labels>
         <label locale="en_US">
@@ -104,12 +68,12 @@
         <item idno="ind" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
-              <name_singular>Author</name_singular>
-              <name_plural>Authors</name_plural>
+              <name_singular>Person</name_singular>
+              <name_plural>Persons</name_plural>
             </label>
             <label locale="de_DE" preferred="1">
-              <name_singular>Autor</name_singular>
-              <name_plural>Autoren</name_plural>
+              <name_singular>Person</name_singular>
+              <name_plural>Persons</name_plural>
             </label>
           </labels>
           <settings>
@@ -443,7 +407,7 @@
         </label>
       </labels>
       <items>
-        <item idno="Root_node_for_tags" enabled="1" default="0">
+        <item idno="awesome_book" enabled="1" default="0">
           <labels>
             <label locale="de_DE" preferred="1">
               <name_singular>Erstklassiges Buch</name_singular>
@@ -779,6 +743,19 @@
                 <setting name="maxRelationshipsPerRow">1</setting>
                 <setting name="useHierarchicalBrowser">0</setting>
                 <setting name="restrict_to_lists">category</setting>
+              </settings>
+            </placement>
+            <placement code="tag_placement">
+              <bundle>ca_list_items</bundle>
+              <settings>
+                <setting name="label" locale="de_DE">Schlagwort</setting>
+                <setting name="label" locale="en_US">Tag</setting>
+                <setting name="restrict_to_relationship_types">book_tag</setting>
+                <setting name="list_format">list</setting>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="display_template">^ca_list_items.preferred_labels</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="restrict_to_lists">tags</setting>
               </settings>
             </placement>
             <placement code="book_isbn_placement">
@@ -1125,10 +1102,10 @@
     <userInterface code="author_edt" type="ca_entities">
       <labels>
         <label locale="en_US">
-          <name>Author</name>
+          <name>Person</name>
         </label>
         <label locale="de_DE">
-          <name>Autor</name>
+          <name>Person</name>
         </label>
       </labels>
       <typeRestrictions>
@@ -1160,41 +1137,6 @@
         </screen>
       </screens>
     </userInterface>
-    <!--
-    <userInterface code="editor_edt" type="ca_entities">
-      <labels>
-        <label locale="en_US">
-          <name>Editor</name>
-        </label>
-        <label locale="de_DE">
-          <name>Herausgeber</name>
-        </label>
-      </labels>
-      <screens>
-        <screen idno="editor_edt_scr" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Editor</name>
-            </label>
-            <label locale="de_DE">
-              <name>Herausgeber</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction type="ind"/>
-          </typeRestrictions>
-          <bundlePlacements>
-            <placement code="preferred_labels1">
-              <bundle>preferred_labels</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Name</setting>
-                <setting name="label" locale="de_DE">Name</setting>
-              </settings>
-            </placement>
-          </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface>-->
   </userInterfaces>
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_entities">
@@ -1364,6 +1306,20 @@
           </labels>
           <subTypeLeft>book</subTypeLeft>
           <subTypeRight>category</subTypeRight>
+        </type>
+        <type code="book_tag" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>book is tagged with</typename>
+              <typename_reverse>tag assigned to book</typename_reverse>
+            </label>
+            <label locale="de_DE">
+              <typename>Buch verschlagwortet mit</typename>
+              <typename_reverse>Schlagwort verweist Buch</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>book</subTypeLeft>
+          <subTypeRight>tag</subTypeRight>
         </type>
       </types>
     </relationshipTable>
