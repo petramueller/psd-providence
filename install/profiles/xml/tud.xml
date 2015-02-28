@@ -764,21 +764,6 @@
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
-            <placement code="book_copies_placement">
-              <bundle>ca_objectss</bundle>
-              <settings>
-                <setting name="label" locale="de_DE">Exemplare</setting>
-                <setting name="label" locale="en_US">Copies</setting>
-                <setting name="restrict_to_relationship_types">book_copy</setting>
-                <setting name="restrict_to_types">copy</setting>
-                <setting name="list_format">list</setting>
-                <setting name="sortDirection">ASC</setting>
-                <setting name="display_template">^ca_objects.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
-                <setting name="dontShowDeleteButton">0</setting>
-              </settings>
-            </placement>
             <placement code="publisher_placement">
               <bundle>ca_entities</bundle>
               <settings>
@@ -809,6 +794,37 @@
                 <setting name="dontShowDeleteButton">0</setting>
                 <setting name="restrict_to_types">series</setting>
                 <setting name="minRelationshipsPerRow"/>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+        <screen idno="book_edt_copies_scr" default="0">
+          <labels>
+            <label locale="en_US">
+              <name>Copies</name>
+            </label>
+            <label locale="de_DE">
+              <name>Exemplare</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+            <restriction type="book"/>
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="book_copies_placement">
+              <bundle>ca_objects</bundle>
+              <settings>
+                <setting name="restrict_to_relationship_types">book_copy</setting>
+                <setting name="restrict_to_types">copy</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="list_format">list</setting>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="dontShowDeleteButton">0</setting>
+                <setting name="display_template">^ca_objects.preferred_labels</setting>
+                <setting name="minRelationshipsPerRow">1</setting>
+                <setting name="maxRelationshipsPerRow"/>
+                <setting name="label" locale="en_US">Copy</setting>
+                <setting name="label" locale="de_DE">Exemplar</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1068,37 +1084,6 @@
         </screen>
       </screens>
     </userInterface>
-    <!--
-    <userInterface code="entity_edt" type="ca_entities">
-      <labels>
-        <label locale="en_US">
-          <name>Entity</name>
-        </label>
-        <label locale="de_DE">
-          <name>Entität</name>
-        </label>
-      </labels>
-      <screens>
-        <screen idno="entity_edt_scr" default="1">
-          <labels>
-            <label locale="en_US">
-              <name>Entity</name>
-            </label>
-            <label locale="de_DE">
-              <name>Entität</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction type="org"/>
-          </typeRestrictions>
-          <bundlePlacements>
-            <placement code="preferred_labels1">
-              <bundle>preferred_labels</bundle>
-            </placement>
-          </bundlePlacements>
-        </screen>
-      </screens>
-    </userInterface> --> 
     <userInterface code="author_edt" type="ca_entities">
       <labels>
         <label locale="en_US">
