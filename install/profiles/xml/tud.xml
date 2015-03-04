@@ -433,6 +433,42 @@
         </item>
       </items>
     </list>
+    <list code="yes_no_lst" hierarchical="0" system="0" vocabulary="0" defaultSort="1">
+      <labels>
+        <label locale="en_US">
+          <name>Yes/No</name>
+        </label>
+        <label locale="de_DE">
+          <name>Ja/Nein</name>
+        </label>
+      </labels>
+      <items>
+        <item idno="no" rank="1" value="10" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>No</name_singular>
+              <name_plural>No</name_plural>
+            </label>
+            <label locale="de_DE" preferred="0">
+              <name_singular>Nein</name_singular>
+              <name_plural>Nein</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="yes" rank="2" value="20" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Yes</name_singular>
+              <name_plural>Yes</name_plural>
+            </label>
+            <label locale="de_DE" preferred="0">
+              <name_singular>Ja</name_singular>
+              <name_plural>Ja</name_plural>
+            </label>
+          </labels>
+        </item>
+      </items>
+    </list>
   </lists>
   <elementSets>
     <metadataElement code="year" datatype="DateRange">
@@ -638,6 +674,36 @@
             <setting name="minAttributesPerRow">0</setting>
             <setting name="maxAttributesPerRow">1</setting>
             <setting name="minimumAttributeBundlesToDisplay">0</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
+    <metadataElement code="slub_return" datatype="List" list="yes_no_lst">
+      <labels>
+        <label locale="en_US">
+          <name>Return to SLUB</name>
+          <description>
+            Check if SLUB ordered return.
+          </description>
+        </label>
+        <label locale="de_DE">
+          <name>Rückgabe an SLUB</name>
+          <description>
+            Markieren wenn Rückgabe von SLUB angefordert.
+          </description>
+        </label>
+      </labels>
+      <settings>
+        <setting name="render">yes_no_checkboxes</setting>
+      </settings>
+      <typeRestrictions>
+        <restriction>
+          <table>ca_objects</table>
+          <type>copy</type>
+          <settings>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
         </restriction>
       </typeRestrictions>
@@ -1059,6 +1125,14 @@
             <restriction type="copy"/>
           </typeRestrictions>
           <bundlePlacements>
+            <placement code="return_to_slub">
+              <bundle>ca_attribute_slub_return</bundle>
+              <!--<settings>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="label" locale="en_US">Return to SLUB</setting>
+                <setting name="label" locale="de_DE">Rückgabe an SLUB</setting>
+              </settings>-->
+            </placement>
             <placement code="source_id4">
               <bundle>source_id</bundle>
             </placement>
