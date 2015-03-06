@@ -78,6 +78,7 @@ class ShelfMarkService {
 
 	public function updateCopy($copyId, $shelfmark)
 	{
+		/*
 		$maxIndex = null;
 		try {
 			$con = new PDO(sprintf("mysql:host=%s;dbname=%s", __CA_DB_HOST__, __CA_DB_DATABASE__), __CA_DB_USER__, __CA_DB_PASSWORD__);
@@ -92,5 +93,6 @@ class ShelfMarkService {
 			echo "There was an error! " . $e->getMessage();
 			exit;
 		}
+		*/
 	}
 }

@@ -10,6 +10,7 @@
  */
 require_once(__CA_MODELS_DIR__ . "/ca_lists.php");
 require_once(__CA_MODELS_DIR__ . "/ca_objects.php");
+require_once(__CA_MODELS_DIR__ . "/ca_object_labels.php");
 require_once("ShelfMarkService.php");
 
 class ShelfMarkGenPlugin extends BaseApplicationPlugin
@@ -76,7 +77,7 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		}
 
 		//Appears that a shelf mark is already set
-		if (preg_match('/^\w-\w{1,10}-\w+$/', $book->get("ca_objects.preferred_labels.name"))){
+		if (preg_match('/^\w-\w{1,10}-\w+$/', $copy->get("ca_objects.preferred_labels.name"))){
 			return;
 		}
 
@@ -90,10 +91,20 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		$shelfmarkService = new ShelfMarkService();
 		$shelfmark = $shelfmarkService->getShelfmark($authorSurname, $category);
 		//NOT WORKING FOR SOME REASON I DON'T UNDERSTAND, FALLING BACK TO RAW SQL
-		//$copy->setMode(ACCESS_WRITE);
-		//$copy->set("preferred_labels.name", $shelfmark);
-		//$copy->update();
-		$shelfmarkService->updateCopy($copyId, $shelfmark);
+		unset($_REQUEST['form_timestamp']);
+		$objectLabels = new ca_object_labels();
+		$copyLabels = $objectLabels->find(array("object_id" => $relationship->get("object_right_id")), array("returnAs" => "firstModelInstance"));
+		$copyLabels->setMode(ACCESS_WRITE);
+		//$copyLabels->set("idno", $shelfmark);
+		$a = $copyLabels->set("name_sort", $shelfmark);
+		$b = $copyLabels->set("name", $shelfmark);
+		$c = $copyLabels->setAsChanged("name_sort");
+		$d = $copyLabels->setAsChanged("name");
+		$e = $copyLabels->update(array("force" => true, "dontCheckCircularReferences" => true));
+		//$u = $copy->update(array("force" => true, "dontCheckCircularReferences" => true));
+		//$f = 1;//$copyLabels->update(array("force" => true, "dontCheckCircularReferences" => true));
+		//BUG: Causes items to not appear in checkout search
+		//$shelfmarkService->updateCopy($copyId, $shelfmark);
 	}
 
 /*	public function hookBeforeBundleInsert(&$args){
