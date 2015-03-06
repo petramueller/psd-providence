@@ -191,7 +191,7 @@
         </label>
       </labels>
       <items>
-        <item idno="bks" enabled="1" default="0">
+        <item idno="bks" value="BKS" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Business Communication Systems</name_singular>
@@ -203,7 +203,7 @@
             </label>
           </labels>
         </item>
-        <item idno="bs" enabled="1" default="0">
+        <item idno="bs" value="BS" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Operating Systems</name_singular>
@@ -215,7 +215,7 @@
             </label>
           </labels>
         </item>
-        <item idno="bwl" enabled="1" default="0">
+        <item idno="bwl" value="BWL" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Business Administration</name_singular>
@@ -227,7 +227,7 @@
             </label>
           </labels>
         </item>
-        <item idno="cim" enabled="1" default="0">
+        <item idno="cim" value="CIM" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Computer Integrated Manufacturing (CIM)</name_singular>
@@ -239,7 +239,7 @@
             </label>
           </labels>
         </item>
-        <item idno="csc" enabled="1" default="0">
+        <item idno="csc" value="CSC" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Computer Integrated Cooperative Work (CSC)</name_singular>
@@ -251,7 +251,7 @@
             </label>
           </labels>
         </item>
-        <item idno="db" enabled="1" default="0">
+        <item idno="db" value="DB" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Databases</name_singular>
@@ -263,7 +263,7 @@
             </label>
           </labels>
         </item>
-        <item idno="dm" enabled="1" default="0">
+        <item idno="dm" value="DM" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Data Modelling</name_singular>
@@ -275,7 +275,7 @@
             </label>
           </labels>
         </item>
-        <item idno="ecm" enabled="1" default="0">
+        <item idno="ecm" value="ECM" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>E-Commerce</name_singular>
@@ -287,7 +287,7 @@
             </label>
           </labels>
         </item>
-        <item idno="gpw" enabled="1" default="0">
+        <item idno="gpw" value="GPW" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Groupware</name_singular>
@@ -299,7 +299,7 @@
             </label>
           </labels>
         </item>
-        <item idno="im" enabled="1" default="0">
+        <item idno="im" value="IM" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Information Management</name_singular>
@@ -311,11 +311,11 @@
             </label>
           </labels>
         </item>
-        <item idno="inf" enabled="1" default="0">
+        <item idno="inf" value="INF" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Computer Science</name_singular>
-              <name_plural>Computer Sciences</name_plural>
+              <name_plural>Computer Science</name_plural>
             </label>
             <label locale="de_DE" preferred="1">
               <name_singular>Informatik</name_singular>
@@ -323,9 +323,237 @@
             </label>
           </labels>
         </item>
+        <item idno="ki" value="KI" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Artificial Intelligence</name_singular>
+              <name_plural>Artificial Intelligence</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Künstliche Intelligenz</name_singular>
+              <name_plural>Künstliche Intelligenz</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="mat" value="MAT" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Mathematics</name_singular>
+              <name_plural>Mathematics</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Mathematik</name_singular>
+              <name_plural>Mathematik</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="med" value="MED" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Medicine</name_singular>
+              <name_plural>Medicine</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Medizin</name_singular>
+              <name_plural>Medizin</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="mm" value="MM" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Multimedia</name_singular>
+              <name_plural>Multimedia</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Multimedia</name_singular>
+              <name_plural>Multimedia</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="net" value="net" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Networks</name_singular>
+              <name_plural>Networks</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Netzwerke</name_singular>
+              <name_plural>Netzwerke</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="org" value="ORG" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Organization</name_singular>
+              <name_plural>Organization</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Organisation</name_singular>
+              <name_plural>Organisation</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="phil" value="PHIL" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Philosophy</name_singular>
+              <name_plural>Philosophy</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Philosophie</name_singular>
+              <name_plural>Philosophie</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="pm" value="PM" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Project Management</name_singular>
+              <name_plural>Project Management</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Projektmanagement</name_singular>
+              <name_plural>Projektmanagement</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="prg" value="PRG" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Programming</name_singular>
+              <name_plural>Programming</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Programmierung</name_singular>
+              <name_plural>Programmierung</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="ref" value="REF" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Reference Modelling</name_singular>
+              <name_plural>Reference Modelling</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Referenzmodellierung</name_singular>
+              <name_plural>Referenzmodellierung</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="se" value="SE" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>System Engineering</name_singular>
+              <name_plural>System Engineering</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Systementwicklung</name_singular>
+              <name_plural>Systementwicklung</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="sem" value="SEM" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Semiotics</name_singular>
+              <name_plural>Semiotics</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Semiotik</name_singular>
+              <name_plural>Semiotik</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="syt" value="SYT" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>System Theory</name_singular>
+              <name_plural>System Theory</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Systemtheorie</name_singular>
+              <name_plural>Systemtheorie</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="tex" value="TEX" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Typesetting</name_singular>
+              <name_plural>Typesetting</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Textsatz</name_singular>
+              <name_plural>Textsatz</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="um" value="UM" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Enterprise Modelling</name_singular>
+              <name_plural>Enterprise Modelling</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Unternehmensmodellierung</name_singular>
+              <name_plural>Unternehmensmodellierung</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="umw" value="UMW" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Environment</name_singular>
+              <name_plural>Environment</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Umwelt</name_singular>
+              <name_plural>Umwelt</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="vwl" value="VWL" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Economics</name_singular>
+              <name_plural>Economics</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Volkswirtschaftslehre</name_singular>
+              <name_plural>Volkswirtschaftslehre</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="wia" value="WIA" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>General Information Systems Research</name_singular>
+              <name_plural>General Information Systems Research</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Allgemeine Wirtschaftsinformatik</name_singular>
+              <name_plural>Allgemeine Wirtschaftsinformatik</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="wim" value="WIM" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Knowledge Management</name_singular>
+              <name_plural>Knowledge Management</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Wissensmanagement</name_singular>
+              <name_plural>Wissensmanagement</name_plural>
+            </label>
+          </labels>
+        </item>
       </items>
     </list>
-    <list code="thesis_type" hierarchical="0" system="0" vocabulary="1">
+    <list code="thesis_type" hierarchical="0" system="0" vocabulary="0">
       <labels>
         <label locale="en_US">
           <name>Thesis Type</name>
@@ -532,6 +760,32 @@
         </restriction>
       </typeRestrictions>
     </metadataElement>
+    <metadataElement code="edition" datatype="Text">
+      <labels>
+        <label locale="en_US">
+          <name>Edition</name>
+        </label>
+        <label locale="de_DE">
+          <name>Auflage</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="fieldWidth">70</setting>
+        <setting name="maxChars">17</setting>
+      </settings>
+      <typeRestrictions>
+        <restriction>
+          <table>ca_objects</table>
+          <type>book</type>
+          <includeSubtypes>0</includeSubtypes>
+          <settings>
+            <setting name="minAttributesPerRow">0</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
     <metadataElement code="abstract" datatype="Text">
       <labels>
         <label locale="en_US">
@@ -601,9 +855,9 @@
         <restriction>
           <table>ca_objects</table>
           <type>copy</type>
-          <includeSubtypes>1</includeSubtypes>
+          <includeSubtypes>0</includeSubtypes>
           <settings>
-            <setting name="minAttributesPerRow">1</setting>
+            <setting name="minAttributesPerRow">0</setting>
             <setting name="maxAttributesPerRow">1</setting>
             <setting name="minimumAttributeBundlesToDisplay">1</setting>
           </settings>
@@ -788,6 +1042,14 @@
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
                 <setting name="dont_include_subtypes_in_type_restriction">0</setting>
                 <setting name="dontShowDeleteButton">0</setting>
+              </settings>
+            </placement>
+            <placement code="ca_attribute_edition">
+              <bundle>ca_attribute_edition</bundle>
+              <settings>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="label" locale="de_DE">Ausgabe</setting>
+                <setting name="label" locale="en_US">Edition</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_year3">
@@ -1127,11 +1389,10 @@
           <bundlePlacements>
             <placement code="return_to_slub">
               <bundle>ca_attribute_slub_return</bundle>
-              <!--<settings>
-                <setting name="sortDirection">ASC</setting>
+              <settings>
                 <setting name="label" locale="en_US">Return to SLUB</setting>
                 <setting name="label" locale="de_DE">Rückgabe an SLUB</setting>
-              </settings>-->
+              </settings>
             </placement>
             <placement code="source_id4">
               <bundle>source_id</bundle>
