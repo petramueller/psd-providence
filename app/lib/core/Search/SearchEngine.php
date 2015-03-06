@@ -7,7 +7,7 @@
  * ----------------------------------------------------------------------
  *
  * Software by Whirl-i-Gig (http://www.whirl-i-gig.com)
- * Copyright 2007-2014 Whirl-i-Gig
+ * Copyright 2007-2015 Whirl-i-Gig
  *
  * For more information visit http://www.CollectiveAccess.org
  *
@@ -188,7 +188,7 @@ class SearchEngine extends SearchBase {
 				Debug::msg('SEARCH cache hit for '.$vs_cache_key);
 				$va_hits = $o_cache->getResults();
 				if (isset($pa_options['sort']) && $pa_options['sort'] && ($pa_options['sort'] != '_natural')) {
-					$va_hits = $this->sortHits($va_hits, $this->ops_tablename, $pa_options['sort'], $ps_search, (isset($pa_options['sort_direction']) ? $pa_options['sort_direction'] : null));
+					$va_hits = $this->sortHits($va_hits, $this->ops_tablename, $pa_options['sort'], (isset($pa_options['sort_direction']) ? $pa_options['sort_direction'] : null));
 				} else {
 					if (($pa_options['sort'] == '_natural') && ($pa_options['sort_direction'] == 'desc')) {
 						$va_hits = array_reverse($va_hits);
@@ -241,29 +241,39 @@ class SearchEngine extends SearchBase {
 				$va_access_values = $pa_options['checkAccess'];
 				$this->addResultFilter($this->ops_tablename.'.access', 'IN', join(",",$va_access_values));
 			} 
-					
-			if (is_array($va_type_ids = $this->getTypeRestrictionList()) && sizeof($va_type_ids)) {
+			
+			$vb_no_types = false;	
+			if (is_array($va_type_ids = $this->getTypeRestrictionList()) && (sizeof($va_type_ids) > 0)) {
+				if ($t_table->getFieldInfo('type_id', 'IS_NULL')) {
+					$va_type_ids[] = 'NULL';
+				}
 				$this->addResultFilter($this->ops_tablename.'.type_id', 'IN', join(",",$va_type_ids));
+			} elseif (is_array($va_type_ids) && (sizeof($va_type_ids) == 0)) { 
+				$vb_no_types = true; 
 			}
 			
-			// Filter on source
-			if (is_array($va_source_ids = $this->getSourceRestrictionList())) {
-				$this->addResultFilter($this->ops_tablename.'.source_id', 'IN', join(",",$va_source_ids));
+			if (!$vb_no_types) {
+				// Filter on source
+				if (is_array($va_source_ids = $this->getSourceRestrictionList())) {
+					$this->addResultFilter($this->ops_tablename.'.source_id', 'IN', join(",",$va_source_ids));
+				}
+			
+				if (in_array($t_table->getHierarchyType(), array(__CA_HIER_TYPE_SIMPLE_MONO__, __CA_HIER_TYPE_MULTI_MONO__))) {
+					$this->addResultFilter($this->ops_tablename.'.parent_id', 'IS NOT', NULL);
+				}
+			
+				if (is_array($va_restrict_to_fields = caGetOption('restrictSearchToFields', $pa_options, null)) && $this->opo_engine->can('restrict_to_fields')) {
+					$this->opo_engine->setOption('restrictSearchToFields', $va_restrict_to_fields);
+				}
+			
+				$o_res =  $this->opo_engine->search($this->opn_tablenum, $vs_search, $this->opa_result_filters, $o_rewritten_query);
+			
+				// cache the results
+				$va_hits = $o_res->getPrimaryKeyValues($vn_limit);
+				$o_res->seek(0);
+			} else {
+				$va_hits = array();			
 			}
-			
-			if (in_array($t_table->getHierarchyType(), array(__CA_HIER_TYPE_SIMPLE_MONO__, __CA_HIER_TYPE_MULTI_MONO__))) {
-				$this->addResultFilter($this->ops_tablename.'.parent_id', 'IS NOT', NULL);
-			}
-			
-			if (is_array($va_restrict_to_fields = caGetOption('restrictSearchToFields', $pa_options, null)) && $this->opo_engine->can('restrict_to_fields')) {
-				$this->opo_engine->setOption('restrictSearchToFields', $va_restrict_to_fields);
-			}
-			
-			$o_res =  $this->opo_engine->search($this->opn_tablenum, $vs_search, $this->opa_result_filters, $o_rewritten_query);
-			
-			// cache the results
-			$va_hits = $o_res->getPrimaryKeyValues($vn_limit);
-			$o_res->seek(0);
 
 			if (isset($pa_options['sets']) && $pa_options['sets']) {
 				$va_hits = $this->filterHitsBySets($va_hits, $pa_options['sets'], array('search' => $vs_search));
@@ -275,7 +285,7 @@ class SearchEngine extends SearchBase {
 			}
 			
 			if (isset($pa_options['sort']) && $pa_options['sort'] && ($pa_options['sort'] != '_natural')) {
-				$va_hits = $this->sortHits($va_hits, $t_table->tableName(), $pa_options['sort'], $vs_cache_key, (isset($pa_options['sort_direction']) ? $pa_options['sort_direction'] : null));
+				$va_hits = $this->sortHits($va_hits, $t_table->tableName(), $pa_options['sort'], (isset($pa_options['sort_direction']) ? $pa_options['sort_direction'] : null));
 			} else {
 				if (($pa_options['sort'] == '_natural') && ($pa_options['sort_direction'] == 'desc')) {
 					$va_hits = array_reverse($va_hits);
@@ -505,14 +515,20 @@ class SearchEngine extends SearchBase {
 								break;
 						}
 					} 
+					
+					if(isset($va_ap_info['options']) && ($va_ap_info['options']['DONT_STEM'] || in_array('DONT_STEM', $va_ap_info['options']))) {
+						$vs_term .= '|';
+					}
 					$va_terms['terms'][] = new Zend_Search_Lucene_Index_Term($vs_term, $vs_field);
 					$va_terms['signs'][] = ($vs_bool == 'AND') ? true : null;
+					$va_terms['options'][] = is_array($va_ap_info['options']) ? $va_ap_info['options'] : array();
 				}
 				
 				if (is_array($va_additional_criteria = $va_ap_info['additional_criteria'])) {
 					foreach($va_additional_criteria as $vs_criterion) {
 						$va_terms['terms'][] = new Zend_Search_Lucene_Index_Term($vs_criterion);
 						$va_terms['signs'][] = $vs_bool;
+						$va_terms['options'][] = is_array($va_ap_info['options']) ? $va_ap_info['options'] : array();
 					}
 				}
 				
@@ -529,13 +545,14 @@ class SearchEngine extends SearchBase {
 				if (method_exists($t_instance, "getLabelTableName")) {
 					return array(
 						'terms' => array(new Zend_Search_Lucene_Index_Term($po_term->getTerm()->text, $t_instance->getLabelTableName().'.'.((isset($va_tmp2[2]) && $va_tmp2[2]) ? $va_tmp2[2] : $t_instance->getLabelDisplayField()).($va_tmp[1] ? '/'.$va_tmp[1] : ''))),
-						'signs' => array($pb_sign)
+						'signs' => array($pb_sign),
+						'options' => array()
 					);
 				}
 			}
 		}
 		
-		return array('terms' => array($po_term->getTerm()), 'signs' => array($pb_sign));
+		return array('terms' => array($po_term->getTerm()), 'signs' => array($pb_sign), 'options' => array());
 	}
 	# ------------------------------------------------------------------
 	/**
@@ -567,12 +584,14 @@ class SearchEngine extends SearchBase {
 				foreach($va_fields as $vs_field) {
 					$va_terms['terms'][] = new Zend_Search_Lucene_Search_Query_Phrase($va_index_term_strings, null, $vs_field);
 					$va_terms['signs'][] = ($vs_bool == 'AND') ? true : null;
+					$va_terms['options'][] = is_array($va_ap_info['options']) ? $va_ap_info['options'] : array();
 				}
 				
 				if (is_array($va_additional_criteria = $va_ap_info['additional_criteria'])) {
 					foreach($va_additional_criteria as $vs_criterion) {
 						$va_terms['terms'][] = new Zend_Search_Lucene_Index_Term($vs_criterion);
 						$va_terms['signs'][] = $vs_bool;
+						$va_terms['options'][] = is_array($va_ap_info['options']) ? $va_ap_info['options'] : array();
 					}
 				}
 				
@@ -588,13 +607,14 @@ class SearchEngine extends SearchBase {
 				if (method_exists($t_instance, "getLabelTableName")) {
 					return array(
 						'terms' => array(new Zend_Search_Lucene_Search_Query_Phrase($va_index_term_strings, null, $t_instance->getLabelTableName().'.'.$t_instance->getLabelDisplayField().($va_tmp[1] ? '/'.$va_tmp[1] : ''))),
-						'signs' => array($pb_sign)
+						'signs' => array($pb_sign),
+						'options' => array()
 					);
 				}
 			}
 		}
 		
-		return array('terms' => array($po_term), 'signs' => array($pb_sign));
+		return array('terms' => array($po_term), 'signs' => array($pb_sign), 'options' => array());
 	}
 	# ------------------------------------------------------------------
 	/**
