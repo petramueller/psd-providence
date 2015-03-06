@@ -11,6 +11,7 @@
 require_once(__CA_MODELS_DIR__ . "/ca_lists.php");
 require_once(__CA_MODELS_DIR__ . "/ca_objects.php");
 require_once(__CA_MODELS_DIR__ . "/ca_object_labels.php");
+require_once(__CA_MODELS_DIR__ . "/ca_locales.php");
 require_once("ShelfMarkService.php");
 
 class ShelfMarkGenPlugin extends BaseApplicationPlugin
@@ -90,8 +91,17 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		}
 		$shelfmarkService = new ShelfMarkService();
 		$shelfmark = $shelfmarkService->getShelfmark($authorSurname, $category);
+
+		$locales = ca_locales::getLocaleList();
+
+		$a1 = $copy->setMode(ACCESS_WRITE);
+		$a2 = $copy->addLabel(array("name" => $shelfmark), 1, null, true);
+		$a3 = $copy->update(array("force" => true, "dontCheckCircularReferences" => true));
+
 		//NOT WORKING FOR SOME REASON I DON'T UNDERSTAND, FALLING BACK TO RAW SQL
+		/*
 		unset($_REQUEST['form_timestamp']);
+
 		$objectLabels = new ca_object_labels();
 		$copyLabels = $objectLabels->find(array("object_id" => $relationship->get("object_right_id")), array("returnAs" => "firstModelInstance"));
 		$copyLabels->setMode(ACCESS_WRITE);
@@ -105,6 +115,7 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		//$f = 1;//$copyLabels->update(array("force" => true, "dontCheckCircularReferences" => true));
 		//BUG: Causes items to not appear in checkout search
 		//$shelfmarkService->updateCopy($copyId, $shelfmark);
+		*/
 	}
 
 /*	public function hookBeforeBundleInsert(&$args){
