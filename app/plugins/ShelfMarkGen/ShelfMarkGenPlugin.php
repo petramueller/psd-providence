@@ -92,12 +92,18 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		$shelfmarkService = new ShelfMarkService();
 		$shelfmark = $shelfmarkService->getShelfmark($authorSurname, $category);
 
-		$locales = ca_locales::getLocaleList();
+		$locales = new ca_locales();
+		$catalogingLocales = $locales->find(array("dont_use_for_cataloguing" => 0), array("returnAs" => "ids"));
 
+		//Won't update otherwise
+		//$timestamp = $_REQUEST['form_timestamp'];
+		//unset($_REQUEST['form_timestamp']);
 		$a1 = $copy->setMode(ACCESS_WRITE);
+		$a11 = $copy->removeAllLabels(__CA_LABEL_TYPE_PREFERRED__);
 		$a2 = $copy->addLabel(array("name" => $shelfmark), 1, null, true);
 		$a3 = $copy->update(array("force" => true, "dontCheckCircularReferences" => true));
-
+		$a4 = $copy->doSearchIndexing(null, true, null);
+		//$_REQUEST['form_timestamp'] = $timestamp;
 		//NOT WORKING FOR SOME REASON I DON'T UNDERSTAND, FALLING BACK TO RAW SQL
 		/*
 		unset($_REQUEST['form_timestamp']);
