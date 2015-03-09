@@ -33,6 +33,7 @@ require_once(__CA_LIB_DIR__."/core/Db.php");
 require_once(__CA_LIB_DIR__."/core/Media/MediaVolumes.php");
 require_once(__CA_APP_DIR__."/helpers/utilityHelpers.php");
 require_once(__CA_LIB_DIR__."/ca/BundlableLabelableBaseModelWithAttributes.php");
+require_once(__CA_LIB_DIR__."/ca/ApplicationPluginManager.php");
 require_once(__CA_MODELS_DIR__."/ca_users.php");
 require_once(__CA_MODELS_DIR__."/ca_user_groups.php");
 
@@ -47,6 +48,8 @@ class Installer {
 
 	protected $ops_admin_email;
 	protected $opb_overwrite;
+	protected $xyz_app_plugin_manager;
+	protected $func_add_error;
 
 	/**
 	 * @var bool We are installing
@@ -78,6 +81,10 @@ class Installer {
 		$this->ops_admin_email = $ps_admin_email;
 		$this->opb_overwrite = $pb_overwrite;
 		$this->opb_debug = $pb_debug;
+		$this->xyz_app_plugin_manager = new ApplicationPluginManager();
+
+		$that = $this; //cf. http://news.php.net/php.internals/57262
+		$this->func_add_error = function($error) use (&$that){ $that->addError($error); };
 
 		$this->opa_locales = array();
 
@@ -192,6 +199,40 @@ class Installer {
 	public function getProfileDebugInfo(){
 		return $this->ops_profile_debug;
 	}
+
+	# --------------------------------------------------
+	/**
+	 * Gets the ApplicationPluginManager
+	 *
+	 * @return ApplicationPluginManager ApplicationPluginManager instance
+	 */
+	public function getAppPluginManager(){
+		return $this->xyz_app_plugin_manager;
+	}
+
+	# --------------------------------------------------
+	/**
+	 * Gets a closure that allows adding errors without passing the installer instance around.
+	 *
+	 * @return callable Add error closure
+	 */
+	public function getAddErrorFunc(){
+		return $this->func_add_error;
+	}
+
+	# --------------------------------------------------
+	/**
+	 * Gets an array of fundamental installation information.
+	 *
+	 * @return array Installation information
+	 */
+	public function getInstallationDetails(){
+		return array("profileDir" => $this->ops_profile_dir,
+			"profileName" => $this->ops_profile_name,
+			"overwrite" => $this->opb_overwrite,
+			"isUpdate" => $this->opb_updating);
+	}
+
 	# --------------------------------------------------
 	# UTILITIES
 	# --------------------------------------------------

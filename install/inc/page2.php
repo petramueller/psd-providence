@@ -53,6 +53,10 @@
 <?php
 	
 	$vn_progress = 0;
+
+	$func_set_progress_message = function($message) use (&$vn_progress){
+		caIncrementProgress($vn_progress, $message);
+	};
 	
 	// parameters: profile dir, profile name, admin email, overwrite y/n, profile debug mode y/n
 	$vo_installer = new Installer("profiles/xml/", $ps_profile, $ps_email, $pb_overwrite, $pb_debug);
@@ -118,6 +122,10 @@
 			caIncrementProgress($vn_progress, "Setting up hierarchies");
 			$vo_installer->processMiscHierarchicalSetup();
 			
+			caIncrementProgress($vn_progress, "Performing post-installation steps in plugins");
+
+			$vo_installer->getAppPluginManager()->hookAfterInstallation(array_merge($vo_installer->getInstallationDetails(), array("addErrorFunc" => $vo_installer->getAddErrorFunc(), "setProgressMessageFunc" => $func_set_progress_message)));
+
 			caIncrementProgress(100, "Installation complete");
 			
 			$vs_time =  "(Installation took ".$t_total->getTime(0)." seconds)";
