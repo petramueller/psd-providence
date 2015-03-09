@@ -32,7 +32,7 @@ class ShelfMarkService {
 	 */
 	private function getFirstLetterNormalized($string){
 		if($string === ""){
-			$firstName = "X";
+			$firstName = "0";
 		} else {
 			$firstName = mb_strtoupper(mb_substr(Normalizer::Normalize($string, Normalizer::FORM_D), 0, 1));
 		}
