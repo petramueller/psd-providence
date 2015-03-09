@@ -1380,7 +1380,7 @@
                 <setting name="label" locale="de_DE">Signatur</setting>
                 <setting name="width">30</setting>
                 <setting name="height">1</setting>
-                <setting name="readonly"></setting>
+                <setting name="readonly">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
