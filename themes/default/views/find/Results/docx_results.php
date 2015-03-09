@@ -31,7 +31,6 @@
 	$vo_result 				= $this->getVar('result');
 	$vn_items_per_page 		= $this->getVar('current_items_per_page');
 	$vs_current_sort 		= $this->getVar('current_sort');
-	$vo_ar					= $this->getVar('access_restrictions');
 
 	// For easier calculation
 	// 1 cm = 1440/2.54 = 566.93 twips
@@ -129,7 +128,10 @@ $phpWord->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 		// Second column : bundles
 		$contentCell = $table->addCell(12 * $cmToTwips);
 
-		$contentCell->addText($vo_result->getWithTemplate('^ca_objects.preferred_labels.name (^ca_objects.idno)'), $styleHeaderFont);
+		$contentCell->addText(
+			html_entity_decode(strip_tags(br2nl($vo_result->get('preferred_labels'))), ENT_QUOTES | ENT_HTML5),
+			$styleHeaderFont
+		);
 
 		foreach($list as $vn_placement_id => $va_display_item) {
 
@@ -155,12 +157,14 @@ $phpWord->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 					}
 				}
 
-			} elseif ($vs_display_text = $t_display->getDisplayValue($vo_result, $vn_placement_id, array('request' => $this->request))) {
-
+			} elseif ($vs_display_text = $t_display->getDisplayValue($vo_result, $vn_placement_id, array('request' => $this->request, 'purify' => true))) {
 
                 $textrun = $contentCell->createTextRun();
 				$textrun->addText($va_display_item['display'].' :', $styleBundleNameFont);
-		        $textrun->addText(" ".$vs_display_text, $styleContentFont);
+		        $textrun->addText(
+					html_entity_decode(strip_tags(br2nl($vs_display_text)), ENT_QUOTES | ENT_HTML5),
+					$styleContentFont
+				);
 
 			}}
 		$vn_line++;
@@ -183,5 +187,3 @@ $phpWord->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 	//header('Content-Disposition:inline;filename=Export.odt ');
  	
  	$objWriter->save('php://output');
-
-?>
