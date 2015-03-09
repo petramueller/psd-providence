@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="profile.xsd" useForConfiguration="1" base="base" infoUrl="">
   <profileName>TUD</profileName>
-  <profileDescription></profileDescription>
+  <profileDescription>Profile for Dresden University of Technology, Chair of Wirtschaftsinformatik, esp. Systems Development</profileDescription>
   <locales>
-    <locale lang="en" country="US">English</locale>
+    <locale lang="en" country="US" dontUseForCataloguing="0">English</locale>
     <locale lang="de" country="DE" dontUseForCataloguing="1">Deutsch</locale>
   </locales>
   <lists>
@@ -28,6 +28,20 @@
               <name_plural>Bücher</name_plural>
             </label>
           </labels>
+          <items>
+            <item idno="copy" enabled="1" default="0">
+              <labels>
+                <label locale="de_DE" preferred="1">
+                  <name_singular>Exemplar</name_singular>
+                  <name_plural>Exemplare</name_plural>
+                </label>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Copy</name_singular>
+                  <name_plural>Copies</name_plural>
+                </label>
+              </labels>
+            </item>
+          </items>
         </item>
         <item idno="paper" enabled="1" default="0">
           <labels>
@@ -38,18 +52,6 @@
             <label locale="en_US" preferred="1">
               <name_singular>Paper</name_singular>
               <name_plural>Paper</name_plural>
-            </label>
-          </labels>
-        </item>
-        <item idno="copy" enabled="1" default="0">
-          <labels>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Exemplar</name_singular>
-              <name_plural>Exemplare</name_plural>
-            </label>
-            <label locale="en_US" preferred="1">
-              <name_singular>Copy</name_singular>
-              <name_plural>Copies</name_plural>
             </label>
           </labels>
         </item>
@@ -745,7 +747,7 @@
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
-        <setting name="maxChars">17</setting>
+        <setting name="maxChars">20</setting>
       </settings>
       <typeRestrictions>
         <restriction>
@@ -828,34 +830,6 @@
         <restriction>
           <table>ca_objects_x_collections</table>
           <includeSubtypes>1</includeSubtypes>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="copy_barcode" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>Barcode</name>
-          <description>Accepts a 8 digit decimal barcode for copies from SLUB.</description>
-        </label>
-        <label locale="de_DE">
-          <name>Barcode</name>
-          <description>Akzeptiert einen 8 Zahlen langen Barcode für SLUB Exemplare.</description>
-        </label>
-      </labels>
-      <settings>
-        <setting name="canBeUsedInSort">0</setting>
-        <setting name="doesNotTakeLocale">1</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction>
-          <table>ca_objects</table>
-          <type>copy</type>
-          <includeSubtypes>0</includeSubtypes>
           <settings>
             <setting name="minAttributesPerRow">0</setting>
             <setting name="maxAttributesPerRow">1</setting>
@@ -962,6 +936,27 @@
         </restriction>
       </typeRestrictions>
     </metadataElement>
+    <metadataElement code="category_list_attr" datatype="List" list="category">
+      <labels>
+        <label locale="en_US">
+          <name>Category</name>
+        </label>
+        <label locale="de_DE">
+          <name>Kategorie</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction>
+          <table>ca_objects</table>
+          <type>book</type>
+          <settings>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
   </elementSets>
   <userInterfaces>
     <userInterface code="book_edt" type="ca_objects">
@@ -990,7 +985,7 @@
             <restriction type="book"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="preferred_labels1">
+            <placement code="preferred_labels_placement">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Titel</setting>
@@ -1010,7 +1005,7 @@
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">1</setting>
                 <setting name="dontShowDeleteButton">1</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
@@ -1026,7 +1021,7 @@
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">1</setting>
                 <setting name="dontShowDeleteButton">0</setting>
               </settings>
             </placement>
@@ -1040,7 +1035,7 @@
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">1</setting>
                 <setting name="dontShowDeleteButton">0</setting>
               </settings>
             </placement>
@@ -1055,22 +1050,18 @@
             <placement code="ca_attribute_year3">
               <bundle>ca_attribute_year</bundle>
               <settings>
+                <setting name="label" locale="en_US">Year of Publication</setting>
+                <setting name="label" locale="de_DE">Erscheinungsjahr</setting>
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
-            <placement code="category_placement">
-              <bundle>ca_list_items</bundle>
+            <placement code="category_list_attr_placement">
+              <bundle>ca_attribute_category_list_attr</bundle>
               <settings>
-                <setting name="label" locale="de_DE">Kategorie</setting>
                 <setting name="label" locale="en_US">Category</setting>
-                <setting name="restrict_to_relationship_types">book_category</setting>
-                <setting name="list_format">list</setting>
+                <setting name="label" locale="de_DE">Kategorie</setting>
                 <setting name="sortDirection">ASC</setting>
-                <setting name="display_template">^ca_list_items.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="restrict_to_lists">category</setting>
+                <setting name="display_template">^ca_list_items.preferred_labels (^ca_list_items.idno)</setting>
               </settings>
             </placement>
             <placement code="tag_placement">
@@ -1124,35 +1115,11 @@
                 <setting name="minRelationshipsPerRow"/>
               </settings>
             </placement>
-          </bundlePlacements>
-        </screen>
-        <screen idno="book_edt_copies_scr" default="0">
-          <labels>
-            <label locale="en_US">
-              <name>Copies</name>
-            </label>
-            <label locale="de_DE">
-              <name>Exemplare</name>
-            </label>
-          </labels>
-          <typeRestrictions>
-            <restriction type="book"/>
-          </typeRestrictions>
-          <bundlePlacements>
-            <placement code="book_copies_placement">
-              <bundle>ca_objects</bundle>
+            <placement code="book_hierarchy_location">
+              <bundle>hierarchy_location</bundle>
               <settings>
-                <setting name="restrict_to_relationship_types">book_copy</setting>
-                <setting name="restrict_to_types">copy</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
-                <setting name="list_format">list</setting>
-                <setting name="sortDirection">ASC</setting>
-                <setting name="dontShowDeleteButton">0</setting>
-                <setting name="display_template">^ca_objects.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="maxRelationshipsPerRow"/>
-                <setting name="label" locale="en_US">Copy</setting>
-                <setting name="label" locale="de_DE">Exemplar</setting>
+                <setting name="open_hierarchy">1</setting>
+                <setting name="auto_shrink"/>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1561,38 +1528,6 @@
         </type>
       </types>
     </relationshipTable>
-    <relationshipTable name="ca_objects_x_objects">
-      <types>
-        <type code="book_copy" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>book has copies</typename>
-              <typename_reverse>is copy of book</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>Buch hat Exemplare</typename>
-              <typename_reverse>ist Exemplar von Buch</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>book</subTypeLeft>
-          <subTypeRight>copy</subTypeRight>
-        </type>
-        <type code="paper_copies" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>paper has copies</typename>
-              <typename_reverse>copy of paper</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>Artikel hat Exemplare</typename>
-              <typename_reverse>ist Exemplar von Artikel</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>paper</subTypeLeft>
-          <subTypeRight>copy</subTypeRight>
-        </type>
-      </types>
-    </relationshipTable>
     <relationshipTable name="ca_objects_x_collections">
       <types>
         <type code="item_series" default="0">
@@ -1613,20 +1548,6 @@
     </relationshipTable>
     <relationshipTable name="ca_objects_x_vocabulary_terms">
       <types>
-        <type code="book_category" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>book is in category</typename>
-              <typename_reverse>category contains book</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>Buch ist in Kategorie</typename>
-              <typename_reverse>Kategorie enthält Buch</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>book</subTypeLeft>
-          <subTypeRight>category</subTypeRight>
-        </type>
         <type code="book_tag" default="0">
           <labels>
             <label locale="en_US">
@@ -1635,7 +1556,7 @@
             </label>
             <label locale="de_DE">
               <typename>Buch verschlagwortet mit</typename>
-              <typename_reverse>Schlagwort verweist Buch</typename_reverse>
+              <typename_reverse>Schlagwort verweist auf Buch</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>book</subTypeLeft>
