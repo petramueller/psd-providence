@@ -3764,12 +3764,12 @@
         <type code="main_paper_author" default="0">
           <labels>
             <label locale="en_US">
-              <typename>written by (first author)</typename>
-              <typename_reverse>is first author of</typename_reverse>
+              <typename>paper is written by</typename>
+              <typename_reverse>is author of paper</typename_reverse>
             </label>
             <label locale="de_DE">
-              <typename>geschrieben von (Hauptautor)</typename>
-              <typename_reverse>ist Hauptautor von</typename_reverse>
+              <typename>wiss. Arbeit geschrieben von</typename>
+              <typename_reverse>ist Autor von wiss. Arbeit</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>paper</subTypeLeft>
@@ -3815,20 +3815,6 @@
             </label>
           </labels>
           <subTypeLeft>book</subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-        <type code="paper_published" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>published by</typename>
-              <typename_reverse>is publisher</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>veröffentlicht von</typename>
-              <typename_reverse>ist Verleger</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>paper</subTypeLeft>
           <subTypeRight>org</subTypeRight>
         </type>
       </types>
