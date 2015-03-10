@@ -53,13 +53,6 @@
 			require_once(__CA_LIB_DIR__."/ca/ApplicationPluginManager.php");
 
 			$xyz_app_plugin_manager = new ApplicationPluginManager();
-			$func_add_error = function($error){
-				CLIUtils::addError($error);
-			};
-
-			$func_add_message = function($message){
-				CLIUtils::addMessage($message);
-			};
 
 			if ($pb_installing && !$po_opts->getOption('profile-name')) {
 				CLIUtils::addError(_t("Missing required parameter: profile-name"));
@@ -91,6 +84,16 @@
 					$po_opts->getOption('debug')
 				);
 			}
+
+			$func_add_error = function($error) use ($vo_installer){
+				$errorFunc = $vo_installer->getAddErrorFunc();
+				$errorFunc($error);
+				CLIUtils::addError($error);
+			};
+
+			$func_add_message = function($message) {
+				CLIUtils::addMessage($message);
+			};
 
 			$vb_quiet = $po_opts->getOption('quiet');
 
