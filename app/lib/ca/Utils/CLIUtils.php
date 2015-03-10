@@ -50,6 +50,16 @@
 		public static function install($po_opts=null, $pb_installing = true) {
 			require_once(__CA_BASE_DIR__ . '/install/inc/Installer.php');
 			require_once(__CA_BASE_DIR__ . '/install/inc/Updater.php');
+			require_once(__CA_LIB_DIR__."/ca/ApplicationPluginManager.php");
+
+			$xyz_app_plugin_manager = new ApplicationPluginManager();
+			$func_add_error = function($error){
+				CLIUtils::addError($error);
+			};
+
+			$func_add_message = function($message){
+				CLIUtil::addMessage($message);
+			};
 
 			if ($pb_installing && !$po_opts->getOption('profile-name')) {
 				CLIUtils::addError(_t("Missing required parameter: profile-name"));
@@ -146,6 +156,14 @@
 			if (!$vb_quiet) { CLIUtils::addMessage(_t("Setting up hierarchies")); }
 			$vo_installer->processMiscHierarchicalSetup();
 
+			$xyz_app_plugin_manager->hookAfterInstallation(
+				array("profileDir" => $vs_profile_directory,
+					"profileName" => $po_opts->getOption('profile-name'),
+					"overwrite" => $pb_installing ? $po_opts->getOption('overwrite') : false,
+					"isUpdate" => !$pb_installing,
+					"addErrorFunc" => $func_add_error,
+					"setProgressMessageFunc" => $func_add_message));
+
 			if (!$vb_quiet) { CLIUtils::addMessage(_t("Installation complete")); }
 
 			$vs_time = _t("Installation took %1 seconds", $t_total->getTime(0));
@@ -159,6 +177,7 @@
 				return false;
 			}
 			if($pb_installing){
+
 				CLIUtils::addMessage(_t(
 					"Installation was successful!\n\nYou can now login with the following logins: %1\nMake a note of these passwords!",
 					"\n * " . join(
