@@ -58,7 +58,7 @@
 			};
 
 			$func_add_message = function($message){
-				CLIUtil::addMessage($message);
+				CLIUtils::addMessage($message);
 			};
 
 			if ($pb_installing && !$po_opts->getOption('profile-name')) {
