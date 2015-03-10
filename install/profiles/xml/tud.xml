@@ -54,6 +54,20 @@
               <name_plural>Paper</name_plural>
             </label>
           </labels>
+          <items>
+            <item idno="paper_copy" enabled="1" default="0">
+              <labels>
+                <label locale="de_DE" preferred="1">
+                  <name_singular>Exemplar (wiss. Arbeit)</name_singular>
+                  <name_plural>Exemplare (wiss. Arbeit)</name_plural>
+                </label>
+                <label locale="en_US" preferred="1">
+                  <name_singular>Copy (Thesis)</name_singular>
+                  <name_plural>Copies (Thesis)</name_plural>
+                </label>
+              </labels>
+            </item>
+          </items>
         </item>
       </items>
     </list>
@@ -178,6 +192,66 @@
             <label locale="en_US" preferred="1">
               <name_singular>Series</name_singular>
               <name_plural>Series</name_plural>
+            </label>
+          </labels>
+        </item>
+      </items>
+    </list>
+    <list code="paper_category" hierarchical="0" system="0" vocabulary="1">
+      <labels>
+        <label locale="en_US">
+          <name>Thesis Category</name>
+        </label>
+        <label locale="de_DE">
+          <name>Kategorie Wissenschaftliche Arbeit</name>
+        </label>
+      </labels>
+      <items>
+        <item idno="dis" value="DIS" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>PhD Thesis</name_singular>
+              <name_plural>PhD Theses</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Dissertation</name_singular>
+              <name_plural>Dissertation</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="ma" value="MA" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Master Thesis</name_singular>
+              <name_plural>Master Theses</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Masterarbeit</name_singular>
+              <name_plural>Masterarbeiten</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="ba" value="BA" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Bachelor Thesis</name_singular>
+              <name_plural>Bachelor Theses</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Bachelorarbeit</name_singular>
+              <name_plural>Bachelorarbeiten</name_plural>
+            </label>
+          </labels>
+        </item>
+        <item idno="dip" value="DIP" enabled="1" default="0">
+          <labels>
+            <label locale="en_US" preferred="1">
+              <name_singular>Diploma Thesis</name_singular>
+              <name_plural>Diploma Theses</name_plural>
+            </label>
+            <label locale="de_DE" preferred="1">
+              <name_singular>Diplomarbeit</name_singular>
+              <name_plural>Diplomarbeiten</name_plural>
             </label>
           </labels>
         </item>
@@ -637,30 +711,2274 @@
         </label>
       </labels>
       <items>
-        <item idno="awesome_book" enabled="1" default="0">
-          <labels>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Erstklassiges Buch</name_singular>
-              <name_plural>Erstklassige Bücher</name_plural>
-            </label>
-            <label locale="en_US" preferred="1">
-              <name_singular>Great book</name_singular>
-              <name_plural>Great books</name_plural>
-            </label>
-          </labels>
-        </item>
-        <item idno="mediocre_book" enabled="1" default="0">
-          <labels>
-            <label locale="en_US" preferred="1">
-              <name_singular>Mediocre book</name_singular>
-              <name_plural>Mediocre books</name_plural>
-            </label>
-            <label locale="de_DE" preferred="1">
-              <name_singular>Zweitklassiges Buch</name_singular>
-              <name_plural>Zweitklassige Bücher</name_plural>
-            </label>
-          </labels>
-        </item>
+      <item idno="ana" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Analyse</name_singular>
+            <name_plural>Analysen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ags" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Answer Garden System</name_singular>
+            <name_plural>Answer Garden Systems</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="aws" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Anwendungssystem</name_singular>
+            <name_plural>Anwendungssysteme</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="arc" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Architekturmodell</name_singular>
+            <name_plural>Architekturmodelle</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ari" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>ARIS</name_singular>
+            <name_plural>ARIS</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="atm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>ATM-Netz</name_singular>
+            <name_plural>ATM-Netze</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="aut" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Automation</name_singular>
+            <name_plural>Automation</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Automation</name_singular>
+            <name_plural>Automation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="bas" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Belegarztsystem</name_singular>
+            <name_plural>Belegarztsystem</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="bo" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Betriebsorganisation</name_singular>
+            <name_plural>Betriebsorganisation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="os" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Operating System</name_singular>
+            <name_plural>Operating Systems</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Betriebssysteme</name_singular>
+            <name_plural>Betriebssysteme</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="bet" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Business Administration</name_singular>
+            <name_plural>Business Administration</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Betriebswirtschaft</name_singular>
+            <name_plural>Betriebswirtschaft</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="off" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Office</name_singular>
+            <name_plural>Office</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Büro</name_singular>
+            <name_plural>Büros</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="be" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Business Engineering</name_singular>
+            <name_plural>Business Engineering</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Business Engineering</name_singular>
+            <name_plural>Business Engineering</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="bp" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Business Process</name_singular>
+            <name_plural>Business Process</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Business Process</name_singular>
+            <name_plural>Business Process</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="bpre" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Business Process Re-engineering</name_singular>
+            <name_plural>Business Process Re-engineering</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Business Process Re-engineering</name_singular>
+            <name_plural>Business Process Re-engineering</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="bre" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Business Reframing</name_singular>
+            <name_plural>Business Reframing</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Business Reframing</name_singular>
+            <name_plural>Business Reframing</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cpp" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>C++</name_singular>
+            <name_plural>C++</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>C++</name_singular>
+            <name_plural>C++</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cch" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Caché</name_singular>
+            <name_plural>Caché</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Caché</name_singular>
+            <name_plural>Caché</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="case" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>CASE</name_singular>
+            <name_plural>CASE</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>CASE</name_singular>
+            <name_plural>CASE</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cha" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Charité</name_singular>
+            <name_plural>Charité</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Charité</name_singular>
+            <name_plural>Charité</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="che" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Checklist</name_singular>
+            <name_plural>Checklists</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Checkliste</name_singular>
+            <name_plural>Checklisten</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cim" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>CIM (Computer Integrated Manufacturing)</name_singular>
+            <name_plural>CIM (Computer Integrated Manufacturing)</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>CIM (Computer Integrated Manufacturing)</name_singular>
+            <name_plural>CIM (Computer Integrated Manufacturing)</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cla" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Class Analysis</name_singular>
+            <name_plural>Class Analysis</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Class Analysis</name_singular>
+            <name_plural>Class Analysis</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="clas" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Classification</name_singular>
+            <name_plural>Classifications</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Classification</name_singular>
+            <name_plural>Classifications</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cons" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Consulting</name_singular>
+            <name_plural>Consulting</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Consulting</name_singular>
+            <name_plural>Consulting</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cont" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Contolling</name_singular>
+            <name_plural>Contolling</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Contolling</name_singular>
+            <name_plural>Contolling</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="corba" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>CORBA</name_singular>
+            <name_plural>CORBA</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>CORBA</name_singular>
+            <name_plural>CORBA</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cscw" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>CSCW (Computer Supported Cooperative Work)</name_singular>
+            <name_plural>CSCW (Computer Supported Cooperative Work)</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>CSCW (Computer Supported Cooperative Work)</name_singular>
+            <name_plural>CSCW (Computer Supported Cooperative Work)</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cyb" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Cybermediaries</name_singular>
+            <name_plural>Cybermediaries</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Cybermediaries</name_singular>
+            <name_plural>Cybermediaries</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="da" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Data Analysis</name_singular>
+            <name_plural>Data Analysis</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Datenanalyse</name_singular>
+            <name_plural>Datenanalyse</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="db" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Database</name_singular>
+            <name_plural>Databases</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Datenbank</name_singular>
+            <name_plural>Datenbank</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="dac" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Data Communication</name_singular>
+            <name_plural>Data Communications</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Datenkommunikation</name_singular>
+            <name_plural>Datenkommunikation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="dam" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Data Modelling</name_singular>
+            <name_plural>Data Modelling</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Datenmodellierung</name_singular>
+            <name_plural>Datenmodellierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="dst" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Data Structures</name_singular>
+            <name_plural>Data Structures</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Datenstrukturen</name_singular>
+            <name_plural>Datenstrukturen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="des" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Design</name_singular>
+            <name_plural>Design</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Design</name_singular>
+            <name_plural>Design</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="des" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Design Pattern</name_singular>
+            <name_plural>Design Patterns</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Design Pattern</name_singular>
+            <name_plural>Design Patterns</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="dia" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Diagram</name_singular>
+            <name_plural>Diagrams</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Diagram</name_singular>
+            <name_plural>Diagramme</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="dir" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Directory</name_singular>
+            <name_plural>Directories</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Verzeichnis</name_singular>
+            <name_plural>Verzeichnisse</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="dok" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Document Management</name_singular>
+            <name_plural>Document Management</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Dokumentenmanagement</name_singular>
+            <name_plural>Dokumentenmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="eco" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>eCommerce</name_singular>
+            <name_plural>eCommerce</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>E-Commerce</name_singular>
+            <name_plural>E-Commerce</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="efin" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>e-Finance</name_singular>
+            <name_plural>e-Finance</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>e-Finance</name_singular>
+            <name_plural>e-Finance</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="eb" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Electronic Business</name_singular>
+            <name_plural>Electronic Business</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>elektronische Kaufprozesse</name_singular>
+            <name_plural>elektronische Kaufprozesse</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="eml" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Email</name_singular>
+            <name_plural>Email</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>elektronische Post</name_singular>
+            <name_plural>elektronische Post</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="en2" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>EN29001</name_singular>
+            <name_plural>EN29001</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>EN29001</name_singular>
+            <name_plural>EN29001</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="er" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Entity Relationship</name_singular>
+            <name_plural>Entity Relationship</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Entity-Relationship</name_singular>
+            <name_plural>Entity-Relationship</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="era" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Entity Relationship Approach</name_singular>
+            <name_plural>Entity Relationship Approach</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Entity-Relationship-Ansatz</name_singular>
+            <name_plural>Entity-Relationship-Ansatz</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ef" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Decision Making</name_singular>
+            <name_plural>Decision Making</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Entscheidungsfindung</name_singular>
+            <name_plural>Entscheidungsfindung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="erp" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>ERP Architecture</name_singular>
+            <name_plural>ERP Architectures</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>ERP-Architektur</name_singular>
+            <name_plural>ERP-Architekturen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="exch" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Exchange Server 2003</name_singular>
+            <name_plural>Exchange Server 2003</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Exchange Server 2003</name_singular>
+            <name_plural>Exchange Server 2003</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="prop" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Professional Portal</name_singular>
+            <name_plural>Professional Portals</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Fachportal</name_singular>
+            <name_plural>Fachportale</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="lead" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Leadership</name_singular>
+            <name_plural>Leadership</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Führung</name_singular>
+            <name_plural>Führung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="fus" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Merger</name_singular>
+            <name_plural>Mergers</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Fusion</name_singular>
+            <name_plural>Fusionen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="bpm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Business Process Modelling</name_singular>
+            <name_plural>Business Process Modelling</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Geschäftsprozeßmodellierung</name_singular>
+            <name_plural>Geschäftsprozeßmodellierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ges" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Business Process Optimization</name_singular>
+            <name_plural>Business Process Optimization</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Geschäftsprozeßoptimierung</name_singular>
+            <name_plural>Geschäftsprozeßoptimierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="heal" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Health</name_singular>
+            <name_plural>Health</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Gesundheitsförderung</name_singular>
+            <name_plural>Gesundheitsförderung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ges" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Health</name_singular>
+            <name_plural>Health</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Gesundheitsleistungen</name_singular>
+            <name_plural>Gesundheitsleistungen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="heals" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Health Sector</name_singular>
+            <name_plural>Health Sector</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Gesundheitssektor</name_singular>
+            <name_plural>Gesundheitssektor</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="phs" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Public Health Sector</name_singular>
+            <name_plural>Public Health Sector</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Gesundheitswesen</name_singular>
+            <name_plural>Gesundheitswesen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="gme" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>GME</name_singular>
+            <name_plural>GME</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>GME</name_singular>
+            <name_plural>GME</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="strt" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Startup Management</name_singular>
+            <name_plural>Startup Management</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Gründungsmanagement</name_singular>
+            <name_plural>Gründungsmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="hlps" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Help System</name_singular>
+            <name_plural>Help Systems</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Hilfesystem</name_singular>
+            <name_plural>Hilfesysteme</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="html" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>HTML</name_singular>
+            <name_plural>HTML</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>HTML</name_singular>
+            <name_plural>HTML</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="info" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Information</name_singular>
+            <name_plural>Informations</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Information</name_singular>
+            <name_plural>Informationen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="infl" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Information Logistic</name_singular>
+            <name_plural>Information Logistic</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Informationslogistik</name_singular>
+            <name_plural>Informationslogistik</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="infm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Information Management</name_singular>
+            <name_plural>Information Management</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Informationsmanagement</name_singular>
+            <name_plural>Informationsmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="infm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Information Modelling</name_singular>
+            <name_plural>Information Modelling</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Informationsmodellierung</name_singular>
+            <name_plural>Informationsmodellierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="is" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Information System</name_singular>
+            <name_plural>Information Systems</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Informationssystem</name_singular>
+            <name_plural>Informationssysteme</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ides" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Internet Design</name_singular>
+            <name_plural>Internet Design</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Internetdesign</name_singular>
+            <name_plural>Internetdesign</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="intra" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Intranet</name_singular>
+            <name_plural>Intranet</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Intranet</name_singular>
+            <name_plural>Intranet</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="itc" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>IT Consulting</name_singular>
+            <name_plural>IT Consulting</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>IT-Beratung</name_singular>
+            <name_plural>IT-Beratung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="jav" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Java</name_singular>
+            <name_plural>Java</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Java</name_singular>
+            <name_plural>Java</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="javp" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Java Programming</name_singular>
+            <name_plural>Java Programming</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Java-Programmierung</name_singular>
+            <name_plural>Java-Programmierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="js" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>JavaScript</name_singular>
+            <name_plural>JavaScript</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>JavaScript</name_singular>
+            <name_plural>JavaScript</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="smb" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>SMB</name_singular>
+            <name_plural>SMB</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>KMU</name_singular>
+            <name_plural>KMU</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="kno" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Knowledge Organization</name_singular>
+            <name_plural>Knowledge Organization</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Knowledge Organization</name_singular>
+            <name_plural>Knowledge Organization</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="com" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Communication</name_singular>
+            <name_plural>Communication</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Kommunikation</name_singular>
+            <name_plural>Kommunikation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="cbse" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Component Technology</name_singular>
+            <name_plural>Component Technolgies</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Komponententechnologie</name_singular>
+            <name_plural>Komponententechnologien</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="hos" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Hospital</name_singular>
+            <name_plural>Hospital</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Krankenhaus</name_singular>
+            <name_plural>Krankenhaus</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="hosm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Hospital Management</name_singular>
+            <name_plural>Hospital Management</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Krankenhausführung</name_singular>
+            <name_plural>Krankenhausführung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="kran" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Krankenhausmanagement</name_singular>
+            <name_plural>Krankenhausmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="krasof" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Krankenhaussoftware</name_singular>
+            <name_plural>Krankenhaussoftware</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ai" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Künstliche Intelligenz</name_singular>
+            <name_plural>Künstliche Intelligenz</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="lei" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Leistungs- und Kostenanalyse</name_singular>
+            <name_plural>Leistungs- und Kostenanalyse</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="log" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Logistik</name_singular>
+            <name_plural>Logistik</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="man" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Management</name_singular>
+            <name_plural>Management</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="mane" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Managementbildung</name_singular>
+            <name_plural>Managementbildung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="marp" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Marktplätze</name_singular>
+            <name_plural>Marktplätze</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="mwir" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Marktwirtschaft</name_singular>
+            <name_plural>Marktwirtschaft</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="med" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Medizin</name_singular>
+            <name_plural>Medizin</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="metmo" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Metamodelle</name_singular>
+            <name_plural>Metamodelle</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="met" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Methodenentwicklung</name_singular>
+            <name_plural>Methodenentwicklung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="mob" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>MobIS</name_singular>
+            <name_plural>MobIS</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>MobIS</name_singular>
+            <name_plural>MobIS</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="mod" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Modellgestützte Unternehmensplanung</name_singular>
+            <name_plural>Modellgestützte Unternehmensplanung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="modlng" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Modellierung</name_singular>
+            <name_plural>Modellierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="modm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Modellierungsmethode</name_singular>
+            <name_plural>Modellierungsmethode</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="modl" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Modellierungssprache</name_singular>
+            <name_plural>Modellierungssprache</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="modtr" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Modelltransformation</name_singular>
+            <name_plural>Modelltransformation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="net" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Networking</name_singular>
+            <name_plural>Networking</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="nnet" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>neuronale Netze</name_singular>
+            <name_plural>neuronale Netze</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="new" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>New Media</name_singular>
+            <name_plural>New Media</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ood" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Object-Oriented Development</name_singular>
+            <name_plural>Object-Oriented Development</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="oos" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Object-Oriented Software</name_singular>
+            <name_plural>Object-Oriented Software</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="objm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Objektmodellierung</name_singular>
+            <name_plural>Objektmodellierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="oo" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>objektorientiert</name_singular>
+            <name_plural>objektorientiert</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="oop" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Objektorientierte Programmierung</name_singular>
+            <name_plural>Objektorientierte Programmierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ont" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Ontologien</name_singular>
+            <name_plural>Ontologien</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="org" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Organization</name_singular>
+            <name_plural>Organization</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Organisation</name_singular>
+            <name_plural>Organisation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="orgd" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Organisationsgestaltung</name_singular>
+            <name_plural>Organisationsgestaltung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="out" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Outlook</name_singular>
+            <name_plural>Outlook</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="path" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Pattern Hatching</name_singular>
+            <name_plural>Pattern Hatching</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="patl" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Pattern Languages</name_singular>
+            <name_plural>Pattern Languages</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="pcte" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>PCTE</name_singular>
+            <name_plural>PCTE</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>PCTE</name_singular>
+            <name_plural>PCTE</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="pla" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Planwirtschaft</name_singular>
+            <name_plural>Planwirtschaft</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="plat" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Plattformen</name_singular>
+            <name_plural>Plattformen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="prore" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Process Reengineering</name_singular>
+            <name_plural>Process Reengineering</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="prodm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Produktdatenmanagement</name_singular>
+            <name_plural>Produktdatenmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="pdms" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Produktdatenmanagementsystemen</name_singular>
+            <name_plural>Produktdatenmanagementsystemen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="prodctn" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Produktion</name_singular>
+            <name_plural>Produktion</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="progd" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Program Design</name_singular>
+            <name_plural>Program Design</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="projc" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Projektkalkulation</name_singular>
+            <name_plural>Projektkalkulation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="proc" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Process</name_singular>
+            <name_plural>Processes</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Prozess</name_singular>
+            <name_plural>Prozesse</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="procon" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Prozessberatung</name_singular>
+            <name_plural>Prozessberatung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="prodev" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Prozeßentwicklung</name_singular>
+            <name_plural>Prozeßentwicklung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="promgmt" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Prozeßmanagement</name_singular>
+            <name_plural>Prozeßmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="proopt" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Prozeßoptimierung</name_singular>
+            <name_plural>Prozeßoptimierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="proorg" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Prozeßorganisation</name_singular>
+            <name_plural>Prozeßorganisation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="prosrc" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Prozessorientierte Beschaffung</name_singular>
+            <name_plural>Prozessorientierte Beschaffung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="proom" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Prozeßorientiertes Management</name_singular>
+            <name_plural>Prozeßorientiertes Management</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="qfd" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>QFD</name_singular>
+            <name_plural>QFD</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>QFD</name_singular>
+            <name_plural>QFD</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="qual" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Qualität</name_singular>
+            <name_plural>Qualität</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="quam" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Qualitätsmanagement</name_singular>
+            <name_plural>Qualitätsmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="lawc" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Legal Counseling</name_singular>
+            <name_plural>Legal Counseling</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Rechtsratgeber</name_singular>
+            <name_plural>Rechtsratgeber</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ree" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Reengineering</name_singular>
+            <name_plural>Reengineering</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="refm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Referenzmodelle</name_singular>
+            <name_plural>Referenzmodelle</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="refmod" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Referenzmodellierung</name_singular>
+            <name_plural>Referenzmodellierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="reorg" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Reorganisation</name_singular>
+            <name_plural>Reorganisation</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="repo" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Repository</name_singular>
+            <name_plural>Repository</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="rev" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Revision</name_singular>
+            <name_plural>Revision</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="sem" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Semiotik</name_singular>
+            <name_plural>Semiotik</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="sec" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Sicherheit</name_singular>
+            <name_plural>Sicherheit</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="sw" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Software</name_singular>
+            <name_plural>Software</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="se" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Software Engineering</name_singular>
+            <name_plural>Software Engineering</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="swq" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Software Quality</name_singular>
+            <name_plural>Software Quality</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="swagt" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Softwareagenten</name_singular>
+            <name_plural>Softwareagenten</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="swd" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Softwareentwicklung</name_singular>
+            <name_plural>Softwareentwicklung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="swre" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Softwaresanierung</name_singular>
+            <name_plural>Softwaresanierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="swma" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Softwarewartung</name_singular>
+            <name_plural>Softwarewartung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="sol" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Solaris 7</name_singular>
+            <name_plural>Solaris 7</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Solaris 7</name_singular>
+            <name_plural>Solaris 7</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="sozw" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Sozialwesen</name_singular>
+            <name_plural>Sozialwesen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="lang" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Language</name_singular>
+            <name_plural>Languages</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Sprache</name_singular>
+            <name_plural>Sprachen</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="otssw" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Standardsoftware</name_singular>
+            <name_plural>Standardsoftware</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="stat" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Statistik</name_singular>
+            <name_plural>Statistik</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="ste" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Steuerkanzleien</name_singular>
+            <name_plural>Steuerkanzleien</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="str" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Strategie</name_singular>
+            <name_plural>Strategie</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="strcon" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Strategieberatung</name_singular>
+            <name_plural>Strategieberatung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="scm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Supply Chain Management</name_singular>
+            <name_plural>Supply Chain Management</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="sysa" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Systemadministration</name_singular>
+            <name_plural>Systemadministration</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="sysre" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Systematische Wiederverwendung</name_singular>
+            <name_plural>Systematische Wiederverwendung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="sysdev" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Systementwicklung</name_singular>
+            <name_plural>Systementwicklung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="tcp" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>TCP/IP</name_singular>
+            <name_plural>TCP/IP</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>TCP/IP</name_singular>
+            <name_plural>TCP/IP</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="tec" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Technologieförderung</name_singular>
+            <name_plural>Technologieförderung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="tqm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>TQM</name_singular>
+            <name_plural>TQM</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>TQM</name_singular>
+            <name_plural>TQM</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="tra" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Transparenz</name_singular>
+            <name_plural>Transparenz</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="uml" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>UML</name_singular>
+            <name_plural>UML</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>UML</name_singular>
+            <name_plural>UML</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="unix" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Unix</name_singular>
+            <name_plural>Unix</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Unix</name_singular>
+            <name_plural>Unix</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="unt" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Unternehmensflexibilität</name_singular>
+            <name_plural>Unternehmensflexibilität</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="untf" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Unternehmensführung</name_singular>
+            <name_plural>Unternehmensführung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="untg" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Unternehmensgründung</name_singular>
+            <name_plural>Unternehmensgründung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="entm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Unternehmensmodellierung</name_singular>
+            <name_plural>Unternehmensmodellierung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="untnet" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Unternehmensvernetzung</name_singular>
+            <name_plural>Unternehmensvernetzung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="vor" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Vorgangsketten</name_singular>
+            <name_plural>Vorgangsketten</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="vorm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Vorgehensmodell</name_singular>
+            <name_plural>Vorgehensmodell</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="wal" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Wald</name_singular>
+            <name_plural>Wald</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="webs" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Web Sites</name_singular>
+            <name_plural>Web Sites</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Web sites</name_singular>
+            <name_plural>Web sites</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="webobj" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>WebObjects</name_singular>
+            <name_plural>WebObjects</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>WebObjects</name_singular>
+            <name_plural>WebObjects</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="were" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Werterhaltung</name_singular>
+            <name_plural>Werterhaltung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="werst" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Wertsteuerung</name_singular>
+            <name_plural>Wertsteuerung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="wet" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Wettbewerbssteuerung</name_singular>
+            <name_plural>Wettbewerbssteuerung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="wie" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Reuse</name_singular>
+            <name_plural>Reuse</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Wiederverwendung</name_singular>
+            <name_plural>Wiederverwendung</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="wiesw" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Software Reuse</name_singular>
+            <name_plural>Software Reuse</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Wiederverwendung Software</name_singular>
+            <name_plural>Wiederverwendung Software</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="win2k3" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Windows 2003</name_singular>
+            <name_plural>Windows 2003</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Windows 2003</name_singular>
+            <name_plural>Windows 2003</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="winnt" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Windows NT</name_singular>
+            <name_plural>Windows NT</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Windows NT</name_singular>
+            <name_plural>Windows NT</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="wi" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Information Systems Research</name_singular>
+            <name_plural>Information Systems Research</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Wirtschaftsinformatik</name_singular>
+            <name_plural>Wirtschaftsinformatik</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="knwm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Knowledge Management</name_singular>
+            <name_plural>Knowledge Management</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Wissensmanagement</name_singular>
+            <name_plural>Wissensmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="wfm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Workflow Management</name_singular>
+            <name_plural>Workflow Management</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Workflowmanagement</name_singular>
+            <name_plural>Workflowmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="wgm" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Workgroup Management</name_singular>
+            <name_plural>Workgroup Management</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Workgroupmanagement</name_singular>
+            <name_plural>Workgroupmanagement</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="x400" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>X.400</name_singular>
+            <name_plural>X.400</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>X.400</name_singular>
+            <name_plural>X.400</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="zsl" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>Z as Specification Language</name_singular>
+            <name_plural>Z as Specification Language</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Z as Specification Language</name_singular>
+            <name_plural>Z as Specification Language</name_plural>
+          </label>
+        </labels>
+      </item>
+      <item idno="zei" enabled="1" default="0">
+        <labels>
+          <label locale="en_US" preferred="1">
+            <name_singular>a</name_singular>
+            <name_plural>as</name_plural>
+          </label>
+          <label locale="de_DE" preferred="0">
+            <name_singular>Zeichenprozesse</name_singular>
+            <name_plural>Zeichenprozesse</name_plural>
+          </label>
+        </labels>
+      </item>
       </items>
     </list>
     <list code="yes_no_lst" hierarchical="0" system="0" vocabulary="0" defaultSort="1">
@@ -780,32 +3098,6 @@
           <table>ca_objects</table>
           <type>book</type>
           <includeSubtypes>0</includeSubtypes>
-          <settings>
-            <setting name="minAttributesPerRow">0</setting>
-            <setting name="maxAttributesPerRow">1</setting>
-            <setting name="minimumAttributeBundlesToDisplay">1</setting>
-          </settings>
-        </restriction>
-      </typeRestrictions>
-    </metadataElement>
-    <metadataElement code="abstract" datatype="Text">
-      <labels>
-        <label locale="en_US">
-          <name>Abstract</name>
-        </label>
-        <label locale="de_DE">
-          <name>Abstract</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="fieldWidth">70</setting>
-        <setting name="fieldHeight">6</setting>
-        <setting name="maxChars">3072</setting>
-      </settings>
-      <typeRestrictions>
-        <restriction>
-          <table>ca_objects</table>
-          <type>paper</type>
           <settings>
             <setting name="minAttributesPerRow">0</setting>
             <setting name="maxAttributesPerRow">1</setting>
@@ -957,6 +3249,27 @@
         </restriction>
       </typeRestrictions>
     </metadataElement>
+    <metadataElement code="paper_category_list_attr" datatype="List" list="paper_category">
+      <labels>
+        <label locale="en_US">
+          <name>Category</name>
+        </label>
+        <label locale="de_DE">
+          <name>Kategorie</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction>
+          <table>ca_objects</table>
+          <type>paper</type>
+          <settings>
+            <setting name="minAttributesPerRow">1</setting>
+            <setting name="maxAttributesPerRow">1</setting>
+            <setting name="minimumAttributeBundlesToDisplay">1</setting>
+          </settings>
+        </restriction>
+      </typeRestrictions>
+    </metadataElement>
   </elementSets>
   <userInterfaces>
     <userInterface code="book_edt" type="ca_objects">
@@ -1094,7 +3407,7 @@
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">1</setting>
                 <setting name="dontShowDeleteButton">0</setting>
                 <setting name="maxRelationshipsPerRow"/>
               </settings>
@@ -1109,7 +3422,7 @@
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_collections.preferred_labels</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">1</setting>
                 <setting name="dontShowDeleteButton">0</setting>
                 <setting name="restrict_to_types">series</setting>
                 <setting name="minRelationshipsPerRow"/>
@@ -1179,78 +3492,52 @@
         <restriction type="paper"/>
       </typeRestrictions>
       <screens>
-        <screen idno="screen_20_0" default="1">
+        <screen idno="paper_edt_scr" default="1">
           <labels>
             <label locale="en_US">
               <name>Paper</name>
             </label>
             <label locale="de_DE">
-              <name>Artikel</name>
+              <name>Wissenschaftliche Arbeit</name>
             </label>
           </labels>
           <typeRestrictions>
-            <restriction type="paper_dissertation"/>
             <restriction type="paper"/>
-            <restriction type="paper_thesis"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="category_placement">
-              <bundle>ca_list_items</bundle>
-              <settings>
-                <setting name="restrict_to_relationship_types">object_category</setting>
-                <setting name="list_format">bubbles</setting>
-                <setting name="sortDirection">ASC</setting>
-                <setting name="display_template">^ca_list_items.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow"/>
-                <setting name="maxRelationshipsPerRow"/>
-                <setting name="hierarchicalBrowserHeight">200px</setting>
-                <setting name="restrictToTermsOnCollectionUseRelationshipType">103</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
-                <setting name="dontShowDeleteButton">0</setting>
-                <setting name="restrict_to_lists">thesis_type</setting>
-                <setting name="useHierarchicalBrowser">0</setting>
-                <setting name="restrictToTermsRelatedToCollection">0</setting>
-              </settings>
-            </placement>
             <placement code="preferred_labels1">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Titel</setting>
                 <setting name="label" locale="en_US">Title</setting>
+                <setting name="width">95</setting>
+                <setting name="height">1</setting>
                 <setting name="usewysiwygeditor"/>
+              </settings>
+            </placement>
+            <placement code="paper_category_list_attr_placement">
+              <bundle>ca_attribute_paper_category_list_attr</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Category</setting>
+                <setting name="label" locale="de_DE">Kategorie</setting>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="display_template">^ca_list_items.preferred_labels (^ca_list_items.idno)</setting>
               </settings>
             </placement>
             <placement code="main_paper_author">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Hauptautor</setting>
-                <setting name="label" locale="en_US">Main Author</setting>
+                <setting name="label" locale="en_US">First Author</setting>
                 <setting name="restrict_to_relationship_types">main_paper_author</setting>
                 <setting name="restrict_to_types">ind</setting>
-                <setting name="list_format">bubbles</setting>
+                <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">1</setting>
                 <setting name="dontShowDeleteButton">0</setting>
-                <setting name="maxRelationshipsPerRow"/>
-              </settings>
-            </placement>
-            <placement code="ca_entities5">
-              <bundle>ca_entities</bundle>
-              <settings>
-                <setting name="label" locale="de_DE">Autor</setting>
-                <setting name="label" locale="en_US">Author</setting>
-                <setting name="restrict_to_relationship_types">paper_author</setting>
-                <setting name="restrict_to_types">ind</setting>
-                <setting name="list_format">bubbles</setting>
-                <setting name="sortDirection">ASC</setting>
-                <setting name="display_template">^ca_entities.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow">0</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
-                <setting name="dontShowDeleteButton">0</setting>
-                <setting name="maxRelationshipsPerRow"/>
               </settings>
             </placement>
             <placement code="ca_attribute_year2">
@@ -1259,20 +3546,51 @@
                 <setting name="sortDirection">ASC</setting>
               </settings>
             </placement>
-            <placement code="ca_occurrences5">
-              <bundle>ca_occurrences</bundle>
+            <placement code="paper_hierarchy_location">
+              <bundle>hierarchy_location</bundle>
               <settings>
-                <setting name="label" locale="de_DE">Exemplare</setting>
-                <setting name="label" locale="en_US">Copies</setting>
-                <setting name="restrict_to_relationship_types">paper_copies</setting>
-                <setting name="restrict_to_types">copy</setting>
-                <setting name="list_format">list</setting>
-                <setting name="sortDirection">ASC</setting>
-                <setting name="display_template">^ca_occurrences.preferred_labels</setting>
-                <setting name="minRelationshipsPerRow"/>
-                <setting name="maxRelationshipsPerRow"/>
-                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
-                <setting name="dontShowDeleteButton">0</setting>
+                <setting name="open_hierarchy">1</setting>
+                <setting name="auto_shrink"/>
+              </settings>
+            </placement>
+          </bundlePlacements>
+        </screen>
+      </screens>
+    </userInterface>
+    <userInterface code="paper_copy_edt" type="ca_objects">
+      <labels>
+        <label locale="en_US">
+          <name>Copy</name>
+        </label>
+        <label locale="de_DE">
+          <name>Exemplar</name>
+        </label>
+      </labels>
+      <typeRestrictions>
+        <restriction type="paper_copy"/>
+      </typeRestrictions>
+      <screens>
+        <screen idno="copy_edt__scr" default="1">
+          <labels>
+            <label locale="en_US">
+              <name>Copy</name>
+            </label>
+            <label locale="de_DE">
+              <name>Exemplar</name>
+            </label>
+          </labels>
+          <typeRestrictions>
+            <restriction type="paper_copy"/>
+          </typeRestrictions>
+          <bundlePlacements>
+            <placement code="preferred_labels2">
+              <bundle>preferred_labels</bundle>
+              <settings>
+                <setting name="label" locale="en_US">Shelf Mark</setting>
+                <setting name="label" locale="de_DE">Signatur</setting>
+                <setting name="width">30</setting>
+                <setting name="height">1</setting>
+                <setting name="readonly">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1380,7 +3698,7 @@
                 <setting name="label" locale="de_DE">Signatur</setting>
                 <setting name="width">30</setting>
                 <setting name="height">1</setting>
-                <setting name="readonly"></setting>
+                <setting name="readonly">1</setting>
               </settings>
             </placement>
           </bundlePlacements>
@@ -1432,8 +3750,8 @@
         <type code="main_book_author" default="0">
           <labels>
             <label locale="en_US">
-              <typename>written by (main author)</typename>
-              <typename_reverse>is main author</typename_reverse>
+              <typename>written by (first author)</typename>
+              <typename_reverse>is first author</typename_reverse>
             </label>
             <label locale="de_DE">
               <typename>geschrieben von (Hauptautor)</typename>
@@ -1446,12 +3764,12 @@
         <type code="main_paper_author" default="0">
           <labels>
             <label locale="en_US">
-              <typename>written by (main author)</typename>
-              <typename_reverse>is main author</typename_reverse>
+              <typename>written by (first author)</typename>
+              <typename_reverse>is first author of</typename_reverse>
             </label>
             <label locale="de_DE">
               <typename>geschrieben von (Hauptautor)</typename>
-              <typename_reverse>ist Hauptautor</typename_reverse>
+              <typename_reverse>ist Hauptautor von</typename_reverse>
             </label>
           </labels>
           <subTypeLeft>paper</subTypeLeft>
@@ -1483,20 +3801,6 @@
             </label>
           </labels>
           <subTypeLeft>book</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="paper_author" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>written by</typename>
-              <typename_reverse>is author</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>geschrieben von</typename>
-              <typename_reverse>ist Autor</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>paper</subTypeLeft>
           <subTypeRight>ind</subTypeRight>
         </type>
         <type code="book_published" default="0">
@@ -1550,6 +3854,20 @@
     <relationshipTable name="ca_objects_x_vocabulary_terms">
       <types>
         <type code="book_tag" default="0">
+          <labels>
+            <label locale="en_US">
+              <typename>book is tagged with</typename>
+              <typename_reverse>tag assigned to book</typename_reverse>
+            </label>
+            <label locale="de_DE">
+              <typename>Buch verschlagwortet mit</typename>
+              <typename_reverse>Schlagwort verweist auf Buch</typename_reverse>
+            </label>
+          </labels>
+          <subTypeLeft>book</subTypeLeft>
+          <subTypeRight>tag</subTypeRight>
+        </type>
+        <type code="paper_tag" default="0">
           <labels>
             <label locale="en_US">
               <typename>book is tagged with</typename>
