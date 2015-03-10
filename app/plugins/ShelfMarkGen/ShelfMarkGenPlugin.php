@@ -65,7 +65,7 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		}
 
 		$item = $args["instance"];
-		if(!($item instanceof ca_objects) || $item->getTypeCode() !== "copy"){
+		if(!($item instanceof ca_objects) || ($item->getTypeCode() !== "copy" && $item->getTypeCode() !== "paper_copy")){
 			return;
 		}
 
@@ -87,14 +87,20 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		}
 
 		$book = new ca_objects($copy->get("parent_id"));
-		if(!($book instanceof ca_objects) || $book->getTypeCode() !== "book"){
+		if(!($book instanceof ca_objects) || ($book->getTypeCode() !== "book" && $book->getTypeCode() !== "paper")){
 			return;
 		}
 
-		$author = $book->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array("main_book_author")));
+		$identifier = array("relationship" => "main_book_author", "category" => "ca_objects.category_list_attr");
+		if($copy->getTypeCode() === "paper_copy"){
+			$identifier["category"] = "ca_objects.paper_category_list_attr";
+			$identifier["relationship"] = "main_paper_author";
+		}
+		
+		$author = $book->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($identifier["relationship"])));
 		$authorSurname = reset($author)["surname"];
 
-		$categoryId = $book->get("ca_objects.category_list_attr");
+		$categoryId = $book->get($identifier["category"]);
 		$category = new ca_list_items($categoryId);
 		$categoryValue = $category->get("item_value");
 		if($categoryValue == "" || $categoryValue == null){
@@ -118,6 +124,10 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 	 * @param $item ca_objects The copy which is saved.
 	 */
 	private function setObjectSource(&$item){
+		//We don't need to set the source on items other than book copies
+		if($item->getTypeCode() !== "copy"){
+			return;
+		}
 		$barCode = $item->get("ca_objects.barcode");
 		$listItems = new ca_list_items();
 		if($barCode != "") {
