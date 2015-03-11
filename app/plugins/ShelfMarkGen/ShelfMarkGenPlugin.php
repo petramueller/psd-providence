@@ -53,6 +53,24 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		$this->opo_config = Configuration::load($ps_plugin_path . "/conf/shelfmarkgen.conf");
 	}
 
+	public function hookDuplicateItem($args){
+		if ($args["table_name"] !== "ca_objects") {
+			return;
+		}
+
+		$item = $args["duplicate"];
+		if(!($item instanceof ca_objects) || ($item->getTypeCode() !== "copy" && $item->getTypeCode() !== "paper_copy")){
+			return;
+		}
+
+		$item->setMode(ACCESS_WRITE);
+		$this->setShelfMark($item);
+		$this->setObjectSource($item);
+		$item->update();
+		$item->doSearchIndexing(null, true, null);
+
+	}
+
 	# -------------------------------------------------------
 	/**
 	 * Hook is called by template every time a item or relationship was inserted.
@@ -81,8 +99,9 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 	 * @param $copy ca_objects The copy which is saved
 	 */
 	private function setShelfMark(&$copy){
-		//Appears that a shelf mark is already set
-		if (preg_match('/^\w-\w{1,10}-\w+$/', $copy->get("ca_objects.preferred_labels.name"))) {
+		//Appears that a shelf mark is already set, but duplicates need a new shelfmark.
+		if (preg_match('/^\w-\w{1,10}-\w+$/', $copy->get("ca_objects.preferred_labels.name"))
+			&& !preg_match('/^[\w-]+\s\[Duplicate\]$/', $copy->get("ca_objects.preferred_labels.name"))) {
 			return;
 		}
 
