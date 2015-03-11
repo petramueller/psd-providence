@@ -3524,7 +3524,7 @@
                 <setting name="display_template">^ca_list_items.preferred_labels (^ca_list_items.idno)</setting>
               </settings>
             </placement>
-            <placement code="main_paper_author">
+            <placement code="main_paper_author_placement">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Hauptautor</setting>
@@ -3534,16 +3534,29 @@
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_entities.preferred_labels</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dontShowDeleteButton">1</setting>
                 <setting name="minRelationshipsPerRow">1</setting>
                 <setting name="maxRelationshipsPerRow">1</setting>
-                <setting name="dont_include_subtypes_in_type_restriction">1</setting>
-                <setting name="dontShowDeleteButton">0</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_year2">
               <bundle>ca_attribute_year</bundle>
               <settings>
                 <setting name="sortDirection">ASC</setting>
+              </settings>
+            </placement>
+            <placement code="tag_placement">
+              <bundle>ca_list_items</bundle>
+              <settings>
+                <setting name="label" locale="de_DE">Schlagwort</setting>
+                <setting name="label" locale="en_US">Tag</setting>
+                <setting name="restrict_to_relationship_types">paper_tag</setting>
+                <setting name="list_format">list</setting>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="display_template">^ca_list_items.preferred_labels</setting>
+                <setting name="useHierarchicalBrowser">0</setting>
+                <setting name="restrict_to_lists">tags</setting>
               </settings>
             </placement>
             <placement code="paper_hierarchy_location">
