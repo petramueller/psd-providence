@@ -33,6 +33,10 @@ input[type="date"] {
     display:none;
 }
 
+table.listtable tbody .tud-note-form-row td{
+    background-color:#d5ffd5;
+}
+
 .tud-note-form label, .tud-ajax-state{
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size:12px;

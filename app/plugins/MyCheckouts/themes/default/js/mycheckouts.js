@@ -28,18 +28,17 @@ $(function(){
             cache: false,
             beforeSend: function(){
                 var state = form.find(".tud-ajax-state");
-                state.html("Saving...");
-                state.css("color", "#000");
+                form.parents("td").first().css("background", "#fefec0");
+                state.html("Speichere Änderungen...");
             }
         }).done(function(){
             var state = form.find(".tud-ajax-state");
-            state.html("Saved");
-            state.css("color", "#008800");
-            setTimeout(function() { state.html(); }, 5000)
+            form.parents("td").first().css("background", "#d5ffd5");
+            state.html("Änderungen gespeichert.");
         }).fail(function(){
             var state = form.find(".tud-ajax-state");
-            state.html("Save failed");
-            state.css("color", "#cf0000");
+            form.parents("td").first().css("background", "#ffaeae");
+            state.html("Speichern fehlgeschlagen.");
         });
 
         e.preventDefault();
@@ -47,6 +46,7 @@ $(function(){
     });
 
     $(".tud-note-form input, .tud-note-form textarea").change(function(){
-        $(this).parents(".tud-note-form").first().find(".tud-ajax-state").html("");
+        $(this).parents("td").first().css("background", "#fefec0");
+        $(this).parents(".tud-note-form").first().find(".tud-ajax-state").html("Ungespeicherte Änderungen vorhanden.");
     })
 });
