@@ -43,6 +43,7 @@ class MyCheckoutsController extends ActionController {
 			$this->response->setRedirect($this->request->config->get('error_display_url').'/n/3000?r='.urlencode($this->request->getFullUrlPath()));
 			return;
 		}
+		MetaTagManager::addLink('stylesheet', __CA_URL_ROOT__."/app/plugins/MyCheckouts/themes/".__CA_THEME__."/css/mycheckouts.css",'text/css');
 		$this->userId = (int)$this->request->user->get("user_id");
 	}
 

@@ -114,6 +114,12 @@ class Checkout {
 	 */
 	public function getStudentDueDate()
 	{
+		if($this->student_due_date == null){
+			$now = new DateTime("now");
+			$now->setTime(0, 0, 0);
+			$now->setTimezone(new DateTimeZone(date_default_timezone_get()));
+			return $now;
+		}
 		return $this->student_due_date;
 	}
 

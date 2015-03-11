@@ -30,12 +30,12 @@ class Checkouts {
 									VALUES (:checkoutId, :note, :prename, :surname, :email, :dueDate)
 									ON DUPLICATE KEY
 										UPDATE note = VALUES(note), prename = VALUES(prename), surname = VALUES(surname), email = VALUES(email), due_date = VALUES(due_date)");
-			$cmd->bindParam(":checkoutId", $checkout->getCheckoutId(), PDO::PARAM_INT);
-			$cmd->bindParam(":note", $checkout->getNote(), PDO::PARAM_STR);
-			$cmd->bindParam(":prename", $checkout->getPrename(), PDO::PARAM_STR);
-			$cmd->bindParam(":surname", $checkout->getSurname(), PDO::PARAM_STR);
-			$cmd->bindParam(":email", $checkout->getEmail(), PDO::PARAM_STR);
-			$cmd->bindParam(":dueDate", $checkout->getStudentDueDate(), PDO::PARAM_STR);
+			$cmd->bindParam(":checkoutId", $checkout->getCheckoutId());
+			$cmd->bindParam(":note", $checkout->getNote());
+			$cmd->bindParam(":prename", $checkout->getPrename());
+			$cmd->bindParam(":surname", $checkout->getSurname());
+			$cmd->bindParam(":email", $checkout->getEmail());
+			$cmd->bindParam(":dueDate", $checkout->getStudentDueDate()->format("Y-m-d"));
 			$cmd->execute();
 			$con = null;
 		}
@@ -98,13 +98,13 @@ class Checkouts {
 			$con = new PDO(sprintf("mysql:host=%s;dbname=%s", __CA_DB_HOST__, __CA_DB_DATABASE__), __CA_DB_USER__, __CA_DB_PASSWORD__);
 			$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-			$cmd = $con->prepare("SELECT lbl.name as shelfmark, plbl.name AS name, co.checkout_id, co.object_id, co.checkout_date, co.return_date, co.due_date, con.id as note_id, con.note, con.prename, con.surname, con.email, con.due_date as student_due_date
+			$cmd = $con->prepare("SELECT lbl.name as shelfmark, plbl.name AS name, co.checkout_id, co.object_id, co.checkout_date, co.return_date, co.due_date, con.note, con.prename, con.surname, con.email, con.due_date as student_due_date
 									FROM ca_object_checkouts AS co
 										INNER JOIN ca_objects AS obj ON co.object_id = obj.object_id
 										INNER JOIN ca_object_labels AS lbl ON obj.object_id = lbl.object_id
 										INNER JOIN ca_object_labels AS plbl ON obj.parent_id = plbl.object_id
 										LEFT JOIN tud_checkout_notes AS con ON co.checkout_id = con.checkout_id
-									WHERE co.user_id = :userId  AND lbl.is_preferred = 1
+									WHERE co.user_id = :userId  AND lbl.is_preferred = 1 AND co.checkout_date IS NOT NULL
 									ORDER by co.due_date ASC, lbl.name ASC;");
 
 			$cmd->bindParam(":userId", $userId, PDO::PARAM_INT);
