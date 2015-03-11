@@ -59,5 +59,4 @@ $checkouts = $this->getVar("checkouts");
 		</tbody>
 	</table>
 </div>
-
-
+<script type="text/javascript" src="<?php echo __CA_APP_DIR__; ?> /plugins/themes/default/js/mycheckouts.js/"></script>
