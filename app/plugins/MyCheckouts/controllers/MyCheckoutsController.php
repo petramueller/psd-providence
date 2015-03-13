@@ -50,9 +50,8 @@ class MyCheckoutsController extends ActionController {
 	public function Index(){
 		if (!$this->request->user->canDoAction('can_manage_own_checkouts')) { return; }
 		$checkouts = new Checkouts();
-		//2147483647: MySQL max integer value for signed integers
-		//we don't limit the size of the result set here
-		$currentCheckouts = $checkouts->getCurrentCheckouts($this->userId, 0, 50);
+
+		$currentCheckouts = $checkouts->getCurrentCheckouts($this->userId, 0, 500000);
 		$this->view->setVar('checkouts', $currentCheckouts);
 
 		//Output hierarchical table in view

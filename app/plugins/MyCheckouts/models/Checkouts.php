@@ -16,6 +16,10 @@ require_once(__CA_APP_DIR__ . "/plugins/MyCheckouts/models/Checkout.php");
  * Get checkouts with custom notes and stores/updates notes
  */
 class Checkouts {
+	/**
+	 * Save or updates a note for a given checkout
+	 * @param $checkout Checkout The checkout and its note
+	 */
 	public function setCheckoutNote($checkout){
 		if(!($checkout instanceof Checkout)){
 			throw new InvalidArgumentException("checkout");
@@ -118,9 +122,7 @@ class Checkouts {
 			echo "There was an error! " . $e->getMessage();
 			exit;
 		}
-
 		return $result;
-
 	}
 
 	/**
