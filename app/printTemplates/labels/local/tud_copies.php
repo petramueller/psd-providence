@@ -60,7 +60,7 @@ $vo_result = $this->getVar('result');
     <link href="/var/www/html/int/app/printTemplates/labels/pdf.css" rel="stylesheet">
 </head>
 
-<div class="tud_standardText" style="position: absolute; left: 0.7cm; top: 0.4cm; width: 8cm; height: 2cm; overflow: hidden;">
+<div class="smallText" style="position: absolute; left: 0.7cm; top: 0.4cm; width: 8cm; height: 2cm; font-size: 10px; overflow: hidden;">
     <?php
     $parent_id = $vo_result->get('ca_objects.parent_id');
     $book = new ca_objects($parent_id);
@@ -102,6 +102,10 @@ $vo_result = $this->getVar('result');
 
 <div class="titleText" style="position: absolute; left: 0.7cm; top: 3.7cm; width: 8cm; height: 1cm; overflow: hidden;">
     {{{^ca_objects.preferred_labels.name}}}
+    <?php
+    $barcode = $book->get('ca_objects.barcode');
+    echo $barcode;
+    ?>
 </div>
 
 
