@@ -19,8 +19,11 @@ class Checkouts {
 	/**
 	 * Save or updates a note for a given checkout
 	 * @param $checkout Checkout The checkout and its note
+	 * @param $userId int User ID
+	 * @throws ErrorException
+	 * @throws PDOException
 	 */
-	public function setCheckoutNote($checkout){
+	public function setCheckoutNote($checkout, $userId){
 		if(!($checkout instanceof Checkout)){
 			throw new InvalidArgumentException("checkout");
 		}
@@ -29,6 +32,16 @@ class Checkouts {
 			//TODO: Use table locks
 			$con = new PDO(sprintf("mysql:host=%s;dbname=%s", __CA_DB_HOST__, __CA_DB_DATABASE__), __CA_DB_USER__, __CA_DB_PASSWORD__);
 			$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+			$cmd = $con->prepare("SELECT checkout_id FROM ca_object_checkouts WHERE user_id = :userId AND checkout_id = :checkoutId;");
+			$cmd->bindParam(":userId", $userId, PDO::PARAM_INT);
+			$cmd->bindParam(":checkoutId", $checkout->getCheckoutId());
+			$cmd->execute();
+			$result = $cmd->fetchAll();
+			if(sizeof($result) === 0){
+				$con = null;
+				throw new ErrorException("Not Authorized");
+			}
 
 			$cmd = $con->prepare("INSERT INTO tud_checkout_notes (checkout_id, note, prename, surname, email, due_date)
 									VALUES (:checkoutId, :note, :prename, :surname, :email, :dueDate)
@@ -44,8 +57,11 @@ class Checkouts {
 			$con = null;
 		}
 		catch (PDOException $e) {
-			echo "There was an error! " . $e->getMessage();
-			exit;
+			$con = null;
+			throw $e;
+		}catch (ErrorException $e) {
+			$con = null;
+			throw $e;
 		}
 	}
 

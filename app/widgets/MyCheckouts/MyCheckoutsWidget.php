@@ -34,11 +34,11 @@ class MyCheckoutsWidget extends BaseWidget implements IWidget{
 	public function renderWidget($ps_widget_id, &$pa_settings) {
 		$request = $this->getRequest();
 		$userId = (int)$request->user->get("user_id");
-		if (!$request->user->canDoAction("can_manage_own_checkouts") || $userId == "" || $userId == null ||$userId === 0) {
-			return true;
-		}
-
 		parent::renderWidget($ps_widget_id, $pa_settings);
+
+		if (!$request->user->canDoAction("can_manage_own_checkouts") || $userId == "" || $userId == null ||$userId === 0) {
+			return $this->opo_view->render("not_allowed_html.php");
+		}
 
 		$checkouts = new Checkouts();
 		$currentCheckouts = $checkouts->getCurrentCheckouts($userId, 0, 500000);
