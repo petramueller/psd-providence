@@ -57,7 +57,12 @@ class MyCheckoutsPlugin extends BaseApplicationPlugin
 	 */
 	public function hookRenderMenuBar($pa_menu_bar) {
 		if ($o_req = $this->getRequest()) {
-			if (!$o_req->user->canDoAction('can_manage_own_checkouts')) { return true; }
+			if (!$o_req->user->canDoAction('can_manage_own_checkouts')) {
+				if (isset($pa_menu_bar['MyCheckouts'])){
+					unset($pa_menu_bar['MyCheckouts']);
+				}
+				return true;
+			}
 
 			if (isset($pa_menu_bar['MyCheckouts'])) {
 				$va_menu_items = $pa_menu_bar['MyCheckouts']['navigation'];
