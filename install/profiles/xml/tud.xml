@@ -3883,6 +3883,160 @@
       </types>
     </relationshipTable>
   </relationshipTypes>
+  <displays>
+    <display code="book_dspl" type="ca_objects" system="1">
+      <labels>
+        <label locale="en_US">
+          <name>Book Display</name>
+        </label>
+        <label locale="de_DE">
+          <name>Buch-Darstellung</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values">1</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Title</setting>
+            <setting name="label" locale="de_DE">Titel</setting>
+          </settings>
+        </placement>
+        <placement code="ca_entities">
+          <bundle>ca_entities</bundle>
+          <settings>
+            <setting name="hierarchy_order">ASC</setting>
+            <setting name="label" locale="en_US">First Author</setting>
+            <setting name="label" locale="de_DE">Hauptautor</setting>
+            <setting name="restrict_to_relationship_types">main_book_author</setting>
+            <setting name="restrict_to_types">ind</setting>
+            <setting name="show_hierarchy">0</setting>
+            <setting name="remove_first_items">0</setting>
+            <setting name="hierarchy_limit">0</setting>
+          </settings>
+        </placement>
+        <placement code="ca_entities">
+          <bundle>ca_entities</bundle>
+          <settings>
+            <setting name="hierarchy_order">ASC</setting>
+            <setting name="label" locale="en_US">Authors</setting>
+            <setting name="label" locale="de_DE">Autoren</setting>
+            <setting name="restrict_to_relationship_types">book_author</setting>
+            <setting name="restrict_to_types">ind</setting>
+            <setting name="delimiter">; </setting>
+            <setting name="show_hierarchy">0</setting>
+            <setting name="remove_first_items">0</setting>
+            <setting name="hierarchy_limit">0</setting>
+          </settings>
+        </placement>
+        <placement code="ca_entities">
+          <bundle>ca_entities</bundle>
+          <settings>
+            <setting name="hierarchy_order">ASC</setting>
+            <setting name="label" locale="en_US">Editors</setting>
+            <setting name="label" locale="de_DE">Herausgeber</setting>
+            <setting name="restrict_to_relationship_types">editor</setting>
+            <setting name="restrict_to_types">ind</setting>
+            <setting name="delimiter">; </setting>
+            <setting name="show_hierarchy">0</setting>
+            <setting name="remove_first_items">0</setting>
+            <setting name="hierarchy_limit">0</setting>
+          </settings>
+        </placement>
+        <placement code="ca_entities">
+          <bundle>ca_entities</bundle>
+          <settings>
+            <setting name="hierarchy_order">ASC</setting>
+            <setting name="label" locale="en_US">Publisher</setting>
+            <setting name="label" locale="de_DE">Verlag</setting>
+            <setting name="restrict_to_relationship_types">book_published</setting>
+            <setting name="restrict_to_types">org</setting>
+            <setting name="delimiter">; </setting>
+            <setting name="show_hierarchy">0</setting>
+            <setting name="remove_first_items">0</setting>
+            <setting name="hierarchy_limit">0</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_category_list_attr">
+          <bundle>ca_objects.category_list_attr</bundle>
+          <settings>
+            <setting name="sense">singular</setting>
+            <setting name="label" locale="en_US">Category</setting>
+            <setting name="label" locale="de_DE">Kategorie</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_edition">
+          <bundle>ca_objects.edition</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Edition</setting>
+            <setting name="label" locale="de_DE">Ausgabe</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_isbn">
+          <bundle>ca_objects.isbn</bundle>
+        </placement>
+        <placement code="ca_list_items">
+          <bundle>ca_list_items</bundle>
+          <settings>
+            <setting name="restrict_to_relationship_types">book_tag</setting>
+            <setting name="hierarchy_order">ASC</setting>
+            <setting name="label" locale="en_US">Tags</setting>
+            <setting name="label" locale="de_DE">Schlagwörter</setting>
+            <setting name="delimiter">; </setting>
+            <setting name="show_hierarchy">0</setting>
+            <setting name="remove_first_items">0</setting>
+            <setting name="hierarchy_limit">0</setting>
+            <setting name="hierarchical_delimiter"> ➔ </setting>
+          </settings>
+        </placement>
+      </bundlePlacements>
+    </display>
+    <display code="researcher_display" type="ca_objects" system="0">
+      <labels>
+        <label locale="en_US">
+          <name>Researcher Display</name>
+        </label>
+        <label locale="de_DE">
+          <name>Researcher-Darstellung</name>
+        </label>
+      </labels>
+      <settings>
+        <setting name="show_empty_values">1</setting>
+      </settings>
+      <bundlePlacements>
+        <placement code="ca_objects_preferred_labels">
+          <bundle>ca_objects.preferred_labels</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Title</setting>
+            <setting name="label" locale="de_DE">Titel</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_date">
+          <bundle>ca_objects.date</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Date</setting>
+            <setting name="label" locale="de_DE">Datum</setting>
+          </settings>
+        </placement>
+        <placement code="ca_objects_type_id">
+          <bundle>ca_objects.type_id</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Type ID</setting>
+            <setting name="label" locale="de_DE">Typ-ID</setting>
+          </settings>
+        </placement>
+        <placement code="ca_entities">
+          <bundle>ca_entities</bundle>
+          <settings>
+            <setting name="label" locale="en_US">Entities</setting>
+            <setting name="label" locale="de_DE">Entitäten</setting>
+          </settings>
+        </placement>
+      </bundlePlacements>
+    </display>
+  </displays>
   <searchForms>
     <searchForm code="object_srch" type="ca_objects" system="1">
       <labels>
