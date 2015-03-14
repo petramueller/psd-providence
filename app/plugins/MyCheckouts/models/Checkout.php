@@ -145,4 +145,28 @@ class Checkout {
 		}
 		return $prefix . $interval->days;
 	}
+
+	public function getDaysLeftStudent(){
+		$now = new DateTime("NOW");
+		$now->setTime(0, 0, 0);
+		$now->setTimezone(new DateTimeZone(date_default_timezone_get()));
+
+		$student_due_date = null;
+		if ($this->getStudentDueDate() instanceof DateTime) {
+			$student_due_date = $this->getStudentDueDate();
+		} else {
+			$student_due_date = DateTime::createFromFormat("Y-m-d", $this->getStudentDueDate());
+			$student_due_date->setTime(0,0,0);
+		}
+
+		$interval = $now->diff($student_due_date);
+		//PHP sucks: We cannot format the difference with DateInterval::format("%R%d") because PHP sucks...
+		$prefix = "+";
+		if($now > $student_due_date){
+			$prefix = "-";
+		} else if ($now === $student_due_date){
+			$prefix = "";
+		}
+		return $prefix . $interval->days;
+	}
 }

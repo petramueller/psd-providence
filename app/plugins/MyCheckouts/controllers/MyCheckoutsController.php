@@ -39,20 +39,19 @@ class MyCheckoutsController extends ActionController {
 
 		parent::__construct($po_request, $po_response, $pa_view_paths);
 
-		if (!$this->request->user->canDoAction('can_manage_own_checkouts')) {
-			$this->response->setRedirect($this->request->config->get('error_display_url').'/n/3000?r='.urlencode($this->request->getFullUrlPath()));
-			return;
-		}
 		MetaTagManager::addLink('stylesheet', __CA_URL_ROOT__."/app/plugins/MyCheckouts/themes/".__CA_THEME__."/css/mycheckouts.css",'text/css');
 		$this->userId = (int)$this->request->user->get("user_id");
 	}
 
 	public function Index(){
-		if (!$this->request->user->canDoAction('can_manage_own_checkouts')) { return; }
+		if (!$this->request->user->canDoAction('can_manage_own_checkouts')) {
+			$this->render("forbidden.php");
+			return;
+		}
+
 		$checkouts = new Checkouts();
-		//2147483647: MySQL max integer value for signed integers
-		//we don't limit the size of the result set here
-		$currentCheckouts = $checkouts->getCurrentCheckouts($this->userId, 0, 50);
+
+		$currentCheckouts = $checkouts->getCurrentCheckouts($this->userId, 0, 500000);
 		$this->view->setVar('checkouts', $currentCheckouts);
 
 		//Output hierarchical table in view

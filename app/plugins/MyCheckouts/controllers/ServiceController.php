@@ -21,8 +21,7 @@ class ServiceController extends BaseServiceController {
 	//GET /service.php/MyCheckouts/Service/SetNote
 	public function SetNote(){
 		if (!$this->request->user->canDoAction('can_manage_own_checkouts')) {
-			$this->response->addHeader("HTTP/1.0", "403 Forbidden");
-			$this->response->setRedirect($this->request->config->get('error_display_url').'/n/3000?r='.urlencode($this->request->getFullUrlPath()));
+			http_response_code(403);
 			return;
 		}
 
@@ -37,7 +36,15 @@ class ServiceController extends BaseServiceController {
 		$checkout->note = $this->request->getParameter("note", pString);
 
 		$checkouts = new Checkouts();
-		$checkouts->setCheckoutNote($checkout);
+		try{
+			$userId = (int)$this->request->user->get("user_id");
+			$checkouts->setCheckoutNote($checkout, $userId);
+		} catch (PDOException $e){
+			http_response_code(500);
+		} catch (ErrorException $e){
+			http_response_code(403);
+		}
+
 	}
 
 }
