@@ -14,7 +14,8 @@ require_once(__CA_MODELS_DIR__ . "/ca_objects.php");
 require_once(__CA_MODELS_DIR__ . "/ca_object_labels.php");
 require_once(__CA_MODELS_DIR__ . "/ca_locales.php");
 require_once("ShelfMarkService.php");
-
+require_once("KeyProviderFactory.php");
+require_once("IKeyProvider.php");
 /**
  * Class ShelfMarkGenPlugin
  * Plugin to automatically generate shelf marks (e.g. E-INF-G001)
@@ -38,6 +39,8 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 	 */
 	private $ops_plugin_path;
 
+	private $keyProviderFactory;
+
 	# -------------------------------------------------------
 	/**
 	 * Default constructor
@@ -51,6 +54,7 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		parent::__construct();
 
 		$this->opo_config = Configuration::load($ps_plugin_path . "/conf/shelfmarkgen.conf");
+		$this->keyProviderFactory = new KeyProviderFactory();
 	}
 
 	public function hookDuplicateItem($args){
@@ -59,13 +63,21 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		}
 
 		$item = $args["duplicate"];
-		if(!($item instanceof ca_objects) || ($item->getTypeCode() !== "copy" && $item->getTypeCode() !== "paper_copy")){
+		if(!($item instanceof ca_objects)){
+			return null;
+		}
+
+		$parent = $this->getParent($item);
+		$keyProvider = $this->getKeyProvider($parent);
+
+		//Appears that we don't need to take action
+		if($keyProvider === null){
 			return;
 		}
 
 		$item->setMode(ACCESS_WRITE);
-		$this->setShelfMark($item);
-		$this->setObjectSource($item);
+		$this->setShelfMark($parent, $item, $keyProvider);
+		$this->setObjectSource($parent, $item, $keyProvider);
 		$item->update();
 		$item->doSearchIndexing(null, true, null);
 
@@ -83,43 +95,41 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		}
 
 		$item = $args["instance"];
-		if(!($item instanceof ca_objects) || ($item->getTypeCode() !== "copy" && $item->getTypeCode() !== "paper_copy")){
+		if(!($item instanceof ca_objects)){
+			return;
+		}
+
+		$parent = $this->getParent($item);
+		$keyProvider = $this->getKeyProvider($parent);
+
+		//Appears that we don't need to take action
+		if($keyProvider === null){
 			return;
 		}
 
 		$item->setMode(ACCESS_WRITE);
-		$this->setShelfMark($item);
-		$this->setObjectSource($item);
+		$this->setShelfMark($parent, $item, $keyProvider);
+		$this->setObjectSource($parent, $item, $keyProvider);
 		$item->update();
 		$item->doSearchIndexing(null, true, null);
 	}
 
 	/**
 	 * Sets the shelf mark to an auto generated value, if none is set.
-	 * @param $copy ca_objects The copy which is saved
+	 * @param $parent ca_objects The parent object which provides us with the information we need
+	 * @param $keyProvider IKeyProvider A key provider
 	 */
-	private function setShelfMark(&$copy){
+	private function setShelfMark($parent, &$copy, $keyProvider){
 		//Appears that a shelf mark is already set, but duplicates need a new shelfmark.
 		if (preg_match('/^\w-\w{1,10}-\w+$/', $copy->get("ca_objects.preferred_labels.name"))
 			&& !preg_match('/^[\w-]+\s\[Duplicate\]$/', $copy->get("ca_objects.preferred_labels.name"))) {
 			return;
 		}
 
-		$book = new ca_objects($copy->get("parent_id"));
-		if(!($book instanceof ca_objects) || ($book->getTypeCode() !== "book" && $book->getTypeCode() !== "paper")){
-			return;
-		}
-
-		$identifier = array("relationship" => "main_book_author", "category" => "ca_objects.category_list_attr");
-		if($copy->getTypeCode() === "paper_copy"){
-			$identifier["category"] = "ca_objects.paper_category_list_attr";
-			$identifier["relationship"] = "main_paper_author";
-		}
-		
-		$author = $book->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($identifier["relationship"])));
+		$author = $parent->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($keyProvider->getMainAuthorRelationshipKey())));
 		$authorSurname = reset($author)["surname"];
 
-		$categoryId = $book->get($identifier["category"]);
+		$categoryId = $parent->get($keyProvider->getCategoryAttributeKey());
 		$category = new ca_list_items($categoryId);
 		$categoryValue = $category->get("item_value");
 		if($categoryValue == "" || $categoryValue == null){
@@ -136,26 +146,51 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		foreach ($cataloguingLocales as $key => $value) {
 			$copy->addLabel(array("name" => $shelfMark), $value, null, true);
 		}
+
 	}
 
 	/**
 	 * Sets the object source to WISE (no bar code) or SLUB if a bar code is present.
-	 * @param $item ca_objects The copy which is saved.
+	 * @param $parent
+	 * @param $copy
+	 * @param $keyProvider IKeyProvider
+	 * @internal param ca_objects $item The copy which is saved.
 	 */
-	private function setObjectSource(&$item){
-		//We don't need to set the source on items other than book copies
-		if($item->getTypeCode() !== "copy"){
+	private function setObjectSource($parent, &$copy, $keyProvider){
+		//We need to set the source only on items that can potentially come from SLUB.
+		if(!in_array($copy->getTypeCode(), $keyProvider->getTypesWithObjectSource(), true)){
 			return;
 		}
-		$barCode = $item->get("ca_objects.barcode");
+		$barCode = $copy->get("ca_objects.barcode");
 		$listItems = new ca_list_items();
 		if($barCode != "") {
 			$slubSourceId = $listItems->find(array("idno" => "obj_src_slub"), array("returnAs" => "firstId"));
-			$item->set("source_id", $slubSourceId);
+			$copy->set("source_id", $slubSourceId);
 		} else {
 			$wiseSourceId = $listItems->find(array("idno" => "obj_src_own"), array("returnAs" => "firstId"));
-			$item->set("source_id", $wiseSourceId);
+			$copy->set("source_id", $wiseSourceId);
 		}
+	}
+
+	private function getKeyProvider($parent){
+		$keyProvider = null;
+		if(!($parent instanceof ca_objects)){
+			return $keyProvider;
+		}
+		try{
+			$keyProvider = $this->keyProviderFactory->createKeyProvider($parent->getTypeCode());
+		} catch (InvalidArgumentException $ex){
+			//Let it fail silently, we don't really care
+		}
+		return $keyProvider;
+	}
+
+	private function getParent($item){
+		$parent = new ca_objects($item->get("parent_id"));
+		if(!($parent instanceof ca_objects)){
+			return null;
+		}
+		return $parent;
 	}
 
 	# -------------------------------------------------------
