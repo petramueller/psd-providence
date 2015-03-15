@@ -4297,7 +4297,7 @@
             <restriction type="series"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="preferred_labels1">
+            <placement code="preferred_labels">
               <bundle>preferred_labels</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Name</setting>
@@ -4305,11 +4305,25 @@
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
-            <placement code="ca_objects2">
+            <placement code="ca_objects_book">
               <bundle>ca_objects</bundle>
               <settings>
                 <setting name="restrict_to_relationship_types">item_series</setting>
                 <setting name="restrict_to_types">book</setting>
+                <setting name="list_format">list</setting>
+                <setting name="sortDirection">ASC</setting>
+                <setting name="display_template">^ca_objects.preferred_labels</setting>
+                <setting name="dont_include_subtypes_in_type_restriction">0</setting>
+                <setting name="dontShowDeleteButton">0</setting>
+                <setting name="minRelationshipsPerRow"/>
+                <setting name="maxRelationshipsPerRow"/>
+              </settings>
+            </placement>
+            <placement code="ca_objects_other">
+              <bundle>ca_objects</bundle>
+              <settings>
+                <setting name="restrict_to_relationship_types">other_series</setting>
+                <setting name="restrict_to_types">other</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_objects.preferred_labels</setting>
