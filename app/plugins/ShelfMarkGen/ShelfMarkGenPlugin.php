@@ -23,25 +23,27 @@ require_once("IKeyProvider.php");
  */
 class ShelfMarkGenPlugin extends BaseApplicationPlugin
 {
-	# -------------------------------------------------------
 	/**
-	 * Plugin description
+	 * @var mixed|null Plugin description
 	 */
 	protected $description = null;
 
 	/**
-	 * Plugin config
+	 * @var Configuration Plugin configuration
 	 */
 	private $opo_config;
 
 	/**
-	 * Plugin path
+	 * @var string Plugin path
 	 */
 	private $ops_plugin_path;
 
+	/**
+	 * @var KeyProviderFactory Key provider factory instance
+	 */
 	private $keyProviderFactory;
 
-	# -------------------------------------------------------
+
 	/**
 	 * Default constructor
 	 * @param $ps_plugin_path string Path to plugin
@@ -57,6 +59,11 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		$this->keyProviderFactory = new KeyProviderFactory();
 	}
 
+	/**
+	 * Called by CA after an item is duplicated
+	 * @param $args Item duplicate
+	 * @return void
+	 */
 	public function hookDuplicateItem($args){
 		if ($args["table_name"] !== "ca_objects") {
 			return;
@@ -64,7 +71,7 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 
 		$item = $args["duplicate"];
 		if(!($item instanceof ca_objects)){
-			return null;
+			return;
 		}
 
 		$parent = $this->getParent($item);
@@ -77,17 +84,16 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 
 		$item->setMode(ACCESS_WRITE);
 		$this->setShelfMark($parent, $item, $keyProvider);
-		$this->setObjectSource($parent, $item, $keyProvider);
+		$this->setObjectSource($item, $keyProvider);
 		$item->update();
 		$item->doSearchIndexing(null, true, null);
-
 	}
 
-	# -------------------------------------------------------
 	/**
-	 * Hook is called by template every time a item or relationship was inserted.
+	 * Called by CA every time a item or relationship was inserted.
 	 * Not the best extension point for what we do, but the only one where we have all information we need.
 	 * Used to set the shelf mark as well as source (WISE or SLUB) of copies
+	 * @param $args array Arguments passed by CA to this hook.
 	 */
 	public function hookSaveItem(&$args){
 		if ($args["table_name"] !== "ca_objects") {
@@ -109,7 +115,7 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 
 		$item->setMode(ACCESS_WRITE);
 		$this->setShelfMark($parent, $item, $keyProvider);
-		$this->setObjectSource($parent, $item, $keyProvider);
+		$this->setObjectSource($item, $keyProvider);
 		$item->update();
 		$item->doSearchIndexing(null, true, null);
 	}
@@ -117,12 +123,14 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 	/**
 	 * Sets the shelf mark to an auto generated value, if none is set.
 	 * @param $parent ca_objects The parent object which provides us with the information we need
+	 * @param $copy ca_objects The child object
 	 * @param $keyProvider IKeyProvider A key provider
 	 */
 	private function setShelfMark($parent, &$copy, $keyProvider){
 		//Appears that a shelf mark is already set, but duplicates need a new shelfmark.
 		if (preg_match('/^\w-\w{1,10}-\w+$/', $copy->get("ca_objects.preferred_labels.name"))
-			&& !preg_match('/^[\w-]+\s\[Duplicate\]$/', $copy->get("ca_objects.preferred_labels.name"))) {
+			&& !preg_match('/^[\w-]+\s\[Duplicate\]$/', $copy->get("ca_objects.preferred_labels.name"))
+			&& !preg_match('/^[\w-]+\s\[Duplizieren\]$/', $copy->get("ca_objects.preferred_labels.name"))) {
 			return;
 		}
 
@@ -151,12 +159,10 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 
 	/**
 	 * Sets the object source to WISE (no bar code) or SLUB if a bar code is present.
-	 * @param $parent
-	 * @param $copy
+	 * @param $copy The child object
 	 * @param $keyProvider IKeyProvider
-	 * @internal param ca_objects $item The copy which is saved.
 	 */
-	private function setObjectSource($parent, &$copy, $keyProvider){
+	private function setObjectSource(&$copy, $keyProvider){
 		//We need to set the source only on items that can potentially come from SLUB.
 		if(!in_array($copy->getTypeCode(), $keyProvider->getTypesWithObjectSource(), true)){
 			return;
@@ -172,6 +178,11 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		}
 	}
 
+	/**
+	 * Returns a key provider instance if parent is of type ca_objects, otherwise null
+	 * @param $parent Parent object
+	 * @return IKeyProvider|null
+	 */
 	private function getKeyProvider($parent){
 		$keyProvider = null;
 		if(!($parent instanceof ca_objects)){
@@ -185,6 +196,11 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		return $keyProvider;
 	}
 
+	/**
+	 * Returns the parent of a (child) object, if the object does not have a parent null is returned.
+	 * @param $item ca_objects Child item
+	 * @return ca_objects|null
+	 */
 	private function getParent($item){
 		$parent = new ca_objects($item->get("parent_id"));
 		if(!($parent instanceof ca_objects)){
@@ -193,9 +209,9 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		return $parent;
 	}
 
-	# -------------------------------------------------------
 	/**
-	 * Override checkStatus() to return true - the statisticsViewerPlugin always initializes ok... (part to complete)
+	 * Returns an array with status information about the plugin
+	 * @return array Array representing the status
 	 */
 	public function checkStatus()
 	{
@@ -207,11 +223,11 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		);
 	}
 
-	# -------------------------------------------------------
 	/**
 	 * Add plugin user actions
 	 * We don't have any custom permissions, but need to fulfill the contract defined by
 	 * IApplicationPlugin.
+	 * @return array() An empty array
 	 */
 	static function getRoleActionList()
 	{

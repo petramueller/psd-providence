@@ -14,6 +14,10 @@ require_once("BookKeyProvider.php");
 require_once("PaperKeyProvider.php");
 require_once("OtherKeyProvider.php");
 
+/**
+ * Class KeyProviderFactory
+ * Creates instance of classes implementing IKeyProvider, depending on the given type code.
+ */
 class KeyProviderFactory {
 	/**
 	 * Returns a key provider, depending on the given type code
