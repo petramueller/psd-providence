@@ -9,6 +9,10 @@
  *  ----------------------------------------------------------------------
  */
 
+/**
+ * Class ShelfMarkService
+ * Provides business logic used during shelf mark generation
+ */
 class ShelfMarkService {
 	/**
 	 * Gets a shelf mark for a given author and category combination
