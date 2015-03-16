@@ -95,14 +95,10 @@ $vo_result = $this->getVar('result');
     ?>
     {{{^ca_objects.parent.year}}}
 </div>
-<?php
-$barcode = $vo_result->get("ca_objects.barcode");
-if ($barcode != "") {
-    ?>
-    <div class="barcode" style="position: absolute; left: 0.45cm; top: 2.5cm; width: 8cm; height: 1cm; overflow: hidden;">
-        {{{barcode:code128:30:^ca_objects.barcode}}}
-    </div>
-<?php } ?>
+
+<div class="barcode" style="position: absolute; left: 0.45cm; top: 2.5cm; width: 8cm; height: 1cm; overflow: hidden;">
+    {{{barcode:code128:30:^ca_objects.barcode}}}
+</div>
 
 <div class="titleText" style="position: absolute; left: 0.7cm; top: 3.7cm; width: 8cm; height: 1cm; overflow: hidden;">
     {{{^ca_objects.preferred_labels.name}}}
