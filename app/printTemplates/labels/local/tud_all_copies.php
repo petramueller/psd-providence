@@ -25,7 +25,7 @@
  * @marginTop 0.45cm
  * @marginBottom 0.45cm
  * @horizontalGutter 0.0cm
- * @verticalGutter 0.ocm
+ * @verticalGutter 0.0cm
  * @labelWidth 10.5cm
  * @labelHeight 4.8cm
  *
@@ -35,8 +35,8 @@
 require_once(__CA_MODELS_DIR__ . "/ca_objects.php");
 require_once(__CA_MODELS_DIR__ . "/ca_entities.php");
 
-
 $vo_result = $this->getVar('result');
+
 ?>
 
 <head>
@@ -44,45 +44,48 @@ $vo_result = $this->getVar('result');
 </head>
 
 <div class="smallText" style="position: absolute; left: 0.7cm; top: 0.4cm; width: 8cm; height: 2cm; font-size: 10px; overflow: hidden;">
-    <?php
 
+    <?php
     $parent_id = $vo_result->get('ca_objects.parent_id');
     $copy = new ca_objects($parent_id);
     $type_code = $copy->getTypeCode();
 
+    if ($type_code == "book" || $type_code == "other") {
 
-    if ($type_code == "book") {
-        $book = new ca_objects($parent_id);
-        $book_name = $book->get('ca_objects.preferred_labels.name').", ";
+        $object = new ca_objects($parent_id);
+        $object_name = $object->get('ca_objects.preferred_labels.name').", ";
 
-        $identifier = "main_book_author";
-        $author = $book->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($identifier)));
-        $authorSurname = reset($author)["surname"];
-        $authorForename = reset($author)["forename"];
-        $authorForename = $authorForename[0].".";
-        $authorMain = $authorSurname. ", ". $authorForename. "; ";
+        if ($type_code == "book") {
+            $identifiers = array("main_book_author","book_author");
+            $identifier = "book_published";
+        } else {
+            $identifiers = array("main_other_author","other_author");
+            $identifier = "other_published";
+        }
+        $authors = "";
 
-        $identifier = "book_published";
-        $publisher = $book->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($identifier)));
+        foreach($identifiers as $id) {
+
+            $author = $object->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($id)));
+
+            foreach($author as $x) {
+                reset($x);
+                $authorSurname = $x["surname"];
+                $authorForename = mb_substr($x["forename"], 0, 1, "UTF-8").".";
+                $authors = $authors. $authorSurname. ", ". $authorForename. "; ";
+            }
+        }
+
+        $publisher = $object->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($identifier)));
         $publisher_name = reset($publisher)["surname"]." Verlag, ";
         $publisher_id = reset($publisher)["entity_id"];
         $publisher = new ca_entities($publisher_id);
         $publisher_location = $publisher->get("ca_entities.publisher_location").", ";
 
-        $identifier = "book_author";
-        $authors = $book->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($identifier)));
-        $authorSecond = "";
-        foreach($authors as $x){
-            reset($x);
-            $Surname = $x["surname"];
-            $Forename = $x["forename"];
-            $Forename = $Forename[0].".";
-            $authorSecond = $authorSecond. $Surname.", ". $Forename."; ";
-        }
-
-        echo $authorMain, $authorSecond, $book_name, $publisher_name, $publisher_location;
+        echo $authors, $object_name, $publisher_name, $publisher_location;
 
     } elseif ($type_code == "paper") {
+
         $paper = new ca_objects($parent_id);
         $paper_name = $paper->get('ca_objects.preferred_labels.name').", ";
 
@@ -95,11 +98,11 @@ $vo_result = $this->getVar('result');
 
         echo $authorMain, $paper_name;
     }  else {
-        print "The objecttype is not supported, only 'Copies' and 'Copies (Thesis)' are!";
+        print "The object type is not supported, only child objects of 'book', 'paper' and 'other' are!";
         return;
     }
-
     ?>
+
     {{{^ca_objects.parent.year}}}
 </div>
 
@@ -110,6 +113,7 @@ $vo_result = $this->getVar('result');
 <div class="titleText" style="position: absolute; left: 0.7cm; top: 3.7cm; width: 8cm; height: 1cm; overflow: hidden;">
     {{{^ca_objects.preferred_labels.name}}}
 </div>
+
 
 
 
