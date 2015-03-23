@@ -3092,7 +3092,7 @@
         </label>
       </labels>
       <items>
-        <item idno="no" rank="1" value="10" enabled="1" default="0">
+        <item idno="no" rank="2" value="20" enabled="1" default="1">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>No</name_singular>
@@ -3104,7 +3104,7 @@
             </label>
           </labels>
         </item>
-        <item idno="yes" rank="2" value="20" enabled="1" default="0">
+        <item idno="yes" rank="1" value="10" enabled="1" default="0">
           <labels>
             <label locale="en_US" preferred="1">
               <name_singular>Yes</name_singular>
