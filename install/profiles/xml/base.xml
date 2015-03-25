@@ -31,6 +31,9 @@
         <label locale="sv_SE">
           <name>Posttypslista</name>
         </label>
+        <label locale="de_DE">
+          <name>Listentyp</name>
+        </label>
       </labels>
       <items>
         <item idno="concept" enabled="1" default="1">
@@ -51,6 +54,10 @@
               <name_singular>koncept</name_singular>
               <name_plural>koncept</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Konzept</name_singular>
+                  <name_plural>Konzepte</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="facet" enabled="1" default="0">
@@ -71,6 +78,10 @@
               <name_singular>fasett</name_singular>
               <name_plural>fasetter</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Facette</name_singular>
+                  <name_plural>Facetten</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="guide_term" enabled="1" default="0">
@@ -91,6 +102,10 @@
               <name_singular>guide term</name_singular>
               <name_plural>guide termer</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Leitbegriff</name_singular>
+                  <name_plural>Leitbegriffe</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="hierarchy_name" enabled="1" default="0">
@@ -111,6 +126,10 @@
               <name_singular>hierarki namn</name_singular>
               <name_plural>hierarki namn</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Hierarchiebezeichung</name_singular>
+                  <name_plural>Hierarchiebezeichnungen</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -123,6 +142,9 @@
         <label locale="en_CA">
           <name>List item sources</name>
         </label>
+        <label locale="de_DE">
+            <name>Ursprung Listentyp</name>
+        </label>
       </labels>
       <items>
         <item idno="local" enabled="1" default="0">
@@ -131,6 +153,10 @@
               <name_singular>Local</name_singular>
               <name_plural>Local</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ort</name_singular>
+                  <name_plural>Orte</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -149,6 +175,9 @@
         <label locale="sv_SE">
           <name>Etikett till posttypslista</name>
         </label>
+          <label locale="de_DE">
+              <name>Etikett für Listentypen</name>
+          </label>
       </labels>
       <items>
         <item idno="uf" enabled="1" default="1">
@@ -169,6 +198,10 @@
               <name_singular>Används för</name_singular>
               <name_plural>Används för</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Genutzt für</name_singular>
+                  <name_plural>Genutzt für</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="alt" enabled="1" default="0">
@@ -189,6 +222,10 @@
               <name_singular>Alternativ</name_singular>
               <name_plural>Alternativ</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ändern</name_singular>
+                  <name_plural>Ändern</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -207,6 +244,9 @@
         <label locale="sv_SE">
           <name>Grupperingstyper</name>
         </label>
+          <label locale="de_DE">
+              <name>Gruppierungstypen</name>
+          </label>
       </labels>
       <items>
         <item idno="user" enabled="1" default="0">
@@ -227,6 +267,10 @@
               <name_singular>Användargruppering</name_singular>
               <name_plural>Användargrupperingar</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Nutzergruppierung</name_singular>
+                  <name_plural>Nutzergruppierungen</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="public_presentation" enabled="1" default="1">
@@ -247,6 +291,10 @@
               <name_singular>Publik presentation</name_singular>
               <name_plural>publik presentationer</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>öffentliche Präsentation</name_singular>
+                  <name_plural>öffentliche Präsentationen</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -265,6 +313,9 @@
         <label locale="sv_SE">
           <name>Ställ in presentationstyper</name>
         </label>
+          <label locale="de_DE">
+              <name>Arten der Präsentation</name>
+          </label>
       </labels>
       <items>
         <item idno="slideshow" enabled="1" default="1">
@@ -285,6 +336,10 @@
               <name_singular>Bildspel</name_singular>
               <name_plural>Bildspel</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Diaschau</name_singular>
+                  <name_plural>Diaschau</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="thumbnail_image_list" enabled="1" default="0">
@@ -305,6 +360,10 @@
               <name_singular>Miniatyrbild lista</name_singular>
               <name_plural>Miniatyrbild listor</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Miniaturbilder</name_singular>
+                  <name_plural>Miniaturbilder</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="title_list" enabled="1" default="0">
@@ -325,6 +384,10 @@
               <name_singular>Titellista</name_singular>
               <name_plural>Titellistor</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Titelliste</name_singular>
+                  <name_plural>Titellisten</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="chronology" enabled="1" default="0">
@@ -345,6 +408,10 @@
               <name_singular>Kronologi</name_singular>
               <name_plural>Kronologier</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Chronologie</name_singular>
+                  <name_plural>Chronologien</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -363,6 +430,9 @@
         <label locale="sv_SE">
           <name>Ställ in postens primära status typer</name>
         </label>
+          <label locale="de_DE">
+              <name>Bestimmt den Statustyp für primäre Elemente</name>
+          </label>
       </labels>
       <items>
         <item idno="is_primary" enabled="1" default="0">
@@ -383,6 +453,10 @@
               <name_singular>Är primär</name_singular>
               <name_plural>Är primär</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ist primär</name_singular>
+                  <name_plural>Sind primär</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="is_not_primary" enabled="1" default="1">
@@ -403,6 +477,10 @@
               <name_singular>Är inte primär</name_singular>
               <name_plural>Är inte primär</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ist nicht primär</name_singular>
+                  <name_plural>Sind nicht primär</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -421,6 +499,9 @@
         <label locale="sv_SE">
           <name>Objekttyper</name>
         </label>
+          <label locale="de_DE">
+              <name>Objekttypen</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -438,6 +519,9 @@
         <label locale="sv_SE">
           <name>Objekt källor</name>
         </label>
+          <label locale="de_DE">
+              <name>Ursprung Objekt</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -455,6 +539,9 @@
         <label locale="sv_SE">
           <name>Objekt status</name>
         </label>
+          <label locale="de_DE">
+              <name>Objektstatus</name>
+          </label>
       </labels>
       <items>
         <item idno="pending_accession" enabled="1" default="1">
@@ -475,6 +562,10 @@
               <name_singular>i väntan på nyförvärv</name_singular>
               <name_plural>i väntan på nyförvärv</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Aufnahme ausstehend</name_singular>
+                  <name_plural>Aufnahmen ausstehend</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="accessioned" enabled="1" default="0">
@@ -495,6 +586,10 @@
               <name_singular>nyförvärvad</name_singular>
               <name_plural>nyförvärvad</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>aufgenommen</name_singular>
+                  <name_plural>aufgenommen</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="non_accessioned" enabled="1" default="0">
@@ -515,6 +610,10 @@
               <name_singular>ej nyförvärvad</name_singular>
               <name_plural>ej nyförvärvad</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>nicht aufgenommen</name_singular>
+                  <name_plural>nicht aufgenommen</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="potential_acquisition" enabled="1" default="0">
@@ -535,6 +634,10 @@
               <name_singular>potentiella förvärv</name_singular>
               <name_plural>potentiella förvärv</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>potentielle Anschaffung</name_singular>
+                  <name_plural>potentielle Anschaffungen</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -544,6 +647,9 @@
         <label locale="en_US">
           <name>Object deaccession types</name>
         </label>
+          <label locale="de_DE">
+              <name>Typen von Objekten zur Aussonderung</name>
+          </label>
       </labels>
       <items>
         <item idno="disposed" enabled="1" default="1">
@@ -551,7 +657,11 @@
             <label locale="en_US" preferred="1">
               <name_singular>disposed</name_singular>
               <name_plural>disposed</name_plural>
-            </label>
+          </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>entsorgt</name_singular>
+                  <name_plural>entsorgen</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -570,6 +680,9 @@
         <label locale="sv_SE">
           <name>Objekt förvärvstyper</name>
         </label>
+          <label locale="de_DE">
+              <name>Anschaffungsarten von Objekten</name>
+          </label>
       </labels>
       <items>
         <item idno="gift" enabled="1" default="1">
@@ -590,6 +703,10 @@
               <name_singular>gåva</name_singular>
               <name_plural>gåvor</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Geschenk</name_singular>
+                  <name_plural>Geschenke</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="bequest" enabled="1" default="0">
@@ -610,6 +727,10 @@
               <name_singular>donation</name_singular>
               <name_plural>donation</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Hinterlassenschaft</name_singular>
+                  <name_plural>Hinterlassenschaften</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="purchase" enabled="1" default="0">
@@ -630,6 +751,10 @@
               <name_singular>köp</name_singular>
               <name_plural>köp</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Kauf</name_singular>
+                  <name_plural>Käufe</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="loan" enabled="1" default="0">
@@ -650,6 +775,10 @@
               <name_singular>lån</name_singular>
               <name_plural>lån</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Leihgabe</name_singular>
+                  <name_plural>Leihgaben</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="long_term_loan" enabled="1" default="0">
@@ -670,6 +799,10 @@
               <name_singular>långfristigt lån</name_singular>
               <name_plural>långfristigt lån</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>langfristige Leihgabe</name_singular>
+                  <name_plural>langfristige Leihgaben</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -688,6 +821,9 @@
         <label locale="sv_SE">
           <name>Objekt etikettyper</name>
         </label>
+          <label locale="de_DE">
+              <name>Etikettentypen von Objekten</name>
+          </label>
       </labels>
       <items>
         <item idno="uf" enabled="1" default="0">
@@ -708,6 +844,10 @@
               <name_singular>använda för</name_singular>
               <name_plural>använda för</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Genutzt für</name_singular>
+                  <name_plural>Genutzt für</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="alt" enabled="1" default="1">
@@ -728,6 +868,10 @@
               <name_singular>alternativ</name_singular>
               <name_plural>alternativa</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ändern</name_singular>
+                  <name_plural>Ändern</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -746,6 +890,9 @@
         <label locale="sv_SE">
           <name>Objekt arbetsflöde status</name>
         </label>
+          <label locale="de_DE">
+              <name>Arbeitsstand eines Objektes</name>
+          </label>
       </labels>
       <items>
         <item idno="new" enabled="1" default="1" value="0">
@@ -766,6 +913,10 @@
               <name_singular>ny</name_singular>
               <name_plural>nya</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Neu</name_singular>
+                  <name_plural>Neu</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="editing_in_progress" enabled="1" default="0" value="1">
@@ -786,6 +937,10 @@
               <name_singular>redigering pågår</name_singular>
               <name_plural>redigering pågår</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>In Bearbeitung</name_singular>
+                  <name_plural>In Bearbeitung</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="editing_complete" enabled="1" default="0" value="2">
@@ -806,6 +961,10 @@
               <name_singular>redigering komplett</name_singular>
               <name_plural>redigering komplett</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Bearbeitung abgeschlossen</name_singular>
+                  <name_plural>Bearbeitungen abgeschlossen</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="review_in_progress" enabled="1" default="0" value="3">
@@ -826,6 +985,10 @@
               <name_singular>granskning pågår</name_singular>
               <name_plural>granskning pågår</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>In Prüfung</name_singular>
+                  <name_plural>In Prüfung</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="completed" enabled="1" default="0" value="4">
@@ -846,6 +1009,10 @@
               <name_singular>klar</name_singular>
               <name_plural>klar</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Fertig</name_singular>
+                  <name_plural>Fertig</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -863,6 +1030,9 @@
         </label>
         <label locale="sv_SE">
           <name>Objektåtkomst status</name>
+        </label>
+        <label locale="de_DE">
+          <name>Status für Objektzugriff</name>
         </label>
       </labels>
       <items>
@@ -884,6 +1054,10 @@
               <name_singular>inte tillgänglig för allmänheten</name_singular>
               <name_plural>inte tillgänglig för allmänheten</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>kein öffentlicher Zugriff</name_singular>
+                  <name_plural>kein öffentlicher Zugriff</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="restricted_public_access" enabled="1" default="0" value="2">
@@ -904,6 +1078,10 @@
               <name_singular>begränsad allmän tillgång</name_singular>
               <name_plural>begränsad allmän tillgång</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>begrenzter öffentlicher Zugang</name_singular>
+                  <name_plural>begrenzter öffentlicher Zugang</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="public_access" enabled="1" default="0" value="1">
@@ -924,6 +1102,10 @@
               <name_singular>tillgänglig för allmänheten</name_singular>
               <name_plural>tillgänglig för allmänheten</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>öffentlicher Zugriff</name_singular>
+                  <name_plural>öffentlicher Zugriff</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -1247,6 +1429,9 @@
         <label locale="sv_SE">
           <name>Lån etikettyp värden</name>
         </label>
+          <label locale="sv_SE">
+              <name>Typen von Etiketten für Leihgaben</name>
+          </label>
       </labels>
       <items>
         <item idno="in" enabled="1" default="0">
@@ -1267,6 +1452,10 @@
               <name_singular>inlån</name_singular>
               <name_plural>inlån</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Verleih</name_singular>
+                  <name_plural>Verleihe</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="out" enabled="1" default="1">
@@ -1287,6 +1476,10 @@
               <name_singular>utlån</name_singular>
               <name_plural>utlån</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ausleihe</name_singular>
+                  <name_plural>Ausleihen</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -1299,6 +1492,9 @@
         <label locale="en_CA">
           <name>Loan sources</name>
         </label>
+          <label locale="de_DE">
+              <name>Ursprung Leihgaben</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -1316,6 +1512,9 @@
         <label locale="sv_SE">
           <name>Förflyttningstyp värden</name>
         </label>
+          <label locale="de_DE">
+              <name>Werte für Bewegungtyp</name>
+          </label>
       </labels>
       <items>
         <item idno="movement" enabled="1" default="1">
@@ -1336,6 +1535,10 @@
               <name_singular>Förflyttning</name_singular>
               <name_plural>Förflyttningar</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Bewegung</name_singular>
+                  <name_plural>Bewegung</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -1348,6 +1551,9 @@
         <label locale="en_CA">
           <name>Movement sources</name>
         </label>
+          <label locale="de_DE">
+              <name>Ursprung Bewegung</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -1365,6 +1571,9 @@
         <label locale="sv_SE">
           <name>Person/organisation/folk typer</name>
         </label>
+          <label locale="de_DE">
+              <name>Typen von Entitäten</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -1382,6 +1591,9 @@
         <label locale="sv_SE">
           <name>Person/organisation/folk källor</name>
         </label>
+          <label locale="de_DE">
+              <name>Ursprung von Entitäten</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -1399,6 +1611,9 @@
         <label locale="sv_SE">
           <name>Person/organisation/folk etikettyper</name>
         </label>
+          <label locale="de_DE">
+              <name>Etikettentypen von Entitäten</name>
+          </label>
       </labels>
       <items>
         <item idno="uf" enabled="1" default="0">
@@ -1419,6 +1634,10 @@
               <name_singular>använda för</name_singular>
               <name_plural>använda för</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Genutzt für</name_singular>
+                  <name_plural>Genutzt für</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="alt" enabled="1" default="1">
@@ -1439,6 +1658,10 @@
               <name_singular>alternativ</name_singular>
               <name_plural>alternativa</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ändern</name_singular>
+                  <name_plural>Ändern</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -1457,6 +1680,9 @@
         <label locale="sv_SE">
           <name>Plats typer</name>
         </label>
+          <label locale="de_DE">
+              <name>Ortstypen</name>
+          </label>
       </labels>
       <items>
         <item idno="continent" enabled="1" default="0">
@@ -1476,7 +1702,11 @@
             <label locale="sv_SE" preferred="1">
               <name_singular>kontinent</name_singular>
               <name_plural>kontinenter</name_plural>
-            </label>
+          </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Kontinent</name_singular>
+                  <name_plural>Kontinente</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="country" enabled="1" default="1">
@@ -1497,6 +1727,10 @@
               <name_singular>land</name_singular>
               <name_plural>länder</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Land</name_singular>
+                  <name_plural>Länder</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="state" enabled="1" default="0">
@@ -1517,6 +1751,10 @@
               <name_singular>län/region</name_singular>
               <name_plural>län/regioner</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Region</name_singular>
+                  <name_plural>Regionen</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="city" enabled="1" default="0">
@@ -1537,6 +1775,10 @@
               <name_singular>kommun</name_singular>
               <name_plural>kommuner</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Stadt</name_singular>
+                  <name_plural>Städte</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="county" enabled="1" default="0">
@@ -1569,6 +1811,10 @@
               <name_singular>kvarter</name_singular>
               <name_plural>kvarter</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Stadtviertel</name_singular>
+                  <name_plural>Stadtviertel</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="location" enabled="1" default="0">
@@ -1589,6 +1835,10 @@
               <name_singular>plats</name_singular>
               <name_plural>platser</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ort</name_singular>
+                  <name_plural>Orte</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="river" enabled="1" default="0">
@@ -1609,6 +1859,10 @@
               <name_singular>flod</name_singular>
               <name_plural>floder</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Fluss</name_singular>
+                  <name_plural>Flüsse</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="socken" enabled="1" default="0">
@@ -1624,7 +1878,11 @@
             <label locale="sv_SE" preferred="1">
               <name_singular>socken</name_singular>
               <name_plural>socknar</name_plural>
-            </label>
+          </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Gemeinde</name_singular>
+                  <name_plural>Gemeinde</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="other" enabled="1" default="0">
@@ -1645,6 +1903,10 @@
               <name_singular>annan typ</name_singular>
               <name_plural>andra typer</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Anderer Typ</name_singular>
+                  <name_plural>Andere Typen</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -1663,6 +1925,9 @@
         <label locale="sv_SE">
           <name>Plats etikettyp värden</name>
         </label>
+          <label locale="de_DE">
+              <name>Etikettentypen von Orten</name>
+          </label>
       </labels>
       <items>
         <item idno="uf" enabled="1" default="0">
@@ -1683,6 +1948,10 @@
               <name_singular>använda för</name_singular>
               <name_plural>använda för</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Genutzt für</name_singular>
+                  <name_plural>Genutzt für</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="alt" enabled="1" default="1">
@@ -1703,6 +1972,10 @@
               <name_singular>alternativ</name_singular>
               <name_plural>alternativa</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ändern</name_singular>
+                  <name_plural>Ändern</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -1721,6 +1994,9 @@
         <label locale="sv_SE">
           <name>Plats källor</name>
         </label>
+          <label locale="de_DE">
+              <name>Ursprung Orte</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -1830,6 +2106,9 @@
         <label locale="sv_SE">
           <name>Samlingstyper</name>
         </label>
+          <label locale="de_DE">
+              <name>Typen von Sammlungen</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -1847,6 +2126,9 @@
         <label locale="sv_SE">
           <name>Samlingskällor</name>
         </label>
+          <label locale="de_DE">
+              <name>Ursprung von Sammlungen</name>
+          </label>
       </labels>
       <items/>
     </list>
@@ -1864,6 +2146,9 @@
         <label locale="sv_SE">
           <name>Samling etikettyper</name>
         </label>
+          <label locale="de_DE">
+              <name>Etikettentypen von Sammlungen</name>
+          </label>
       </labels>
       <items>
         <item idno="uf" enabled="1" default="0">
@@ -1884,6 +2169,10 @@
               <name_singular>använda för</name_singular>
               <name_plural>använda för</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Genutzt für</name_singular>
+                  <name_plural>Genutzt für</name_plural>
+              </label>
           </labels>
         </item>
         <item idno="alt" enabled="1" default="1">
@@ -1904,6 +2193,10 @@
               <name_singular>alternativ</name_singular>
               <name_plural>alternativa</name_plural>
             </label>
+              <label locale="de_DE" preferred="1">
+                  <name_singular>Ändern</name_singular>
+                  <name_plural>Ändern</name_plural>
+              </label>
           </labels>
         </item>
       </items>
@@ -2191,7 +2484,6 @@
       </items>
     </list>
   </lists>
-
   <elementSets>
     <metadataElement code="set_description" datatype="Text">
       <labels>
@@ -2211,6 +2503,10 @@
           <name>Introduktion</name>
           <description>Berättande beskrivning, för gruppering. Detta är den primära texten som används när grupperingen visas offentligt.</description>
         </label>
+          <label locale="de_DE">
+              <name>Einführung</name>
+              <description>Natürliche Beschreibung von Gruppierungen. Dies ist der hauptsächliche Text der bei der öffentlichen Präsentation angezeigt wird.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2247,6 +2543,10 @@
           <name>Post beskrivning</name>
           <description>Berättande beskrivning för poster i denna gruppering. Detta är den primära texten som används när poster i grupperingen visas offentligt.</description>
         </label>
+          <label locale="de_DE">
+              <name>Beschreibung des Elementes</name>
+              <description>Natürliche Beschreibung eines Elementes innerhalb einer Gruppierung. Dies ist der hauptsächliche Text der bei der öffentlichen Präsentation eines Elementes der im Kontext einer Gruppierung angezeigt wird.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2283,6 +2583,10 @@
           <name>Presentation typ</name>
           <description>Bestämmer hur gruppering återges när den visas för allmänheten i Pawtucket/Pawtucket2 front-end.</description>
         </label>
+          <label locale="de_DE">
+              <name>Art der Präsentation</name>
+              <description>Legt fest wie die Gruppierung dargestellt wird, wenn sie im Pawtucket Front-End angezeigt wird.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2317,6 +2621,10 @@
           <name>Är det primära objektet för gruppering?</name>
           <description>Objekt markerad som primär kommer att användas för att representera grupperingen i sin helhet när det ingår i en lista över grupperingar.</description>
         </label>
+          <label locale="de_DE">
+              <name>Ist das Element das Primäre in der Gruppierung?</name>
+              <description>Das Element das mit primär markiert wird, wird genutzt um die Gruppierung innerhalb einer Liste von Gruppierungen zu repräsentieren.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2351,6 +2659,10 @@
           <name>Kronologi elementkod</name>
           <description>Elementkoden för datumintervall element som användas för att placera in föremål i kronologisk ordning.</description>
         </label>
+          <label locale="de_DE">
+              <name>chronolgischer Elementcode</name>
+              <description>Elementcode eines Zeitraumes für die Darstellung Elementen einer Gruppierung in chronologischer Reihenfolge.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2385,6 +2697,10 @@
           <name>Datum för godkännande</name>
           <description>Det datum då lånet beviljades.</description>
         </label>
+          <label locale="de_DE">
+              <name>Datum der Autorisierung</name>
+              <description>Datum zum Zeitpunkt der Autorisierung der Leihgabe.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">40</setting>
@@ -2421,6 +2737,10 @@
           <name>Inlåningsdatum</name>
           <description>Datumet ett lån kommer till institutionen.</description>
         </label>
+          <label locale="de_DE">
+              <name>Datum der Leihe</name>
+              <description>Zeitpunkt des Eingangs einer Leihgabe im Institut.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">40</setting>
@@ -2458,6 +2778,10 @@
           <name>Utlåningsdatum</name>
           <description>Datumet ett lån kommer till institutionen.</description>
         </label>
+          <label locale="de_DE">
+              <name>Datum der Verleihe</name>
+              <description>Zeitpunkt des Eingangs einer Leihgabe im Institut.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">40</setting>
@@ -2495,6 +2819,10 @@
           <name>Lån återlämningsdatum</name>
           <description>Datumet ett lån kommer tillbaka till det långivande institutet.</description>
         </label>
+          <label locale="de_DE">
+              <name>Datum der Rückgabe einer Leihgabe</name>
+              <description>Datum der Rückgabe einer Leihgabe an die verleihende Institution.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">40</setting>
@@ -2531,6 +2859,10 @@
           <name>Lån förnyelse ansökningsdag</name>
           <description>Datumet att ansöka om förnyelse för lånet.</description>
         </label>
+          <label locale="de_DE">
+              <name>Datum zur Verlängerung der Leihfrist</name>
+              <description>Datum für die Verlängerung der Leihfrist einer Leihgabe.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">40</setting>
@@ -2567,6 +2899,10 @@
           <name>Lånevillkor</name>
           <description>En redogörelse för villkoren på ett lån.</description>
         </label>
+          <label locale="de_DE">
+              <name>Leihbedingungen</name>
+              <description>Aussage über die Bedingungen einer Leihgabe.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2603,6 +2939,10 @@
           <name>Lån anteckning</name>
           <description>Allmän information om lånet.</description>
         </label>
+          <label locale="de_DE">
+              <name>Notiz zur Leihgabe</name>
+              <description>Allgemeine Information zu einer Leihgabe.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2639,6 +2979,10 @@
           <name>Lån syfte</name>
           <description>Allmän information om syftet med lånet.</description>
         </label>
+          <label locale="de_DE">
+              <name>Grund für die Leihgabe</name>
+              <description>Allgemine Information über den Grund für die Leihgabe.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2675,6 +3019,10 @@
           <name>Förflyttningsmetod</name>
           <description>Den metod som används i förflyttningen av ett objekt.</description>
         </label>
+          <label locale="de_DE">
+              <name>Methode der Bewegung</name>
+              <description>Die angwandte Metode für die Bewegung eines Objektes.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2711,6 +3059,10 @@
           <name>Förflyttning anteckning</name>
           <description>Ytterligare information om förflyttning av ett objekt eller en grupp av objekt.</description>
         </label>
+          <label locale="de_DE">
+              <name>Notiz der Bewegung</name>
+              <description>Zusätzliche Information über die Bewegung eines Objektes oder einer Grupper von Objekten.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2747,6 +3099,10 @@
           <name>Planerad borttagningsdatum</name>
           <description>Datumet ett objekt ska tas bort från sin nuvarande plats.</description>
         </label>
+          <label locale="de_DE">
+              <name>geplantes Datum der Entfernung</name>
+              <description>Datum für die Entfernung eines Objektes von seinem derzeitigen Standpunkt.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">40</setting>
@@ -2783,6 +3139,10 @@
           <name>Planerat borttagningsdatum</name>
           <description>Datumet ett föremål faktiskt togs bort från dess nuvarande plats.</description>
         </label>
+          <label locale="de_DE">
+              <name>Datum der Entfernung</name>
+              <description>Datum an dem das Objekt tatsächlich von seinem aktuellen Standort entfernt wurde.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">40</setting>
@@ -2819,6 +3179,10 @@
           <name>Orsak till flytt</name>
           <description>Syftet eller skäl för förflyttning av objekt eller en grupp av objekt.</description>
         </label>
+          <label locale="de_DE">
+              <name>Grund der Bewegung</name>
+              <description>Der Grund für die Bewegung eines Objektes oder einer Gruppe von Objekten.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2855,6 +3219,10 @@
           <name>Inledning</name>
           <description>Berättande beskrivning av turen. Detta är den primära texten som används när turen presenteras.</description>
         </label>
+          <label locale="de_DE">
+              <name>Einführung</name>
+              <description>Natürliche Beschreibung einer Tour. Dies ist der hauptsächliche Text der bei der öffentlichen Präsentation angezeigt wird.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2891,6 +3259,10 @@
           <name>Inledning</name>
           <description>Berättande beskrivning av turen. Detta är den primära texten som används när turen presenteras.</description>
         </label>
+          <label locale="de_DE">
+              <name>Einführung</name>
+              <description>Natürliche Beschreibung eines Touraufenthaltes.  Dies ist der hauptsächliche Text der bei der öffentlichen Präsentation angezeigt wird.</description>
+          </label>
       </labels>
       <settings>
         <setting name="fieldWidth">70</setting>
@@ -2927,6 +3299,10 @@
           <name>Georeferens</name>
           <description>Plats för detta stopp.</description>
         </label>
+          <label locale="de_DE">
+              <name>Georeferenz</name>
+              <description>Ort des Aufenthaltes.</description>
+          </label>
       </labels>
       <settings>
 
@@ -2958,6 +3334,9 @@
         <label locale="sv_SE">
           <name>Lån redigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Leihgaben</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -2974,6 +3353,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -2982,11 +3364,13 @@
                 <setting name="label" locale="en_US">Short description of loan</setting>
                 <setting name="label" locale="en_CA">Short description of loan</setting>
                 <setting name="label" locale="fr_FR">Rapide description du prêt</setting>
+                  <setting name="label" locale="de_DE">Kurze Beschreibung der Leihgabe</setting>
                 <setting name="label" locale="sv_SE">Kort beskrivning av lån</setting>
                 <setting name="add_label" locale="en_US">Add short description</setting>
                 <setting name="add_label" locale="en_CA">Add short description</setting>
                 <setting name="add_label" locale="fr_FR">Ajouter une courte description</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till kort beskrivning</setting>
+                  <setting name="add_label" locale="de_DE">Kurze Beschreibung hinzufügen</setting>
               </settings>
             </placement>
             <placement code="idno">
@@ -3035,6 +3419,9 @@
             <label locale="sv_SE">
               <name>Relationer</name>
             </label>
+              <label locale="de_DE">
+                  <name>Beziehungen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_objects">
@@ -3064,6 +3451,9 @@
         <label locale="sv_SE">
           <name>Förflyttning redigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Bewegungen</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3080,6 +3470,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3088,9 +3481,11 @@
                 <setting name="label" locale="en_US">Short description of movement</setting>
                 <setting name="label" locale="en_CA">Short description of movement</setting>
                 <setting name="label" locale="fr_FR">Rapide description du mouvement</setting>
+                  <setting name="label" locale="de_DE">Kurze Beschreibung der Bewegung</setting>
                 <setting name="add_label" locale="en_US">Add short description</setting>
                 <setting name="add_label" locale="en_CA">Add short description</setting>
                 <setting name="add_label" locale="fr_FR">Ajouter une courte description</setting>
+                  <setting name="add_label" locale="de_DE">Kurze Beschreibung hinzufügen</setting>
               </settings>
             </placement>
             <placement code="idno">
@@ -3130,6 +3525,9 @@
             <label locale="sv_SE">
               <name>Relationer</name>
             </label>
+              <label locale="de_DE">
+                  <name>Beziehungen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_objects">
@@ -3159,6 +3557,9 @@
         <label locale="sv_SE">
           <name>List redigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Listen</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3175,6 +3576,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3213,6 +3617,9 @@
         <label locale="sv_SE">
           <name>Listpost redigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Listenelemente</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3229,6 +3636,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="hier_location">
@@ -3286,6 +3696,9 @@
             <label locale="sv_SE">
               <name>Alternativa namn</name>
             </label>
+              <label locale="de_DE">
+                  <name>Alternative Namen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="nonpreferred_labels">
@@ -3307,6 +3720,9 @@
             <label locale="sv_SE">
               <name>Relaterade listobjekt</name>
             </label>
+              <label locale="de_DE">
+                  <name>Verwandtes Listenelement</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_list_items">
@@ -3330,6 +3746,9 @@
         <label locale="sv_SE">
           <name>Relationstyper konfigurationsredigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Konfiguration von Beziehungstypen</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3346,6 +3765,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3355,10 +3777,12 @@
                 <setting name="label" locale="en_CA">Relationship names</setting>
                 <setting name="label" locale="fr_FR">Noms de relations</setting>
                 <setting name="label" locale="sv_SE">Relationsnamn</setting>
+                  <setting name="label" locale="de_DE">Beziehungsbezeichnung</setting>
                 <setting name="add_label" locale="en_US">Add relationship name</setting>
                 <setting name="add_label" locale="en_CA">Add relationship name</setting>
                 <setting name="add_label" locale="fr_FR">Ajouter un nom de relation</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till relationsnamn</setting>
+                  <setting name="add_label" locale="de_DE">Beziehungsbezeichnung hinzufügen</setting>
               </settings>
             </placement>
             <placement code="type_code">
@@ -3397,6 +3821,9 @@
         <label locale="sv_SE">
           <name>Gruppering redigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Gruppierungen</name>
+          </label>
       </labels>
       <screens>
         <screen idno="set_info" default="1">
@@ -3413,6 +3840,9 @@
             <label locale="sv_SE">
               <name>Gruppering info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3422,10 +3852,12 @@
                 <setting name="label" locale="en_CA">Set title</setting>
                 <setting name="label" locale="fr_FR">Titre de l\'ensemble</setting>
                 <setting name="label" locale="sv_SE">Gruppering titel</setting>
+                  <setting name="label" locale="de_DE">Gruppierungstitel</setting>
                 <setting name="add_label" locale="en_US">Add title</setting>
                 <setting name="add_label" locale="en_CA">Add title</setting>
                 <setting name="add_label" locale="fr_FR">Ajouter un titre</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till titel</setting>
+                  <setting name="add_label" locale="de_DE">Gruppierungstitel hinzufügen</setting>
               </settings>
             </placement>
             <placement code="set_code">
@@ -3462,6 +3894,9 @@
             <label locale="sv_SE">
               <name>Objekt</name>
             </label>
+              <label locale="de_DE">
+                  <name>Objekt</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_set_items">
@@ -3485,6 +3920,9 @@
         <label locale="sv_SE">
           <name>Grupperingsobjekt redigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Gruppierungselemente</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3501,6 +3939,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3510,10 +3951,12 @@
                 <setting name="label" locale="en_CA">Caption</setting>
                 <setting name="label" locale="fr_FR">Légende</setting>
                 <setting name="label" locale="sv_SE">Bildtext</setting>
+                  <setting name="label" locale="de_DE">Bildbeschriftung</setting>
                 <setting name="add_label" locale="en_US">Add caption</setting>
                 <setting name="add_label" locale="en_CA">Add caption</setting>
                 <setting name="add_label" locale="fr_FR">Ajouter une légende</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till bildtext</setting>
+                  <setting name="add_label" locale="de_DE">Bildbeschriftung hinzufügen</setting>
               </settings>
             </placement>
             <placement code="ca_attribute_set_item_is_primary">
@@ -3540,6 +3983,9 @@
         <label locale="sv_SE">
           <name>Sök formulär konfigurationsredigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Konfiguration von Suchformularen</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3556,6 +4002,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3565,10 +4014,12 @@
                 <setting name="label" locale="en_CA">Form name</setting>
                 <setting name="label" locale="fr_FR">Nom du formulaire</setting>
                 <setting name="label" locale="sv_SE">Formulär namn</setting>
+                  <setting name="label" locale="de_DE">Formularbezeichnung</setting>
                 <setting name="add_label" locale="en_US">Add form name</setting>
                 <setting name="add_label" locale="en_CA">Add form name</setting>
                 <setting name="add_label" locale="fr_FR">Ajouter un nom de formulaire</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till formulärnamn</setting>
+                  <setting name="add_label" locale="de_DE">Formularbezeichnung hinzufügen</setting>
               </settings>
             </placement>
             <placement code="form_code">
@@ -3610,6 +4061,9 @@
         <label locale="sv_SE">
           <name>Display list konfigurationsredigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Konfiguration der Anzeige von Listen</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3626,6 +4080,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3635,10 +4092,12 @@
                 <setting name="label" locale="en_CA">Display list name</setting>
                 <setting name="label" locale="fr_FR">Nom de la liste</setting>
                 <setting name="label" locale="sv_SE">Display listnamn</setting>
+                  <setting name="label" locale="de_DE">Anzeigename für Liste</setting>
                 <setting name="add_label" locale="en_US">Add display list name</setting>
                 <setting name="add_label" locale="en_CA">Add display list name</setting>
                 <setting name="add_label" locale="fr_FR">Ajouter un nom de liste</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till display listnamn</setting>
+                  <setting name="add_label" locale="de_DE">Anzeigename für Liste hinzufügen</setting>
               </settings>
             </placement>
             <placement code="display_code">
@@ -3678,6 +4137,9 @@
             <label locale="sv_SE">
               <name>Display lista</name>
             </label>
+              <label locale="de_DE">
+                  <name>Listenanzeige</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_bundle_display_placements">
@@ -3701,6 +4163,9 @@
         <label locale="sv_SE">
           <name>Tur redigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Touren</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3717,6 +4182,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3726,10 +4194,12 @@
                 <setting name="label" locale="en_CA">Tour title</setting>
                 <setting name="label" locale="fr_FR">Tour title</setting>
                 <setting name="label" locale="sv_SE">Tur titel</setting>
+                  <setting name="label" locale="de_DE">Tourtitel</setting>
                 <setting name="add_label" locale="en_US">Add title</setting>
                 <setting name="add_label" locale="en_CA">Add title</setting>
                 <setting name="add_label" locale="fr_FR">Add title</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till titel</setting>
+                  <setting name="add_label" locale="de_DE">Tourtitel hinzufügen</setting>
               </settings>
             </placement>
             <placement code="tour_code">
@@ -3766,6 +4236,9 @@
             <label locale="sv_SE">
               <name>Relationer</name>
             </label>
+              <label locale="de_DE">
+                  <name>Beziehungen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_objects">
@@ -3795,6 +4268,9 @@
         <label locale="sv_SE">
           <name>Tur stopp redigerare</name>
         </label>
+          <label locale="de_DE">
+              <name>Editor für Touraufenthalte</name>
+          </label>
       </labels>
       <screens>
         <screen idno="basic" default="1">
@@ -3811,6 +4287,9 @@
             <label locale="sv_SE">
               <name>Grundläggande info</name>
             </label>
+              <label locale="de_DE">
+                  <name>grundlegende Informationen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="preferred_labels">
@@ -3820,10 +4299,12 @@
                 <setting name="label" locale="en_CA">Tour stop title</setting>
                 <setting name="label" locale="fr_FR">Tour stop title</setting>
                 <setting name="label" locale="sv_SE">Tur stopp titel</setting>
+                  <setting name="label" locale="de_DE">Bezeichnung für Touraufenthalt</setting>
                 <setting name="add_label" locale="en_US">Add title</setting>
                 <setting name="add_label" locale="en_CA">Add title</setting>
                 <setting name="add_label" locale="fr_FR">Add title</setting>
                 <setting name="add_label" locale="sv_SE">Lägg till titel</setting>
+                  <setting name="add_label" locale="de_DE">Bezeichnung für Touraufenthalt hinzufügen</setting>
               </settings>
             </placement>
             <placement code="idno">
@@ -3863,6 +4344,9 @@
             <label locale="sv_SE">
               <name>Relationer</name>
             </label>
+              <label locale="de_DE">
+                  <name>Beziehungen</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_objects">
@@ -3899,6 +4383,9 @@
             <label locale="sv_SE">
               <name>Nyckelord</name>
             </label>
+              <label locale="de_DE">
+                  <name>Schlüsselbegriffe</name>
+              </label>
           </labels>
           <bundlePlacements>
             <placement code="ca_list_items">
@@ -3930,6 +4417,10 @@
               <typename>lånas ut från</typename>
               <typename_reverse>är långivare av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>ist geliehen von</typename>
+                  <typename_reverse>ist Verleiher von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -3952,6 +4443,10 @@
               <typename>är lånat från</typename>
               <typename_reverse>är låntagare av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>ist geborgt von</typename>
+                  <typename_reverse>ist Verleiher von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -3974,6 +4469,10 @@
               <typename>är auktoriserad av</typename>
               <typename_reverse>är behörighetsgivare</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>ist genehmigt von</typename>
+                  <typename_reverse>hat genehmigt</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4000,6 +4499,10 @@
               <typename>är placerad på</typename>
               <typename_reverse>är platsen för</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>befindet sich bei</typename>
+                  <typename_reverse>ist Standort von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4026,6 +4529,10 @@
               <typename>har som en del av</typename>
               <typename_reverse>är en del av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat als Bestandteil</typename>
+                  <typename_reverse>ist Bestandteil von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4052,6 +4559,10 @@
               <typename>var godkänd av</typename>
               <typename_reverse>var behörighetsgivare</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>wurde genehmigt von</typename>
+                  <typename_reverse>hat genehmigt</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4074,6 +4585,10 @@
               <typename>var flyttad av</typename>
               <typename_reverse>var flyttare</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>wurde bewegt durch</typename>
+                  <typename_reverse>hat bewegt</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4100,6 +4615,10 @@
               <typename>har som en del av</typename>
               <typename_reverse>är en del av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat als Bestandteil</typename>
+                  <typename_reverse>ist Bestandteil von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4126,6 +4645,10 @@
               <typename>har som en del av</typename>
               <typename_reverse>är en del av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat als Bestandteil</typename>
+                  <typename_reverse>ist Bestandteil von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4152,6 +4675,10 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4178,6 +4705,10 @@
               <typename>är placerad på</typename>
               <typename_reverse>är platsen för</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>befindet sich bei</typename>
+                  <typename_reverse>ist Standort von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4204,6 +4735,10 @@
               <typename>är placerad på</typename>
               <typename_reverse>är platsen för</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>befindet sich bei</typename>
+                  <typename_reverse>ist Standort von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4230,6 +4765,10 @@
               <typename>skapades av</typename>
               <typename_reverse>är skaparen</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>wurde hergestellt von</typename>
+                  <typename_reverse>ist Hersteller</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4252,6 +4791,10 @@
               <typename>rättigheter innehas av</typename>
               <typename_reverse>är rättighetsinnehavare</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>Rechte gehalten von</typename>
+                  <typename_reverse>ist Rechteinhaber</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4278,6 +4821,10 @@
               <typename>avbildar</typename>
               <typename_reverse>avbildar</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>bildet ab</typename>
+                  <typename_reverse>bildet ab</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4304,6 +4851,10 @@
               <typename>avbildar</typename>
               <typename_reverse>avbildar</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>bildet ab</typename>
+                  <typename_reverse>bildet ab</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4330,6 +4881,10 @@
               <typename>har ämnet</typename>
               <typename_reverse>är ämnet</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat Thema</typename>
+                  <typename_reverse>ist Thema</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4356,6 +4911,10 @@
               <typename>del av</typename>
               <typename_reverse>del av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>Bestandteil von</typename>
+                  <typename_reverse>Bestandteil von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4382,6 +4941,10 @@
               <typename>nuvarande plats</typename>
               <typename_reverse>nuvarande plats</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>aktueller Standort</typename>
+                  <typename_reverse>aktueller Standort</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4404,6 +4967,10 @@
               <typename>related</typename>
               <typename_reverse>related</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>in Beziehung</typename>
+                  <typename_reverse>in Beziehung</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4426,6 +4993,10 @@
               <typename>est lié à</typename>
               <typename_reverse>est lié à</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4448,6 +5019,10 @@
               <typename>a pour sujet</typename>
               <typename_reverse>est le sujet</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat Thema</typename>
+                  <typename_reverse>ist Thema</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4474,6 +5049,10 @@
               <typename>är placerad</typename>
               <typename_reverse>är placering</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>befindet sich bei</typename>
+                  <typename_reverse>ist Standort von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4500,6 +5079,10 @@
               <typename>har ämne</typename>
               <typename_reverse>är ämne</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat Thema</typename>
+                  <typename_reverse>ist Thema</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4526,6 +5109,10 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4552,6 +5139,10 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat als Bestandteil</typename>
+                  <typename_reverse>ist Bestandteil von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -4578,13 +5169,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung zu</typename>
+                  <typename_reverse>steht in Beziehung mit</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_storage_locations_x_storage_locations">
       <types>
         <type code="related" default="1">
@@ -4605,13 +5199,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_occurrences_x_storage_locations">
       <types>
         <type code="related" default="1">
@@ -4632,13 +5229,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_places_x_storage_locations">
       <types>
         <type code="related" default="1">
@@ -4659,13 +5259,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_storage_locations_x_vocabulary_terms">
       <types>
         <type code="related" default="1">
@@ -4686,13 +5289,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_loans_x_places">
       <types>
         <type code="related" default="1">
@@ -4713,13 +5319,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_loans_x_occurrences">
       <types>
         <type code="related" default="1">
@@ -4740,13 +5349,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_loans_x_collections">
       <types>
         <type code="related" default="1">
@@ -4767,13 +5379,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_loans_x_storage_locations">
       <types>
         <type code="related" default="1">
@@ -4794,13 +5409,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_loans_x_vocabulary_terms">
       <types>
         <type code="related" default="1">
@@ -4821,13 +5439,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_loans_x_object_lots">
       <types>
         <type code="related" default="1">
@@ -4848,13 +5469,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_loans_x_loans">
       <types>
         <type code="related" default="1">
@@ -4875,13 +5499,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_movements_x_places">
       <types>
         <type code="related" default="1">
@@ -4902,13 +5529,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_movements_x_occurrences">
       <types>
         <type code="related" default="1">
@@ -4929,13 +5559,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_movements_x_collections">
       <types>
         <type code="related" default="1">
@@ -4956,13 +5589,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_movements_x_storage_locations">
       <types>
         <type code="related" default="1">
@@ -4983,13 +5619,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung mit</typename>
+                  <typename_reverse>steht in Beziehung zu</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_loans_x_object_representations">
       <types>
         <type code="lender" default="1">
@@ -5010,13 +5649,16 @@
               <typename>lånas ut från</typename>
               <typename_reverse>är långivare av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>ist geliehen von</typename>
+                  <typename_reverse>ist Verleiher von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_movements_x_object_representations">
       <types>
         <type code="part" default="1">
@@ -5037,13 +5679,16 @@
               <typename>har som en del av</typename>
               <typename_reverse>är en del av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat als Bestandteil</typename>
+                  <typename_reverse>ist Bestandteil von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_object_lots_x_object_representations">
       <types>
         <type code="part" default="1">
@@ -5064,13 +5709,16 @@
               <typename>har som en del av</typename>
               <typename_reverse>är en del av</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>hat als Bestandteil</typename>
+                  <typename_reverse>ist Bestandteil von</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_object_lots_x_object_lots">
       <types>
         <type code="related" default="1">
@@ -5091,13 +5739,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung zu</typename>
+                  <typename_reverse>steht in Beziehung mit</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_object_lots_x_occurrences">
       <types>
         <type code="related" default="1">
@@ -5118,13 +5769,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung zu</typename>
+                  <typename_reverse>steht in Beziehung mit</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_movements_x_vocabulary_terms">
       <types>
         <type code="related" default="1">
@@ -5145,13 +5799,16 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung zu</typename>
+                  <typename_reverse>steht in Beziehung mit</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
         </type>
       </types>
     </relationshipTable>
-
     <relationshipTable name="ca_movements_x_movements">
       <types>
         <type code="related" default="1">
@@ -5172,6 +5829,10 @@
               <typename>är relaterad till</typename>
               <typename_reverse>är relaterad till</typename_reverse>
             </label>
+              <label locale="de_DE">
+                  <typename>steht in Beziehung zu</typename>
+                  <typename_reverse>steht in Beziehung mit</typename_reverse>
+              </label>
           </labels>
           <subTypeLeft> </subTypeLeft>
           <subTypeRight></subTypeRight>
@@ -5323,6 +5984,9 @@
         <label locale="en_US">
           <name>Researcher Display</name>
         </label>
+          <label locale="de_DE">
+              <name>wissenschaftliche Anzeige</name>
+          </label>
       </labels>
       <bundlePlacements>
         <placement code="idno">
@@ -5346,7 +6010,6 @@
       </bundlePlacements>
     </display>
   </displays>
-
   <searchForms>
     <searchForm code="ca_objects_adv_search" type="ca_objects" system="1">
       <labels>
@@ -5359,6 +6022,9 @@
         <label locale="sv_SE">
           <name>Utökad sökning</name>
         </label>
+          <label locale="de_DE">
+              <name>Erweiterte Suche</name>
+          </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
@@ -5368,6 +6034,7 @@
           <bundle>ca_object_labels.name</bundle>
           <settings>
             <setting name="label" locale="en_US">Title</setting>
+              <setting name="label" locale="de_DE">Titel</setting>
           </settings>
         </placement>
         <placement code="idno">
@@ -5398,6 +6065,9 @@
         <label locale="sv_SE">
           <name>Utökad sökning</name>
         </label>
+          <label locale="de_DE">
+              <name>Erweiterte Suche</name>
+          </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
@@ -5437,6 +6107,9 @@
         <label locale="sv_SE">
           <name>Utökad sökning</name>
         </label>
+          <label locale="de_DE">
+              <name>Erweiterte Suche</name>
+          </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
@@ -5470,6 +6143,9 @@
         <label locale="sv_SE">
           <name>Utökad sökning</name>
         </label>
+          <label locale="de_DE">
+              <name>Erweiterte Suche</name>
+          </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
@@ -5479,6 +6155,7 @@
           <bundle>ca_occurrence_labels.name</bundle>
           <settings>
             <setting name="label" locale="en_US">Title</setting>
+              <setting name="label" locale="de_DE">Titel</setting>
           </settings>
         </placement>
         <placement code="idno">
@@ -5503,6 +6180,9 @@
         <label locale="sv_SE">
           <name>Utökad sökning</name>
         </label>
+          <label locale="de_DE">
+              <name>Erweiterte Suche</name>
+          </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
@@ -5536,6 +6216,9 @@
         <label locale="sv_SE">
           <name>Utökad sökning</name>
         </label>
+          <label locale="de_DE">
+              <name>Erweiterte Suche</name>
+          </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
@@ -5560,6 +6243,9 @@
         <label locale="sv_SE">
           <name>Utökad sökning</name>
         </label>
+          <label locale="de_DE">
+              <name>Erweiterte Suche</name>
+          </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
@@ -5587,6 +6273,9 @@
         <label locale="sv_SE">
           <name>Utökad sökning</name>
         </label>
+          <label locale="de_DE">
+              <name>Erweiterte Suche</name>
+          </label>
       </labels>
       <settings>
         <setting name="form_width">3</setting>
