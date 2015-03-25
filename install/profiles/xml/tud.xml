@@ -4320,6 +4320,8 @@
             <placement code="ca_objects_book">
               <bundle>ca_objects</bundle>
               <settings>
+                  <setting name="label" locale="de_DE">Related objects (book)</setting>
+                  <setting name="label" locale="en_US">Verwandte Objekte (Buch)</setting>
                 <setting name="restrict_to_relationship_types">item_series</setting>
                 <setting name="restrict_to_types">book</setting>
                 <setting name="list_format">list</setting>
@@ -4334,6 +4336,8 @@
             <placement code="ca_objects_other">
               <bundle>ca_objects</bundle>
               <settings>
+                  <setting name="label" locale="de_DE">Related objects (other objects)</setting>
+                  <setting name="label" locale="en_US">Verwandte Objekte (Andere Objekte)</setting>
                 <setting name="restrict_to_relationship_types">other_series</setting>
                 <setting name="restrict_to_types">other</setting>
                 <setting name="list_format">list</setting>
