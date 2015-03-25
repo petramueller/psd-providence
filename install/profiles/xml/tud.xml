@@ -725,6 +725,18 @@
             </label>
           </labels>
         </item>
+          <item idno="nc" value="NC" enabled="1" default="0">
+              <labels>
+                  <label locale="en_US" preferred="1">
+                      <name_singular>No category</name_singular>
+                      <name_plural>No categories</name_plural>
+                  </label>
+                  <label locale="de_DE" preferred="1">
+                      <name_singular>Keine Kategorie</name_singular>
+                      <name_plural>Keine Kategorien</name_plural>
+                  </label>
+              </labels>
+          </item>
       </items>
     </list>
     <list code="thesis_type" hierarchical="0" system="0" vocabulary="1">
@@ -4102,8 +4114,8 @@
             <placement code="paper_category_list_attr_placement">
               <bundle>ca_attribute_paper_category_list_attr</bundle>
               <settings>
-                <setting name="label" locale="en_US">Category</setting>
-                <setting name="label" locale="de_DE">Kategorie</setting>
+                <setting name="label" locale="en_US">Paper typ</setting>
+                <setting name="label" locale="de_DE">Typ der wissenschaftlichen Arbeit</setting>
                 <setting name="sortDirection">ASC</setting>
                 <setting name="display_template">^ca_list_items.preferred_labels (^ca_list_items.idno)</setting>
               </settings>
@@ -4852,6 +4864,8 @@
         <placement code="p36">
           <bundle>_fulltext</bundle>
           <settings>
+              <setting name="label" locale="en_US">Full text</setting>
+              <setting name="label" locale="de_DE">Volltext</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
@@ -4899,8 +4913,8 @@
         <placement code="p41">
           <bundle>ca_item_tags.tag</bundle>
           <settings>
-            <setting name="label" locale="en_US"/>
-            <setting name="label" locale="de_DE"/>
+            <setting name="label" locale="en_US">Tag</setting>
+            <setting name="label" locale="de_DE">Schlagwort</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
@@ -4923,16 +4937,16 @@
         <placement code="p44">
           <bundle>_fulltext</bundle>
           <settings>
-            <setting name="label" locale="en_US"/>
-            <setting name="label" locale="de_DE"/>
+            <setting name="label" locale="en_US">Full text</setting>
+            <setting name="label" locale="de_DE">Volltext</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
         <placement code="p45">
           <bundle>ca_entity_labels.displayname</bundle>
           <settings>
-            <setting name="label" locale="en_US"/>
-            <setting name="label" locale="de_DE"/>
+            <setting name="label" locale="en_US">Displayname</setting>
+            <setting name="label" locale="de_DE">Anzeigename</setting>
             <setting name="width">100px</setting>
           </settings>
         </placement>
