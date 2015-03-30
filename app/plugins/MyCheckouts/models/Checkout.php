@@ -156,6 +156,7 @@ class Checkout {
 			$student_due_date = $this->getStudentDueDate();
 		} else {
 			$student_due_date = DateTime::createFromFormat("Y-m-d", $this->getStudentDueDate());
+			$student_due_date->setTime(0,0,0);
 		}
 
 		$interval = $now->diff($student_due_date);
