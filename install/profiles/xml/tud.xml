@@ -187,7 +187,7 @@
             </label>
             <label locale="de_DE" preferred="1">
               <name_singular>Person</name_singular>
-              <name_plural>Persons</name_plural>
+              <name_plural>Personen</name_plural>
             </label>
           </labels>
           <settings>
