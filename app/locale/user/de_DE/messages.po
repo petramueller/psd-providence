@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess Providence\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-19 07:58-0800\n"
-"PO-Revision-Date: 2015-03-26 14:58+0100\n"
+"PO-Revision-Date: 2015-03-31 11:32+0100\n"
 "Last-Translator: Mace <mathias.gude@tu-dresden.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/collectiveaccess-"
 "providence/language/de_DE/)\n"
@@ -1253,7 +1253,7 @@ msgstr "Benutzerprofil"
 
 #: c:\providence/app/conf/navigation.conf:2006
 msgid "My watched items"
-msgstr "Meine beobachteten Datensätze"
+msgstr "Meine beobachteten Medien"
 
 #: c:\providence/app/conf/navigation.conf:2019
 msgid "My project teams"
@@ -1261,7 +1261,7 @@ msgstr "Meine Projektteams"
 
 #: c:\providence/app/conf/navigation.conf:2026
 msgid "My displays"
-msgstr "Meine Displays"
+msgstr "Meine Anzeigen"
 
 #: c:\providence/app/conf/navigation.conf:2061
 msgid "My sets"
@@ -3096,7 +3096,7 @@ msgstr ""
 
 #: c:\providence/app/conf/user_actions.conf:834
 msgid "Change type for list items"
-msgstr ""
+msgstr "Typ für Listenelement ändern"
 
 #: c:\providence/app/conf/user_actions.conf:835
 msgid "Allow user to change types of existing list items"
@@ -4432,7 +4432,7 @@ msgstr ""
 
 #: c:\providence/app/controllers/client/library/CheckInController.php:108
 msgid "Overdue by %1"
-msgstr ""
+msgstr "Überfällig durch %1"
 
 #: c:\providence/app/controllers/client/library/CheckInController.php:139
 msgid "Could not check in item %1: %2"
@@ -5014,7 +5014,7 @@ msgstr ""
 #: c:\providence/app/controllers/manage/TagsController.php:217
 #: c:\providence/app/models/ca_item_tags.php:42
 msgid "tags"
-msgstr ""
+msgstr "Schlagwörter"
 
 #: c:\providence/app/controllers/manage/WatchedItemsController.php:44
 msgid "There are no watched items"
@@ -8499,7 +8499,7 @@ msgid ""
 msgstr ""
 "Wählen Sie diese Option, wenn dieser Eigenschaftswert die Lebensdauer einer Person "
 "darstellt. Lebensdauern werden in vielen Sprachen in einem etwas anderen Format als "
-"Standarddaten dargestellt. (Die Standardeinsteillung ist nicht eine Darstellung der "
+"Standarddaten dargestellt. (Die Standardeinstellung ist nicht eine Darstellung der "
 "Lebensdauer.)"
 
 #: c:\providence/app/lib/ca/Attributes/Values/DateRangeAttributeValue.php:105
@@ -10879,17 +10879,17 @@ msgstr "Gebietsschema fehlt für Tag"
 #: c:\providence/app/lib/core/BaseModel.php:8760
 #: c:\providence/app/lib/core/BaseModel.php:8811
 msgid "Tag relation id is invalid"
-msgstr "Tag Beziehungs-id ist ungültig"
+msgstr "Schlagwort Beziehungs-id ist ungültig"
 
 #: c:\providence/app/lib/core/BaseModel.php:8767
 #: c:\providence/app/lib/core/BaseModel.php:8818
 msgid "Tag is not part of the current row"
-msgstr "Tag ist nicht Teil der aktuellen Reihe"
+msgstr "Schlagwort ist nicht Teil der aktuellen Reihe"
 
 #: c:\providence/app/lib/core/BaseModel.php:8773
 #: c:\providence/app/lib/core/BaseModel.php:8824
 msgid "Tag was not created by specified user"
-msgstr "Tag wurde nicht von einem bestimmten Benutzer erstellt"
+msgstr "Schlagwort wurde nicht von einem bestimmten Benutzer erstellt"
 
 #: c:\providence/app/lib/core/BaseModel.php:9005
 #: c:\providence/app/lib/core/BaseModel.php:9069
@@ -12868,7 +12868,7 @@ msgstr ""
 #: c:\providence/themes/default/views/manage/tag_list_html.php:65
 #: c:\providence/themes/default/views/manage/Results/ca_item_tags_list_html.php:43
 msgid "Tag"
-msgstr "Tag"
+msgstr "Schlagwort"
 
 #: c:\providence/app/models/ca_bundle_displays_x_users.php:40
 msgid "bundle displays ⇔ user association"
@@ -13379,7 +13379,7 @@ msgstr "Verwandte Vokabularterme"
 #: c:\providence/app/widgets/recordsByStatus/recordsByStatusWidget.php:241
 #: c:\providence/themes/default/views/find/Results/search_options_html.php:43
 msgid "Sets"
-msgstr "Sets"
+msgstr "Gruppierungen"
 
 #: c:\providence/app/models/ca_collections.php:352
 #: c:\providence/app/models/ca_entities.php:329
@@ -14508,7 +14508,7 @@ msgstr ""
 
 #: c:\providence/app/models/ca_commerce_order_items.php:85
 msgid "Download only"
-msgstr ""
+msgstr "Nur herunterladen"
 
 #: c:\providence/app/models/ca_commerce_order_items.php:94
 #: c:\providence/themes/default/views/client/orders/order_overview_html.php:248
@@ -16563,7 +16563,7 @@ msgstr ""
 #: c:\providence/app/refineries/entityJoiner/entityJoinerRefinery.php:261
 #: c:\providence/app/refineries/entitySplitter/entitySplitterRefinery.php:224
 msgid "Entity type"
-msgstr ""
+msgstr "Entitätstyp"
 
 #: c:\providence/app/models/ca_entities.php:82
 msgid "The type of the entity. eg. individual, organization, family, etc."
@@ -17085,7 +17085,7 @@ msgstr ""
 
 #: c:\providence/app/models/ca_lists.php:1453
 msgid "Current selection"
-msgstr ""
+msgstr "aktuelle Auswahl"
 
 #: c:\providence/app/models/ca_list_items.php:44
 msgid "list item"
@@ -19757,7 +19757,7 @@ msgstr ""
 
 #: c:\providence/app/plugins/statisticsViewer/statisticsViewerPlugin.php:86
 msgid "Statistics"
-msgstr ""
+msgstr "Statistik"
 
 #: c:\providence/app/plugins/statisticsViewer/statisticsViewerPlugin.php:100
 msgid "Can use statistics viewer functions"
@@ -20287,7 +20287,7 @@ msgstr ""
 
 #: c:\providence/app/refineries/entityJoiner/entityJoinerRefinery.php:207
 msgid "Middle name"
-msgstr ""
+msgstr "Zweitname"
 
 #: c:\providence/app/refineries/entityJoiner/entityJoinerRefinery.php:208
 msgid ""
@@ -20297,7 +20297,7 @@ msgstr ""
 
 #: c:\providence/app/refineries/entityJoiner/entityJoinerRefinery.php:216
 msgid "Surname"
-msgstr ""
+msgstr "Nachname"
 
 #: c:\providence/app/refineries/entityJoiner/entityJoinerRefinery.php:217
 msgid ""
@@ -21379,7 +21379,7 @@ msgstr ""
 
 #: c:\providence/app/widgets/recentTags/recentTagsWidget.php:44
 msgid "Lists recently created tags"
-msgstr ""
+msgstr "Listet kürzlich erstellte Schlagwörter auf"
 
 #: c:\providence/app/widgets/recentTags/recentTagsWidget.php:116
 msgid "Recent tags widget"
@@ -23535,7 +23535,7 @@ msgstr "Objekt hinzufügen"
 #: c:\providence/themes/default/views/bundles/hierarchy_location.php:239
 msgid "Click %1 names to explore. Click on an arrow icon to open a %1 for editing."
 msgstr ""
-"Klick auf ein %1 um es zu untersuchen. Klicke auf einen Pfeilsymbol um ein % zur "
+"Klick auf ein %1 um es zu untersuchen. Klicke auf einen Pfeilsymbol um ein %1 zur "
 "Bearbeitung zu öffnen."
 
 #: c:\providence/themes/default/views/bundles/hierarchy_location.php:254
@@ -23819,7 +23819,7 @@ msgstr ""
 #: c:\providence/themes/default/views/client/library/list_loans_html.php:182
 #: c:\providence/themes/default/views/client/library/loan_pdf_export_html.php:197
 msgid "Overdue %1"
-msgstr ""
+msgstr "Überfällig %1"
 
 #: c:\providence/themes/default/views/client/library/list_loans_html.php:185
 #: c:\providence/themes/default/views/client/library/loan_pdf_export_html.php:200
@@ -24059,7 +24059,7 @@ msgstr ""
 
 #: c:\providence/themes/default/views/client/library/order_overview_html.php:193
 msgid "Items returned"
-msgstr ""
+msgstr "zurückgegebene Medien"
 
 #: c:\providence/themes/default/views/client/library/order_overview_html.php:206
 msgid "There has been <a href='%2'>%1 communication</a> regarding this loan request"
@@ -24120,7 +24120,7 @@ msgstr ""
 
 #: c:\providence/themes/default/views/client/library/order_overview_html.php:282
 msgid "items overdue"
-msgstr ""
+msgstr "überfällige Medien"
 
 #: c:\providence/themes/default/views/client/library/order_overview_html.php:297
 #: c:\providence/themes/default/views/client/orders/order_overview_html.php:282
@@ -24959,11 +24959,11 @@ msgstr ""
 
 #: c:\providence/themes/default/views/find/Search/search_tools_html.php:83
 msgid "Selected results: %1"
-msgstr ""
+msgstr "Ausgewählte Ergebnisse: %1"
 
 #: c:\providence/themes/default/views/find/Search/search_tools_html.php:84
 msgid "All results: %1"
-msgstr ""
+msgstr "Alle Ergebnisse: %1"
 
 #: c:\providence/themes/default/views/find/Search/widget_ca_collections_search_tools.php:90
 #: c:\providence/themes/default/views/find/Search/widget_ca_entities_search_tools.php:88
@@ -25338,7 +25338,7 @@ msgstr ""
 
 #: c:\providence/themes/default/views/manage/export/export_results_html.php:68
 msgid "Download export"
-msgstr ""
+msgstr "Export herunterladen"
 
 #: c:\providence/themes/default/views/manage/export/export_single_results_html.php:38
 msgid "Export mapping has errors"
