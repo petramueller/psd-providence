@@ -4649,7 +4649,7 @@
           <name>Book Display</name>
         </label>
         <label locale="de_DE">
-          <name>Buch-Darstellung</name>
+          <name>Bücher</name>
         </label>
       </labels>
       <settings>
@@ -4752,6 +4752,82 @@
         </placement>
       </bundlePlacements>
     </display>
+      <display code="book_child_dspl" type="ca_objects" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Book Child Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Buchelemente</name>
+              </label>
+          </labels>
+          <settings>
+              <setting name="show_empty_values">1</setting>
+          </settings>
+          <typeRestrictions>
+              <restriction code="copy" type="copy"/>
+              <restriction code="attachement" type="attachement"/>
+              <restriction code="digcon" type="digitalconten"/>
+          </typeRestrictions>
+          <bundlePlacements>
+              <placement code="object_title">
+                  <bundle>ca_objects.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Signature</setting>
+                      <setting name="label" locale="de_DE">Signatur</setting>
+                  </settings>
+              </placement>
+              <placement code="parent">
+                  <bundle>ca_objects.parent.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Book</setting>
+                      <setting name="label" locale="de_DE">Buch</setting>
+                  </settings>
+              </placement>
+              <placement code="source">
+                  <bundle>ca_objects.source_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Source</setting>
+                      <setting name="label" locale="de_DE">Quelle</setting>
+                  </settings>
+              </placement>
+              <placement code="type">
+                  <bundle>ca_objects.type_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Type</setting>
+                      <setting name="label" locale="de_DE">Typ</setting>
+                  </settings>
+              </placement>
+              <placement code="status">
+                  <bundle>ca_objects.status</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Status</setting>
+                      <setting name="label" locale="de_DE">Status</setting>
+                  </settings>
+              </placement>
+              <placement code="barcode">
+                  <bundle>ca_objects.barcode</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Barcode</setting>
+                      <setting name="label" locale="de_DE">Barcode</setting>
+                  </settings>
+              </placement>
+              <placement code="creation_date">
+                  <bundle>ca_objects.created</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Creation Date</setting>
+                      <setting name="label" locale="de_DE">Erstellungsdatum</setting>
+                  </settings>
+              </placement>
+              <placement code="availability">
+                  <bundle>ca_objects.checkouts</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Availability</setting>
+                      <setting name="label" locale="de_DE">Verfügbarkeit</setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
     <display code="researcher_display" type="ca_objects" system="0">
       <labels>
         <label locale="en_US">
