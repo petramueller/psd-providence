@@ -3745,16 +3745,6 @@
             <restriction type="other_copy"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="return_to_slub">
-              <bundle>ca_attribute_slub_return</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Return to SLUB</setting>
-                <setting name="label" locale="de_DE">Rückgabe an SLUB</setting>
-              </settings>
-            </placement>
-            <placement code="source_id4">
-              <bundle>source_id</bundle>
-            </placement>
             <placement code="barcode_plcement">
               <bundle>ca_attribute_barcode</bundle>
               <settings>
@@ -3981,16 +3971,6 @@
             <restriction type="other_digitalcontent"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="return_to_slub">
-              <bundle>ca_attribute_slub_return</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Return to SLUB</setting>
-                <setting name="label" locale="de_DE">Rückgabe an SLUB</setting>
-              </settings>
-            </placement>
-            <placement code="source_id4">
-              <bundle>source_id</bundle>
-            </placement>
             <placement code="barcode_plcement">
               <bundle>ca_attribute_barcode</bundle>
               <settings>
@@ -4042,16 +4022,6 @@
             <restriction type="other_attachment"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="return_to_slub">
-              <bundle>ca_attribute_slub_return</bundle>
-              <settings>
-                <setting name="label" locale="en_US">Return to SLUB</setting>
-                <setting name="label" locale="de_DE">Rückgabe an SLUB</setting>
-              </settings>
-            </placement>
-            <placement code="source_id4">
-              <bundle>source_id</bundle>
-            </placement>
             <placement code="barcode_plcement">
               <bundle>ca_attribute_barcode</bundle>
               <settings>
