@@ -14,6 +14,7 @@ require_once(__CA_MODELS_DIR__ . "/ca_objects.php");
 require_once(__CA_MODELS_DIR__ . "/ca_object_labels.php");
 require_once(__CA_MODELS_DIR__ . "/ca_locales.php");
 require_once("ShelfMarkService.php");
+require_once("LabelService.php");
 require_once("KeyProviderFactory.php");
 require_once("IKeyProvider.php");
 /**
@@ -61,7 +62,7 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 
 	/**
 	 * Called by CA after an item is duplicated
-	 * @param $args Item duplicate
+	 * @param $args array Item duplicate
 	 * @return void
 	 */
 	public function hookDuplicateItem($args){
@@ -145,7 +146,12 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		}
 
 		$shelfMarkService = new ShelfMarkService();
+		$labelService = new LabelService();
 		$shelfMark = $shelfMarkService->getShelfMark($authorSurname, $categoryValue);
+
+		if(!empty($shelfMark)){
+			$labelService->addObjectToPrintQueue($shelfMark);
+		}
 
 		$locales = new ca_locales();
 		$cataloguingLocales = $locales->find(array("dont_use_for_cataloguing" => 0), array("returnAs" => "ids"));
@@ -154,12 +160,11 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		foreach ($cataloguingLocales as $key => $value) {
 			$copy->addLabel(array("name" => $shelfMark), $value, null, true);
 		}
-
 	}
 
 	/**
 	 * Sets the object source to WISE (no bar code) or SLUB if a bar code is present.
-	 * @param $copy The child object
+	 * @param $copy ca_objects The child object
 	 * @param $keyProvider IKeyProvider
 	 */
 	private function setObjectSource(&$copy, $keyProvider){
@@ -180,7 +185,7 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 
 	/**
 	 * Returns a key provider instance if parent is of type ca_objects, otherwise null
-	 * @param $parent Parent object
+	 * @param $parent ca_objects Parent object
 	 * @return IKeyProvider|null
 	 */
 	private function getKeyProvider($parent){
@@ -209,6 +214,48 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 		return $parent;
 	}
 
+	# -------------------------------------------------------
+	/**
+	 * Insert activity menu
+	 */
+	public function hookRenderMenuBar($pa_menu_bar) {
+		if ($o_req = $this->getRequest()) {
+			if (!$o_req->user->canDoAction('can_print_labels')) {
+				if (isset($pa_menu_bar['Labels'])){
+					unset($pa_menu_bar['Labels']);
+				}
+				return $pa_menu_bar;
+			}
+
+			if (isset($pa_menu_bar['Labels'])) {
+				$va_menu_items = $pa_menu_bar['Labels']['navigation'];
+				if (!is_array($va_menu_items)) { $va_menu_items = array(); }
+			} else {
+				$va_menu_items = array();
+			}
+
+			$va_menu_items['Labels'] = array(
+				'displayName' => _t('Print Labels'),
+				"default" => array(
+					'module' => 'ShelfMarkGen',
+					'controller' => 'PrintLabels',
+					'action' => 'Index'
+				)
+			);
+
+			if (isset($pa_menu_bar['Labels'])) {
+				$pa_menu_bar['Labels']['navigation'] = $va_menu_items;
+			} else {
+				$pa_menu_bar['Labels'] = array(
+					'displayName' => _t('Print Labels'),
+					'navigation' => $va_menu_items
+				);
+			}
+		}
+
+		return $pa_menu_bar;
+	}
+
 	/**
 	 * Returns an array with status information about the plugin
 	 * @return array Array representing the status
@@ -231,6 +278,9 @@ class ShelfMarkGenPlugin extends BaseApplicationPlugin
 	 */
 	static function getRoleActionList()
 	{
-		return array();
+		return array('can_print_labels' => array(
+			'label' => _t('Can print labels'),
+			'description' => _t('User can print labels.')
+		));
 	}
 }

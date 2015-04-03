@@ -19,11 +19,11 @@ $(function(){
     });
 
     $(".tud-note-submit").click(function(e){
-        var data, form = $(this).parents("form").first();
+        var data, form = $(this).parents("form").first(), servicePath = tudUrlRoot + "/service.php/MyCheckouts/Service/SetNote";
         data = form.serialize();
         $.ajax({
             type: "GET",
-            url: "/service.php/MyCheckouts/Service/SetNote",
+            url: servicePath,
             data: data,
             cache: false,
             beforeSend: function(){

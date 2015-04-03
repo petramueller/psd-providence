@@ -106,5 +106,8 @@ $checkouts = $this->getVar("checkouts");
 		</tbody>
 	</table>
 </div>
+<script type="text/javascript">
+	var tudUrlRoot = "<?php echo __CA_URL_ROOT__; ?>";
+</script>
 <script type="text/javascript" src="<?php echo __CA_URL_ROOT__; ?>/app/plugins/MyCheckouts/themes/default/js/polyfiller.js"></script>
 <script type="text/javascript" src="<?php echo __CA_URL_ROOT__; ?>/app/plugins/MyCheckouts/themes/default/js/mycheckouts.js"></script>
