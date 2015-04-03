@@ -9,7 +9,10 @@
  *  ----------------------------------------------------------------------
  */
 
-class PrintLabelsController extends BaseFindController {
+require_once(__CA_LIB_DIR__.'/ca/BaseSearchController.php');
+include_once(__CA_LIB_DIR__."/ca/Search/ObjectSearch.php");
+
+class PrintLabelsController extends BaseSearchController {
 	# -------------------------------------------------------
 	/**
 	 * Plugin configuration file
@@ -34,7 +37,7 @@ class PrintLabelsController extends BaseFindController {
 
 		// Load plugin configuration file
 		$this->opo_config = Configuration::load(__CA_APP_DIR__.'/plugins/ShelfMarkGen/conf/shelfmarkgen.conf');
-
+		$this->ops_tablename = "ca_objects";
 		parent::__construct($po_request, $po_response, $pa_view_paths);
 
 		MetaTagManager::addLink('stylesheet', __CA_URL_ROOT__."/app/plugins/ShelfMarkGen/themes/".__CA_THEME__."/css/shelfmarkgen.css",'text/css');
@@ -60,7 +63,23 @@ class PrintLabelsController extends BaseFindController {
 		}
 
 		$param = $this->request->getParameter("print", pArray);
-		var_dump($param);
+
+		$shelfMarks = array();
+
+		foreach($param as $p){
+			if(isset($p["shelfmark"])){
+				array_push($shelfMarks, $p["shelfmark"]);
+			}
+		}
+
+		//$labelService = new LabelService();
+		//$searchQuery = $labelService->buildSearchQuery($shelfMarks);
+		//$objectSearch =  new ObjectSearch();
+		//$objectSearch->search($searchQuery,  array("sort" => "_natural", "sort_direction" => "asc", "appendToSearch" => null, "checkAccess" => null, "no_cache" => true, "dontCheckFacetAvailability" => true, "filterNonPrimaryRepresentations" => true));
+
+
+		//parent::Index(array('output_format' => 'LABELS', "search" => $objectSearch));
+		//return $this->Index(array('output_format' => 'LABELS'));
 		$this->opo_response->addHeader("Location", $this->request->getBaseUrlPath().'/'.$this->request->getScriptName() . "/ShelfMarkGen/PrintLabels/Index");
 	}
 

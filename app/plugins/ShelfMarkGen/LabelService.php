@@ -13,6 +13,21 @@ require_once(__CA_APP_DIR__ . "/plugins/ShelfMarkGen/models/Label.php");
 
 class LabelService {
 	/**
+	 * @param $shelfMarks string[] shelf marks
+	 * @return string
+	 */
+	public function buildSearchQuery($shelfMarks){
+		$query = "";
+		if(sizeof($shelfMarks)){
+			$query = "ca_objects.preferred_labes:" . array_pop($shelfMarks);
+			foreach($shelfMarks as $sm){
+				$query .= " OR ca_objects.preferred_labes:" . $sm;
+			}
+		}
+		return $query;
+	}
+
+	/**
 	 * @param $shelfMark string
 	 */
 	public function addObjectToPrintQueue($shelfMark){
