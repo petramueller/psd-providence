@@ -9,10 +9,10 @@
  *  ----------------------------------------------------------------------
  */
 
-require_once(__CA_LIB_DIR__.'/ca/BaseSearchController.php');
+require_once(__CA_APP_DIR__.'/controllers/find/SearchObjectsController.php');
 include_once(__CA_LIB_DIR__."/ca/Search/ObjectSearch.php");
 
-class PrintLabelsController extends BaseSearchController {
+class PrintLabelsController extends SearchObjectsController {
 	# -------------------------------------------------------
 	/**
 	 * Plugin configuration file
@@ -44,6 +44,11 @@ class PrintLabelsController extends BaseSearchController {
 		$this->userId = (int)$this->request->user->get("user_id");
 	}
 
+	public function Download(){
+		header('Set-Cookie: fileDownload=true; path=/');
+		parent::Index(array("output_format" => "LABELS"));
+	}
+
 	public function Index(){
 		if (!$this->request->user->canDoAction('can_print_labels')) {
 			$this->render("forbidden.php");
@@ -54,33 +59,6 @@ class PrintLabelsController extends BaseSearchController {
 		$labels = $labelService->getLabels();
 		$this->view->setVar('labels', $labels);
 		$this->render("printlabels_index.php");
-	}
-
-	public function PrintLabels(){
-		if (!$this->request->user->canDoAction('can_print_labels')) {
-			$this->render("forbidden.php");
-			return;
-		}
-
-		$param = $this->request->getParameter("print", pArray);
-
-		$shelfMarks = array();
-
-		foreach($param as $p){
-			if(isset($p["shelfmark"])){
-				array_push($shelfMarks, $p["shelfmark"]);
-			}
-		}
-
-		//$labelService = new LabelService();
-		//$searchQuery = $labelService->buildSearchQuery($shelfMarks);
-		//$objectSearch =  new ObjectSearch();
-		//$objectSearch->search($searchQuery,  array("sort" => "_natural", "sort_direction" => "asc", "appendToSearch" => null, "checkAccess" => null, "no_cache" => true, "dontCheckFacetAvailability" => true, "filterNonPrimaryRepresentations" => true));
-
-
-		//parent::Index(array('output_format' => 'LABELS', "search" => $objectSearch));
-		//return $this->Index(array('output_format' => 'LABELS'));
-		$this->opo_response->addHeader("Location", $this->request->getBaseUrlPath().'/'.$this->request->getScriptName() . "/ShelfMarkGen/PrintLabels/Index");
 	}
 
 	public function Delete(){
