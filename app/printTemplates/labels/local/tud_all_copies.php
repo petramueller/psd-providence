@@ -37,10 +37,13 @@ require_once(__CA_MODELS_DIR__ . "/ca_entities.php");
 
 $vo_result = $this->getVar('result');
 
+$path = getcwd()."/app/printTemplates/labels/pdf.css";
+$path = "\"".$path."\"";
+
 ?>
 
 <head>
-    <link href="/var/www/html/int/app/printTemplates/labels/pdf.css" rel="stylesheet">
+    <link href=<?php $path?> rel="stylesheet">
 </head>
 
 <div class="smallText" style="position: absolute; left: 0.7cm; top: 0.4cm; width: 8cm; height: 2cm; font-size: 10px; overflow: hidden;">
