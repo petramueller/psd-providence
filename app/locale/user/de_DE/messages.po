@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess Providence\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-19 07:58-0800\n"
-"PO-Revision-Date: 2015-03-31 11:32+0100\n"
+"PO-Revision-Date: 2015-04-05 13:02+0100\n"
 "Last-Translator: Mace <mathias.gude@tu-dresden.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/collectiveaccess-"
 "providence/language/de_DE/)\n"
@@ -3088,7 +3088,7 @@ msgstr ""
 
 #: c:\providence/app/conf/user_actions.conf:830
 msgid "Export list items"
-msgstr ""
+msgstr "Export von Listenelementen"
 
 #: c:\providence/app/conf/user_actions.conf:831
 msgid "Allow user to export list items"
@@ -11669,7 +11669,7 @@ msgstr ""
 #: c:\providence/app/lib/core/Plugins/Media/Office.php:702
 #: c:\providence/app/lib/core/Plugins/Media/PDFWand.php:859
 msgid "Click to download document"
-msgstr ""
+msgstr "Anklicken um Dokument herunterzuladen"
 
 #: c:\providence/app/lib/core/Plugins/Media/Office.php:704
 #: c:\providence/app/lib/core/Plugins/Media/PDFWand.php:861
@@ -12422,7 +12422,7 @@ msgstr ""
 #: c:\providence/app/models/ca_list_items.php:45
 #: c:\providence/app/models/ca_metadata_type_restrictions.php:101
 msgid "list items"
-msgstr ""
+msgstr "Listenelemente"
 
 #: c:\providence/app/models/ca_bookmarks.php:94
 #: c:\providence/app/models/ca_bookmark_folders.php:72
@@ -22013,7 +22013,7 @@ msgstr "Neuer Benutzer"
 #: c:\providence/themes/default/views/administrate/setup/Results/search_options_html.php:42
 #: c:\providence/themes/default/views/find/Results/search_options_html.php:42
 msgid "Tools"
-msgstr "Tools"
+msgstr "Werkzeuge"
 
 #: c:\providence/themes/default/views/administrate/access/user_list_html.php:55
 msgid "%1 users"
@@ -24780,7 +24780,7 @@ msgstr ""
 
 #: c:\providence/themes/default/views/find/Browse/browse_controls_html.php:69
 msgid "Refine results by"
-msgstr ""
+msgstr "Ergebnisse verfeinern mit"
 
 #: c:\providence/themes/default/views/find/Browse/browse_controls_html.php:86
 msgid "You browsed for: "
@@ -24859,7 +24859,7 @@ msgstr ""
 #: c:\providence/themes/default/views/find/Results/ca_tours_results_list_html.php:59
 #: c:\providence/themes/default/views/find/Results/ca_tour_stops_results_list_html.php:58
 msgid "Click to sort by "
-msgstr ""
+msgstr "Anklicken zum sortieren nach"
 
 #: c:\providence/themes/default/views/find/Results/ca_objects_results_map_html.php:45
 msgid "%1 of %2 results have been mapped.  To see all results chose a different display."

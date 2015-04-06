@@ -4619,21 +4619,24 @@
           <name>Book Display</name>
         </label>
         <label locale="de_DE">
-          <name>Buch-Darstellung</name>
+          <name>Anzeige für Bücher</name>
         </label>
       </labels>
       <settings>
         <setting name="show_empty_values">1</setting>
       </settings>
+        <typeRestrictions>
+            <restriction code="book" type="book"/>
+        </typeRestrictions>
       <bundlePlacements>
-        <placement code="ca_objects_preferred_labels">
+        <placement code="book_title">
           <bundle>ca_objects.preferred_labels</bundle>
           <settings>
             <setting name="label" locale="en_US">Title</setting>
             <setting name="label" locale="de_DE">Titel</setting>
           </settings>
         </placement>
-        <placement code="ca_entities">
+        <placement code="main_author">
           <bundle>ca_entities</bundle>
           <settings>
             <setting name="hierarchy_order">ASC</setting>
@@ -4646,7 +4649,7 @@
             <setting name="hierarchy_limit">0</setting>
           </settings>
         </placement>
-        <placement code="ca_entities">
+        <placement code="author">
           <bundle>ca_entities</bundle>
           <settings>
             <setting name="hierarchy_order">ASC</setting>
@@ -4660,7 +4663,7 @@
             <setting name="hierarchy_limit">0</setting>
           </settings>
         </placement>
-        <placement code="ca_entities">
+        <placement code="editor">
           <bundle>ca_entities</bundle>
           <settings>
             <setting name="hierarchy_order">ASC</setting>
@@ -4674,7 +4677,7 @@
             <setting name="hierarchy_limit">0</setting>
           </settings>
         </placement>
-        <placement code="ca_entities">
+        <placement code="publisher">
           <bundle>ca_entities</bundle>
           <settings>
             <setting name="hierarchy_order">ASC</setting>
@@ -4688,7 +4691,7 @@
             <setting name="hierarchy_limit">0</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_category_list_attr">
+        <placement code="category">
           <bundle>ca_objects.category_list_attr</bundle>
           <settings>
             <setting name="sense">singular</setting>
@@ -4696,17 +4699,24 @@
             <setting name="label" locale="de_DE">Kategorie</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_edition">
+        <placement code="edition">
           <bundle>ca_objects.edition</bundle>
           <settings>
             <setting name="label" locale="en_US">Edition</setting>
             <setting name="label" locale="de_DE">Ausgabe</setting>
           </settings>
         </placement>
-        <placement code="ca_objects_isbn">
+          <placement code="volume">
+              <bundle>ca_objects.volume</bundle>
+              <settings>
+                  <setting name="label" locale="en_US">Volume</setting>
+                  <setting name="label" locale="de_DE">Band</setting>
+              </settings>
+          </placement>
+        <placement code="isbn">
           <bundle>ca_objects.isbn</bundle>
         </placement>
-        <placement code="ca_list_items">
+        <placement code="tags">
           <bundle>ca_list_items</bundle>
           <settings>
             <setting name="restrict_to_relationship_types">book_tag</setting>
@@ -4720,51 +4730,540 @@
             <setting name="hierarchical_delimiter"> ➔ </setting>
           </settings>
         </placement>
+          <placement code="child_elements">
+              <bundle>ca_objects.children.preferred_labels</bundle>
+              <settings>
+                  <setting name="hierarchy_order">ASC</setting>
+                  <setting name="label" locale="en_US">Related Elements</setting>
+                  <setting name="label" locale="de_DE">Zugehörige Elemente</setting>
+                  <setting name="delimiter">; </setting>
+              </settings>
+          </placement>
       </bundlePlacements>
     </display>
-    <display code="researcher_display" type="ca_objects" system="0">
-      <labels>
-        <label locale="en_US">
-          <name>Researcher Display</name>
-        </label>
-        <label locale="de_DE">
-          <name>Researcher-Darstellung</name>
-        </label>
-      </labels>
-      <settings>
-        <setting name="show_empty_values">1</setting>
-      </settings>
-      <bundlePlacements>
-        <placement code="ca_objects_preferred_labels">
-          <bundle>ca_objects.preferred_labels</bundle>
+      <display code="book_child_dspl" type="ca_objects" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Book Child Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Anzeige für Buchelemente</name>
+              </label>
+          </labels>
           <settings>
-            <setting name="label" locale="en_US">Title</setting>
-            <setting name="label" locale="de_DE">Titel</setting>
+              <setting name="show_empty_values">1</setting>
           </settings>
-        </placement>
-        <placement code="ca_objects_date">
-          <bundle>ca_objects.date</bundle>
+          <typeRestrictions>
+              <restriction code="copy" type="copy"/>
+              <restriction code="attachement" type="attachement"/>
+              <restriction code="digitalcontent" type="digitalcontent"/>
+          </typeRestrictions>
+          <bundlePlacements>
+              <placement code="object_title">
+                  <bundle>ca_objects.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Signature</setting>
+                      <setting name="label" locale="de_DE">Signatur</setting>
+                  </settings>
+              </placement>
+              <placement code="parent">
+                  <bundle>ca_objects.parent.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Book</setting>
+                      <setting name="label" locale="de_DE">Buch</setting>
+                  </settings>
+              </placement>
+              <placement code="source">
+                  <bundle>ca_objects.source_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Source</setting>
+                      <setting name="label" locale="de_DE">Quelle</setting>
+                  </settings>
+              </placement>
+              <placement code="type">
+                  <bundle>ca_objects.type_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Type</setting>
+                      <setting name="label" locale="de_DE">Typ</setting>
+                  </settings>
+              </placement>
+              <placement code="status">
+                  <bundle>ca_objects.status</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Status</setting>
+                      <setting name="label" locale="de_DE">Status</setting>
+                  </settings>
+              </placement>
+              <placement code="barcode">
+                  <bundle>ca_objects.barcode</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Barcode</setting>
+                      <setting name="label" locale="de_DE">Barcode</setting>
+                  </settings>
+              </placement>
+              <placement code="creation_date">
+                  <bundle>ca_objects.created</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Creation Date</setting>
+                      <setting name="label" locale="de_DE">Erstellungsdatum</setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
+      <display code="paper_dspl" type="ca_objects" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Paper Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Anzeige für wissenschaftliche Arbeiten</name>
+              </label>
+          </labels>
           <settings>
-            <setting name="label" locale="en_US">Date</setting>
-            <setting name="label" locale="de_DE">Datum</setting>
+              <setting name="show_empty_values">1</setting>
           </settings>
-        </placement>
-        <placement code="ca_objects_type_id">
-          <bundle>ca_objects.type_id</bundle>
+          <typeRestrictions>
+              <restriction code="paper" type="paper"/>
+          </typeRestrictions>
+          <bundlePlacements>
+              <placement code="paper_title">
+                  <bundle>ca_objects.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Title</setting>
+                      <setting name="label" locale="de_DE">Titel</setting>
+                  </settings>
+              </placement>
+              <placement code="main_paper_author">
+                  <bundle>ca_entities</bundle>
+                  <settings>
+                      <setting name="hierarchy_order">ASC</setting>
+                      <setting name="label" locale="en_US">First Author</setting>
+                      <setting name="label" locale="de_DE">Hauptautor</setting>
+                      <setting name="restrict_to_relationship_types">main_paper_author</setting>
+                      <setting name="restrict_to_types">ind</setting>
+                      <setting name="show_hierarchy">0</setting>
+                      <setting name="remove_first_items">0</setting>
+                      <setting name="hierarchy_limit">0</setting>
+                  </settings>
+              </placement>
+              <placement code="paper_category">
+                  <bundle>ca_objects.paper_category_list_attr</bundle>
+                  <settings>
+                      <setting name="sense">singular</setting>
+                      <setting name="label" locale="en_US">Thesis Type</setting>
+                      <setting name="label" locale="de_DE">Typ der wissenschaftlichen Arbeit</setting>
+                  </settings>
+              </placement>
+              <placement code="year">
+                  <bundle>ca_objects.year</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Year</setting>
+                      <setting name="label" locale="de_DE">Jahr</setting>
+                  </settings>
+              </placement>
+              <placement code="tags">
+                  <bundle>ca_list_items</bundle>
+                  <settings>
+                      <setting name="restrict_to_relationship_types">paper_tag</setting>
+                      <setting name="hierarchy_order">ASC</setting>
+                      <setting name="label" locale="en_US">Tags</setting>
+                      <setting name="label" locale="de_DE">Schlagwörter</setting>
+                      <setting name="delimiter">; </setting>
+                      <setting name="show_hierarchy">0</setting>
+                      <setting name="remove_first_items">0</setting>
+                      <setting name="hierarchy_limit">0</setting>
+                      <setting name="hierarchical_delimiter"> ➔ </setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
+      <display code="paper_child_dspl" type="ca_objects" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Paper Child Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Anzeige für Elemente wissenschaftlicher Arbeiten</name>
+              </label>
+          </labels>
           <settings>
-            <setting name="label" locale="en_US">Type ID</setting>
-            <setting name="label" locale="de_DE">Typ-ID</setting>
+              <setting name="show_empty_values">1</setting>
           </settings>
-        </placement>
-        <placement code="ca_entities">
-          <bundle>ca_entities</bundle>
+          <typeRestrictions>
+              <restriction code="paper_copy" type="paper_copy"/>
+              <restriction code="p_attachement" type="paper_attachement"/>
+              <restriction code="paper_digitalcontent" type="paper_digitalcontent"/>
+          </typeRestrictions>
+          <bundlePlacements>
+              <placement code="signature">
+                  <bundle>ca_objects.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Signature</setting>
+                      <setting name="label" locale="de_DE">Signatur</setting>
+                  </settings>
+              </placement>
+              <placement code="parent">
+                  <bundle>ca_objects.parent.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Thesis</setting>
+                      <setting name="label" locale="de_DE">Wissenschaftliche Arbeit</setting>
+                  </settings>
+              </placement>
+              <placement code="type">
+                  <bundle>ca_objects.type_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Type</setting>
+                      <setting name="label" locale="de_DE">Typ</setting>
+                  </settings>
+              </placement>
+              <placement code="status">
+                  <bundle>ca_objects.status</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Status</setting>
+                      <setting name="label" locale="de_DE">Status</setting>
+                  </settings>
+              </placement>
+              <placement code="creation_date">
+                  <bundle>ca_objects.created</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Creation Date</setting>
+                      <setting name="label" locale="de_DE">Erstellungsdatum</setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
+      <display code="other_dspl" type="ca_objects" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Other Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Anzeige für Andere Objekte</name>
+              </label>
+          </labels>
           <settings>
-            <setting name="label" locale="en_US">Entities</setting>
-            <setting name="label" locale="de_DE">Entitäten</setting>
+              <setting name="show_empty_values">1</setting>
           </settings>
-        </placement>
-      </bundlePlacements>
-    </display>
+          <typeRestrictions>
+              <restriction code="other" type="other"/>
+          </typeRestrictions>
+          <bundlePlacements>
+              <placement code="titel">
+                  <bundle>ca_objects.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Title</setting>
+                      <setting name="label" locale="de_DE">Titel</setting>
+                  </settings>
+              </placement>
+              <placement code="main_other_author">
+                  <bundle>ca_entities</bundle>
+                  <settings>
+                      <setting name="hierarchy_order">ASC</setting>
+                      <setting name="label" locale="en_US">First Author</setting>
+                      <setting name="label" locale="de_DE">Hauptautor</setting>
+                      <setting name="restrict_to_relationship_types">main_other_author</setting>
+                      <setting name="restrict_to_types">ind</setting>
+                      <setting name="show_hierarchy">0</setting>
+                      <setting name="remove_first_items">0</setting>
+                      <setting name="hierarchy_limit">0</setting>
+                  </settings>
+              </placement>
+              <placement code="other_authores">
+                  <bundle>ca_entities</bundle>
+                  <settings>
+                      <setting name="hierarchy_order">ASC</setting>
+                      <setting name="label" locale="en_US">Authors</setting>
+                      <setting name="label" locale="de_DE">Autoren</setting>
+                      <setting name="restrict_to_relationship_types">other_author</setting>
+                      <setting name="restrict_to_types">ind</setting>
+                      <setting name="delimiter">; </setting>
+                      <setting name="show_hierarchy">0</setting>
+                      <setting name="remove_first_items">0</setting>
+                      <setting name="hierarchy_limit">0</setting>
+                  </settings>
+              </placement>
+              <placement code="editor">
+                  <bundle>ca_entities</bundle>
+                  <settings>
+                      <setting name="hierarchy_order">ASC</setting>
+                      <setting name="label" locale="en_US">Editors</setting>
+                      <setting name="label" locale="de_DE">Herausgeber</setting>
+                      <setting name="restrict_to_relationship_types">other_editor</setting>
+                      <setting name="restrict_to_types">ind</setting>
+                      <setting name="delimiter">; </setting>
+                      <setting name="show_hierarchy">0</setting>
+                      <setting name="remove_first_items">0</setting>
+                      <setting name="hierarchy_limit">0</setting>
+                  </settings>
+              </placement>
+              <placement code="publisher">
+                  <bundle>ca_entities</bundle>
+                  <settings>
+                      <setting name="hierarchy_order">ASC</setting>
+                      <setting name="label" locale="en_US">Publisher</setting>
+                      <setting name="label" locale="de_DE">Verlag</setting>
+                      <setting name="restrict_to_relationship_types">other_published</setting>
+                      <setting name="restrict_to_types">org</setting>
+                      <setting name="delimiter">; </setting>
+                      <setting name="show_hierarchy">0</setting>
+                      <setting name="remove_first_items">0</setting>
+                      <setting name="hierarchy_limit">0</setting>
+                  </settings>
+              </placement>
+              <placement code="category">
+                  <bundle>ca_objects.category_list_attr</bundle>
+                  <settings>
+                      <setting name="sense">singular</setting>
+                      <setting name="label" locale="en_US">Category</setting>
+                      <setting name="label" locale="de_DE">Kategorie</setting>
+                  </settings>
+              </placement>
+              <placement code="edition">
+                  <bundle>ca_objects.edition</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Edition</setting>
+                      <setting name="label" locale="de_DE">Ausgabe</setting>
+                  </settings>
+              </placement>
+              <placement code="volume">
+                  <bundle>ca_objects.volume</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Volume</setting>
+                      <setting name="label" locale="de_DE">Band</setting>
+                  </settings>
+              </placement>
+              <placement code="issn">
+                  <bundle>ca_objects.issn</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">ISSN</setting>
+                      <setting name="label" locale="de_DE">ISSN</setting>
+                  </settings>
+              </placement>
+              <placement code="tags">
+                  <bundle>ca_list_items</bundle>
+                  <settings>
+                      <setting name="restrict_to_relationship_types">other_tag</setting>
+                      <setting name="hierarchy_order">ASC</setting>
+                      <setting name="label" locale="en_US">Tags</setting>
+                      <setting name="label" locale="de_DE">Schlagwörter</setting>
+                      <setting name="delimiter">; </setting>
+                      <setting name="show_hierarchy">0</setting>
+                      <setting name="remove_first_items">0</setting>
+                      <setting name="hierarchy_limit">0</setting>
+                      <setting name="hierarchical_delimiter"> ➔ </setting>
+                  </settings>
+              </placement>
+              <placement code="child_elements">
+                  <bundle>ca_objects.children.preferred_labels</bundle>
+                  <settings>
+                      <setting name="hierarchy_order">ASC</setting>
+                      <setting name="label" locale="en_US">Childs</setting>
+                      <setting name="label" locale="de_DE">Kinderelemente</setting>
+                      <setting name="delimiter"><![CDATA[;<br/>]]></setting>
+                      <setting name="show_hierarchy">0</setting>
+                      <setting name="remove_first_items">0</setting>
+                      <setting name="hierarchy_limit">0</setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
+      <display code="other_child_dspl" type="ca_objects" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Other Child Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Anzeige für Elemente von Anderen Objekten</name>
+              </label>
+          </labels>
+          <settings>
+              <setting name="show_empty_values">1</setting>
+          </settings>
+          <typeRestrictions>
+              <restriction code="other_copy" type="other_copy"/>
+              <restriction code="other_attachement" type="other_attachement"/>
+              <restriction code="other_digitalcontent" type="other_digitalcontent"/>
+          </typeRestrictions>
+          <bundlePlacements>
+              <placement code="object_title">
+                  <bundle>ca_objects.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Signature</setting>
+                      <setting name="label" locale="de_DE">Signatur</setting>
+                  </settings>
+              </placement>
+              <placement code="parent">
+                  <bundle>ca_objects.parent.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Book</setting>
+                      <setting name="label" locale="de_DE">Buch</setting>
+                  </settings>
+              </placement>
+              <placement code="source">
+                  <bundle>ca_objects.source_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Source</setting>
+                      <setting name="label" locale="de_DE">Quelle</setting>
+                  </settings>
+              </placement>
+              <placement code="type">
+                  <bundle>ca_objects.type_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Type</setting>
+                      <setting name="label" locale="de_DE">Typ</setting>
+                  </settings>
+              </placement>
+              <placement code="status">
+                  <bundle>ca_objects.status</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Status</setting>
+                      <setting name="label" locale="de_DE">Status</setting>
+                  </settings>
+              </placement>
+              <placement code="barcode">
+                  <bundle>ca_objects.barcode</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Barcode</setting>
+                      <setting name="label" locale="de_DE">Barcode</setting>
+                  </settings>
+              </placement>
+              <placement code="creation_date">
+                  <bundle>ca_objects.created</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Creation Date</setting>
+                      <setting name="label" locale="de_DE">Erstellungsdatum</setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
+      <display code="entity_displ" type="ca_entities" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Entity Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Anzeige für Entitäten</name>
+              </label>
+          </labels>
+          <settings>
+              <setting name="show_empty_values">1</setting>
+          </settings>
+          <typeRestrictions>
+              <restriction code="entity" type="entity"/>
+          </typeRestrictions>
+          <bundlePlacements>
+              <placement code="typ">
+                  <bundle>ca_entities.type_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Type</setting>
+                      <setting name="label" locale="de_DE">Typ</setting>
+                  </settings>
+              </placement>
+              <placement code="displayname">
+                  <bundle>ca_entities.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Display Name</setting>
+                      <setting name="label" locale="de_DE">Anzeigename</setting>
+                  </settings>
+              </placement>
+              <placement code="location">
+                  <bundle>ca_entities.publisher_location</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Publisher Location</setting>
+                      <setting name="label" locale="de_DE">Verlagsort</setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
+      <display code="coll_displ" type="ca_collections" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Collection Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Anzeige für Sammlungen</name>
+              </label>
+          </labels>
+          <settings>
+              <setting name="show_empty_values">1</setting>
+          </settings>
+          <bundlePlacements>
+              <placement code="name">
+                  <bundle>ca_collections.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Collection Name</setting>
+                      <setting name="label" locale="de_DE">Bezeichnung der Sammlung</setting>
+                  </settings>
+              </placement>
+              <placement code="typ">
+                  <bundle>ca_collections.status</bundle>
+              </placement>
+              <placement code="coll_status">
+                  <bundle>ca_collections.status</bundle>
+              </placement>
+              <placement code="related_books">
+                  <bundle>ca_objects</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Related Books</setting>
+                      <setting name="label" locale="de_DE">Zugehörige Bücher</setting>
+                      <setting name="restrict_to_relationship_types">item_series</setting>
+                      <setting name="delimiter">; </setting>
+                  </settings>
+              </placement>
+              <placement code="related_other_objects">
+                  <bundle>ca_objects</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Related Other Objects</setting>
+                      <setting name="label" locale="de_DE">Zugehörige Andere Objekte</setting>
+                      <setting name="restrict_to_relationship_types">other_series</setting>
+                      <setting name="delimiter">; </setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
+      <display code="researcher_display" type="ca_objects" system="1">
+          <labels>
+              <label locale="en_US">
+                  <name>Researcher Display</name>
+              </label>
+              <label locale="de_DE">
+                  <name>Wissenschaftliche Anzeige</name>
+              </label>
+          </labels>
+          <settings>
+              <setting name="show_empty_values">1</setting>
+          </settings>
+          <bundlePlacements>
+              <placement code="ca_objects_preferred_labels">
+                  <bundle>ca_objects.preferred_labels</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Title</setting>
+                      <setting name="label" locale="de_DE">Titel</setting>
+                  </settings>
+              </placement>
+              <placement code="ca_objects_date">
+                  <bundle>ca_objects.created</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Creation Date</setting>
+                      <setting name="label" locale="de_DE">Erstellungsdatum</setting>
+                  </settings>
+              </placement>
+              <placement code="ca_objects_type_id">
+                  <bundle>ca_objects.type_id</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Type</setting>
+                      <setting name="label" locale="de_DE">Typ</setting>
+                  </settings>
+              </placement>
+              <placement code="ca_entities">
+                  <bundle>ca_entities</bundle>
+                  <settings>
+                      <setting name="label" locale="en_US">Entities</setting>
+                      <setting name="label" locale="de_DE">Entitäten</setting>
+                  </settings>
+              </placement>
+          </bundlePlacements>
+      </display>
   </displays>
   <searchForms>
     <searchForm code="object_srch" type="ca_objects" system="1">
