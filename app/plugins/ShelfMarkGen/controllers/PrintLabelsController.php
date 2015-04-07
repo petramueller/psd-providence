@@ -44,11 +44,6 @@ class PrintLabelsController extends SearchObjectsController {
 		$this->userId = (int)$this->request->user->get("user_id");
 	}
 
-	public function Download(){
-		header('Set-Cookie: fileDownload=true; path=/');
-		parent::Index(array("output_format" => "LABELS"));
-	}
-
 	public function Index(){
 		if (!$this->request->user->canDoAction('can_print_labels')) {
 			$this->render("forbidden.php");
