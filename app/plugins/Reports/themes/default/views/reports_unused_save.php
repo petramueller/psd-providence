@@ -1,7 +1,7 @@
 <?php
 // save ObjectIDs from POST to DB
 
-require_once(__CA_APP_DIR__ . "/plugins/Reports/models/class.php");
+
 require_once(__CA_APP_DIR__ . "/plugins/Reports/models/functions.php");
 
 $func = new Functions();
