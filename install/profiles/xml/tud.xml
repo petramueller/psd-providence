@@ -3369,7 +3369,7 @@
               <settings>
                 <setting name="label" locale="de_DE">Verlag</setting>
                 <setting name="label" locale="en_US">Publisher</setting>
-                <setting name="restrict_to_relationship_types">published</setting>
+                <setting name="restrict_to_relationship_types">book_published</setting>
                 <setting name="restrict_to_types">org</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -3661,7 +3661,7 @@
             <restriction type="other_digitalcontent"/>
           </typeRestrictions>
           <bundlePlacements>
-            <placement code="barcode_plcement">
+            <placement code="barcode_placement">
               <bundle>ca_attribute_barcode</bundle>
               <settings>
                 <setting name="sort">1</setting>
