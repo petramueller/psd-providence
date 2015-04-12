@@ -27,6 +27,7 @@ function putcsv($anyNumberOfParameters)
 {
     $input = func_get_args();
 
+	$result = "";
     foreach ($input as $one) {
         if ($one == NULL || $one == "") {
             $one = "-";
@@ -51,9 +52,7 @@ class ServiceController extends BaseServiceController
 
         $func = new Functions();
         $inventory = $func->getUnused();
-
         $IDs = $func->getRemoveIDs();
-        $sizeofIDs = count($IDs);
 
         $csv = NULL; //string containing raw csv data
         $sizeofInventory = count($inventory); //count first dimension of array
@@ -71,8 +70,6 @@ class ServiceController extends BaseServiceController
         }
 
         sendHeader("aussonderungsliste.csv", $csv);
-
-
     }
 
     //queries DB for full inventory and sends it as csv file to browser
