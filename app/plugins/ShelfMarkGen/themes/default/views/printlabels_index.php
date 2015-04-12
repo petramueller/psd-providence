@@ -3,7 +3,7 @@ require_once(__CA_APP_DIR__ . "/plugins/ShelfMarkGen/models/Label.php");
 $labels = $this->getVar("labels");
 ?>
 <div class="sectionBox">
-	<form method="post" target="_blank" action="<?php echo __CA_URL_ROOT__; ?>/index.php/find/SearchObjects/printLabels">
+	<form method="post" target="_blank" id="printLabelsForm" action="<?php echo __CA_URL_ROOT__; ?>/index.php/find/SearchObjects/printLabels">
 	<table id="tudLabelList" class="listtable" width="100%" border="0" cellpadding="0" cellspacing="1">
 		<thead>
 		<tr>
@@ -21,7 +21,6 @@ $labels = $this->getVar("labels");
 			$i = -1;
 			foreach($labels as $label) {
 				$i++;
-
 				?>
 				<tr>
 					<td>
@@ -48,26 +47,41 @@ $labels = $this->getVar("labels");
 		<input type="hidden" name="label_form" value="_pdf_tud_all_copies"/>
 		<input type="hidden" name="download" value="1"/>
 	<input type="button" id="printButton" value="Print Labels"/>
-	<input type="submit" formaction="<?php echo __CA_URL_ROOT__; ?>/index.php/ShelfMarkGen/PrintLabels/Delete" value="Delete from Queue"/>
+	<input type="submit" id="deleteButton" value="Delete from Queue"/>
 	</form>
 	<iframe style="display: none;" id="hiddenIFrame" name="hiddenIFrame">
 
 	</iframe>
 	<script type="text/javascript">
 		$(function(){
-			var generateSearchExpression, tudUrlRoot = "<?php echo __CA_URL_ROOT__; ?>";
+			var generateSearchExpression, tudUrlRoot = "<?php echo __CA_URL_ROOT__; ?>", labelList = $("#tudLabelList");
 			generateSearchExpression = function(){
-				var searchExpression = null;
+				var searchExpression = null, row = null;
 				$(".labelCheckbox:checked").each(function(){
 					if(searchExpression === null){
 						searchExpression = "ca_objects.preferred_labels:" + $(this).val();
 					} else {
 						searchExpression += " OR ca_objects.preferred_labels:" + $(this).val();
 					}
-					$(this).parents("tr").first().hide();
+					row = $(this).parents("tr").first();
+					row.hide();
 				});
+
+				$("#deleteButton").click();
 				return searchExpression;
 			};
+
+			$("#deleteButton").click(function(e){
+				$.post("<?php echo __CA_URL_ROOT__; ?>/index.php/ShelfMarkGen/PrintLabels/Delete", $("#printLabelsForm").serialize());
+				$(".labelCheckbox:checked").each(function(){
+					$(this).parents("tr").first().remove()
+				});
+				if(labelList.find("tbody tr").length < 1){
+					labelList.find("tbody").append("<tr><td colspan=\"2\" align=\"center\"><?php print _t("No labels to print."); ?></td></tr>");
+				}
+				e.preventDefault();
+				return false;
+			});
 			$("#printButton").click(function(e){
 				var timeStamp = new Date().getTime();
 				var loadSecondForm = true;
