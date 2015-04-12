@@ -59,11 +59,11 @@ $path = "\"".$path."\"";
         $object_name = $object->get('ca_objects.preferred_labels.name').", ";
 
         if ($type_code == "book") {
-            $identifiers = array("main_book_author","book_author");
-            $identifier = "book_published";
+            $identifiers = array("first_author", "author");
+            $identifier = "published";
         } else {
-            $identifiers = array("main_other_author","other_author");
-            $identifier = "other_published";
+            $identifiers = array("first_author","author");
+            $identifier = "published";
         }
         $authors = "";
 
@@ -80,7 +80,7 @@ $path = "\"".$path."\"";
         }
 
         $publisher = $object->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($identifier)));
-        $publisher_name = reset($publisher)["surname"]." Verlag, ";
+        $publisher_name = reset($publisher)["surname"].", ";
         $publisher_id = reset($publisher)["entity_id"];
         $publisher = new ca_entities($publisher_id);
         $publisher_location = $publisher->get("ca_entities.publisher_location").", ";
@@ -92,7 +92,7 @@ $path = "\"".$path."\"";
         $paper = new ca_objects($parent_id);
         $paper_name = $paper->get('ca_objects.preferred_labels.name').", ";
 
-        $identifier = "main_paper_author";
+        $identifier = "first_author";
         $author = $paper->get("ca_entities", array("returnAsArray" => true, "restrictToRelationshipTypes" => array($identifier)));
         $authorSurname = reset($author)["surname"];
         $authorForename = reset($author)["forename"];

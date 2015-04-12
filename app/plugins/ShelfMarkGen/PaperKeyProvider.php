@@ -22,7 +22,7 @@ class PaperKeyProvider implements IKeyProvider{
 	 */
 	public function getMainAuthorRelationshipKey()
 	{
-		return "main_paper_author";
+		return "first_author";
 	}
 
 	/**

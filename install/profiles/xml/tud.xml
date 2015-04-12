@@ -3268,12 +3268,12 @@
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
-            <placement code="main_book_author_placement">
+            <placement code="first_book_author_placement">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Hauptautor</setting>
                 <setting name="label" locale="en_US">First Author</setting>
-                <setting name="restrict_to_relationship_types">main_book_author</setting>
+                <setting name="restrict_to_relationship_types">first_author</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -3289,7 +3289,7 @@
               <settings>
                 <setting name="label" locale="de_DE">Autor</setting>
                 <setting name="label" locale="en_US">Author</setting>
-                <setting name="restrict_to_relationship_types">book_author</setting>
+                <setting name="restrict_to_relationship_types">author</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -3369,7 +3369,7 @@
               <settings>
                 <setting name="label" locale="de_DE">Verlag</setting>
                 <setting name="label" locale="en_US">Publisher</setting>
-                <setting name="restrict_to_relationship_types">book_published</setting>
+                <setting name="restrict_to_relationship_types">published</setting>
                 <setting name="restrict_to_types">org</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -3494,12 +3494,12 @@
                 <setting name="usewysiwygeditor"/>
               </settings>
             </placement>
-            <placement code="main_other_author_placement">
+            <placement code="first_other_author_placement">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Hauptautor</setting>
                 <setting name="label" locale="en_US">First Author</setting>
-                <setting name="restrict_to_relationship_types">main_other_author</setting>
+                <setting name="restrict_to_relationship_types">first_author</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -3515,7 +3515,7 @@
               <settings>
                 <setting name="label" locale="de_DE">Autor</setting>
                 <setting name="label" locale="en_US">Author</setting>
-                <setting name="restrict_to_relationship_types">other_author</setting>
+                <setting name="restrict_to_relationship_types">author</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -3529,7 +3529,7 @@
               <settings>
                 <setting name="label" locale="de_DE">Herausgeber</setting>
                 <setting name="label" locale="en_US">Editor</setting>
-                <setting name="restrict_to_relationship_types">other_editor</setting>
+                <setting name="restrict_to_relationship_types">editor</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -3595,7 +3595,7 @@
               <settings>
                 <setting name="label" locale="de_DE">Verlag</setting>
                 <setting name="label" locale="en_US">Publisher</setting>
-                <setting name="restrict_to_relationship_types">other_published</setting>
+                <setting name="restrict_to_relationship_types">published</setting>
                 <setting name="restrict_to_types">org</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -3780,12 +3780,12 @@
                 <setting name="display_template">^ca_list_items.preferred_labels (^ca_list_items.idno)</setting>
               </settings>
             </placement>
-            <placement code="main_paper_author_placement">
+            <placement code="first_paper_author_placement">
               <bundle>ca_entities</bundle>
               <settings>
                 <setting name="label" locale="de_DE">Hauptautor</setting>
                 <setting name="label" locale="en_US">First Author</setting>
-                <setting name="restrict_to_relationship_types">main_paper_author</setting>
+                <setting name="restrict_to_relationship_types">first_author</setting>
                 <setting name="restrict_to_types">ind</setting>
                 <setting name="list_format">list</setting>
                 <setting name="sortDirection">ASC</setting>
@@ -4095,7 +4095,7 @@
   <relationshipTypes>
     <relationshipTable name="ca_objects_x_entities">
       <types>
-        <type code="main_book_author" default="0">
+        <type code="first_author" default="0">
           <labels>
             <label locale="en_US">
               <typename>written by (first author)</typename>
@@ -4106,35 +4106,6 @@
               <typename_reverse>ist Hauptautor</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>book</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="main_paper_author" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>paper is written by</typename>
-              <typename_reverse>is author of paper</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>wiss. Arbeit geschrieben von</typename>
-              <typename_reverse>ist Autor von wiss. Arbeit</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>paper</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="main_other_author" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>written by (first author)</typename>
-              <typename_reverse>is first author</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>geschrieben von (Hauptautor)</typename>
-              <typename_reverse>ist Hauptautor</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>other</subTypeLeft>
           <subTypeRight>ind</subTypeRight>
         </type>
         <type code="editor" default="0">
@@ -4148,24 +4119,9 @@
               <typename_reverse>ist Herausgeber</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>book</subTypeLeft>
           <subTypeRight>ind</subTypeRight>
         </type>
-        <type code="other_editor" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>editor of</typename>
-              <typename_reverse>is editor</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>Herausgeber von</typename>
-              <typename_reverse>ist Herausgeber</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>other</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="book_author" default="0">
+        <type code="author" default="0">
           <labels>
             <label locale="en_US">
               <typename>written by</typename>
@@ -4176,24 +4132,9 @@
               <typename_reverse>ist Autor</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>book</subTypeLeft>
           <subTypeRight>ind</subTypeRight>
         </type>
-        <type code="other_author" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>written by</typename>
-              <typename_reverse>is author</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>geschrieben von</typename>
-              <typename_reverse>ist Autor</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>other</subTypeLeft>
-          <subTypeRight>ind</subTypeRight>
-        </type>
-        <type code="book_published" default="0">
+        <type code="published" default="0">
           <labels>
             <label locale="en_US">
               <typename>published by</typename>
@@ -4204,21 +4145,6 @@
               <typename_reverse>ist Verleger</typename_reverse>
             </label>
           </labels>
-          <subTypeLeft>book</subTypeLeft>
-          <subTypeRight>org</subTypeRight>
-        </type>
-        <type code="other_published" default="0">
-          <labels>
-            <label locale="en_US">
-              <typename>published by</typename>
-              <typename_reverse>is publisher</typename_reverse>
-            </label>
-            <label locale="de_DE">
-              <typename>veröffentlicht von</typename>
-              <typename_reverse>ist Verleger</typename_reverse>
-            </label>
-          </labels>
-          <subTypeLeft>other</subTypeLeft>
           <subTypeRight>org</subTypeRight>
         </type>
       </types>
@@ -5166,13 +5092,13 @@
             <setting name="label" locale="de_DE">Titel</setting>
           </settings>
         </placement>
-        <placement code="main_author">
+        <placement code="first_author">
           <bundle>ca_entities</bundle>
           <settings>
             <setting name="hierarchy_order">ASC</setting>
             <setting name="label" locale="en_US">First Author</setting>
             <setting name="label" locale="de_DE">Hauptautor</setting>
-            <setting name="restrict_to_relationship_types">main_book_author</setting>
+            <setting name="restrict_to_relationship_types">first_author</setting>
             <setting name="restrict_to_types">ind</setting>
             <setting name="show_hierarchy">0</setting>
             <setting name="remove_first_items">0</setting>
@@ -5185,7 +5111,7 @@
             <setting name="hierarchy_order">ASC</setting>
             <setting name="label" locale="en_US">Authors</setting>
             <setting name="label" locale="de_DE">Autoren</setting>
-            <setting name="restrict_to_relationship_types">book_author</setting>
+            <setting name="restrict_to_relationship_types">author</setting>
             <setting name="restrict_to_types">ind</setting>
             <setting name="delimiter">; </setting>
             <setting name="show_hierarchy">0</setting>
@@ -5213,7 +5139,7 @@
             <setting name="hierarchy_order">ASC</setting>
             <setting name="label" locale="en_US">Publisher</setting>
             <setting name="label" locale="de_DE">Verlag</setting>
-            <setting name="restrict_to_relationship_types">book_published</setting>
+            <setting name="restrict_to_relationship_types">published</setting>
             <setting name="restrict_to_types">org</setting>
             <setting name="delimiter">; </setting>
             <setting name="show_hierarchy">0</setting>
@@ -5363,13 +5289,13 @@
                       <setting name="label" locale="de_DE">Titel</setting>
                   </settings>
               </placement>
-              <placement code="main_paper_author">
+              <placement code="first_paper_author">
                   <bundle>ca_entities</bundle>
                   <settings>
                       <setting name="hierarchy_order">ASC</setting>
                       <setting name="label" locale="en_US">First Author</setting>
                       <setting name="label" locale="de_DE">Hauptautor</setting>
-                      <setting name="restrict_to_relationship_types">main_paper_author</setting>
+                      <setting name="restrict_to_relationship_types">first_author</setting>
                       <setting name="restrict_to_types">ind</setting>
                       <setting name="show_hierarchy">0</setting>
                       <setting name="remove_first_items">0</setting>
@@ -5485,26 +5411,26 @@
                       <setting name="label" locale="de_DE">Titel</setting>
                   </settings>
               </placement>
-              <placement code="main_other_author">
+              <placement code="first_other_author">
                   <bundle>ca_entities</bundle>
                   <settings>
                       <setting name="hierarchy_order">ASC</setting>
                       <setting name="label" locale="en_US">First Author</setting>
                       <setting name="label" locale="de_DE">Hauptautor</setting>
-                      <setting name="restrict_to_relationship_types">main_other_author</setting>
+                      <setting name="restrict_to_relationship_types">first_author</setting>
                       <setting name="restrict_to_types">ind</setting>
                       <setting name="show_hierarchy">0</setting>
                       <setting name="remove_first_items">0</setting>
                       <setting name="hierarchy_limit">0</setting>
                   </settings>
               </placement>
-              <placement code="other_authores">
+              <placement code="other_authors">
                   <bundle>ca_entities</bundle>
                   <settings>
                       <setting name="hierarchy_order">ASC</setting>
                       <setting name="label" locale="en_US">Authors</setting>
                       <setting name="label" locale="de_DE">Autoren</setting>
-                      <setting name="restrict_to_relationship_types">other_author</setting>
+                      <setting name="restrict_to_relationship_types">author</setting>
                       <setting name="restrict_to_types">ind</setting>
                       <setting name="delimiter">; </setting>
                       <setting name="show_hierarchy">0</setting>
@@ -5518,7 +5444,7 @@
                       <setting name="hierarchy_order">ASC</setting>
                       <setting name="label" locale="en_US">Editors</setting>
                       <setting name="label" locale="de_DE">Herausgeber</setting>
-                      <setting name="restrict_to_relationship_types">other_editor</setting>
+                      <setting name="restrict_to_relationship_types">editor</setting>
                       <setting name="restrict_to_types">ind</setting>
                       <setting name="delimiter">; </setting>
                       <setting name="show_hierarchy">0</setting>
@@ -5532,7 +5458,7 @@
                       <setting name="hierarchy_order">ASC</setting>
                       <setting name="label" locale="en_US">Publisher</setting>
                       <setting name="label" locale="de_DE">Verlag</setting>
-                      <setting name="restrict_to_relationship_types">other_published</setting>
+                      <setting name="restrict_to_relationship_types">published</setting>
                       <setting name="restrict_to_types">org</setting>
                       <setting name="delimiter">; </setting>
                       <setting name="show_hierarchy">0</setting>

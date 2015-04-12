@@ -23,7 +23,7 @@ class BookKeyProvider implements IKeyProvider{
 	 */
 	public function getMainAuthorRelationshipKey()
 	{
-		return "main_book_author";
+		return "first_author";
 	}
 
 	/**

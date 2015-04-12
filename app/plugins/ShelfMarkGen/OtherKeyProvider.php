@@ -22,7 +22,7 @@ class OtherKeyProvider extends BookKeyProvider{
 	 */
 	public function getMainAuthorRelationshipKey()
 	{
-		return "main_other_author";
+		return "first_author";
 	}
 
 	/**
