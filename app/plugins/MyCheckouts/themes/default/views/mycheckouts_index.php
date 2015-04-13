@@ -1,5 +1,6 @@
 <?php
 require_once(__CA_APP_DIR__ . "/plugins/MyCheckouts/models/Checkout.php");
+$checkouts = $this->getVar("checkouts");
 ?>
 <div class="sectionBox">
 	<table id="tudCheckoutList"  data-hide-note="<?php _p("Hide Note"); ?>" data-unsaved-changes="<?php _p("Unsaved changes."); ?>" data-saving-failed="<?php _p("Saving failed..."); ?>" data-changes-saved="<?php _p("Changes saved..."); ?>" data-saving-changes="<?php _p("Saving changes..."); ?>" data-show-note="<?php _p("Show Note"); ?>" class="listtable" width="100%" border="0" cellpadding="0" cellspacing="1">

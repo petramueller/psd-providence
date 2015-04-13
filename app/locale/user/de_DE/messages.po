@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: CollectiveAccess Providence\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-19 07:58-0800\n"
-"PO-Revision-Date: 2015-04-13 02:32+0100\n"
+"PO-Revision-Date: 2015-04-13 03:04+0100\n"
 "Last-Translator: Jasper Dunker\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/collectiveaccess-providence/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,10 @@ msgstr ""
 "X-Poedit-KeywordsList: _t;_p;_\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\n"
+
+#: c:\providence/app/plugins/MyCheckouts/themes/default/views/mycheckouts_index.php:3
+msgid "Hide Note"
+msgstr "Anmerkung verbergen"
 
 #: c:\providence/app/plugins/MyCheckouts/themes/default/views/mycheckouts_index.php:5
 msgid "Saving changes..."
@@ -37,7 +41,6 @@ msgstr "Speichern fehlgeschlagen."
 #: c:\providence/app/plugins/MyCheckouts/themes/default/views/mycheckouts_index.php:8
 msgid "Unsaved changes."
 msgstr "Ungespeicherte Änderungen."
-
 
 #: c:\providence/app/widgets/AdminCheckouts/AdminCheckoutsWidget.php:26
 msgid "Overdue Checkouts"
@@ -63,12 +66,9 @@ msgstr "Zeigt eigene Ausleihen"
 msgid "You do not have any items checke out."
 msgstr "Sie haben keine Medien ausgeliehen."
 
-#: c:\providence/app/plugins/MyCheckouts/themes/default/views/mycheckouts_index.php:3
-msgid "Hide Note"
-msgstr "Anmerkung verbergen"
-
 #: c:\providence/app/plugins/MyCheckouts/themes/default/views/mycheckouts_index.php:4
 #: c:\providence/app/plugins/MyCheckouts/themes/default/views/mycheckouts_index.php:67
+#: c:\providence/app/plugins/MyCheckouts/themes/default/views/mycheckouts_index.php:61
 msgid "Show Note"
 msgstr "Anmerkung anzeigen"
 
