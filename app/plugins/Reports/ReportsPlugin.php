@@ -44,7 +44,7 @@ class ReportsPlugin extends BaseApplicationPlugin
     public function __construct($ps_plugin_path)
     {
         $this->ops_plugin_path = $ps_plugin_path;
-        $this->description = _t("generates reports");
+        $this->description = _t("Generates reports");
 
         parent::__construct();
 
@@ -74,7 +74,7 @@ class ReportsPlugin extends BaseApplicationPlugin
 
             // define dropdown menu items
             $va_menu_items['inventory'] = array(
-                'displayName' => _t('Inventar'),
+                'displayName' => _t('Inventory'),
                 "default" => array(
                     'module' => 'Reports',
                     'controller' => 'Reports',
@@ -83,7 +83,7 @@ class ReportsPlugin extends BaseApplicationPlugin
             );
 
             $va_menu_items['unused'] = array(
-                'displayName' => _t('Ungenutzte Medien'),
+                'displayName' => _t('Unused Items'),
                 "default" => array(
                     'module' => 'Reports',
                     'controller' => 'Reports',
@@ -92,7 +92,7 @@ class ReportsPlugin extends BaseApplicationPlugin
             );
 
             $va_menu_items['remove'] = array(
-                'displayName' => _t('Aussonderungsliste'),
+                'displayName' => _t('Sort out list'),
                 "default" => array(
                     'module' => 'Reports',
                     'controller' => 'Reports',
@@ -101,7 +101,7 @@ class ReportsPlugin extends BaseApplicationPlugin
             );
 
             $va_menu_items['slub'] = array(
-                'displayName' => _t('SLUB-Bestand'),
+                'displayName' => _t('SLUB Inventory'),
                 "default" => array(
                     'module' => 'Reports',
                     'controller' => 'Reports',

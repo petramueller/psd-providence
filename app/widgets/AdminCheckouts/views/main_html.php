@@ -87,7 +87,7 @@ $checkouts = $this->getVar('checkouts');
 	} else {
 		?>
 <div class="tud-clearfix">
-			<em class="tud-message">No overdue checkouts.</em>
+			<em class="tud-message"><?php _p("No overdue checkouts"); ?></em>
 </div>
 <?php
 	}

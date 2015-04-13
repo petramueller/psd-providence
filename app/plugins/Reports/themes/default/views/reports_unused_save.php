@@ -10,9 +10,9 @@ $save = $func->saveRemoveList($_POST['list']);  //type check inside of saveRemov
 
 
 if ($save == true) {
-    printf("Liste wurde erfolgreich gespeichert.  <a href=" . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/remove >Anzeigen</a> ");
+    printf(_t("List saved successfully") . "  <a href=" . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/remove >"._t("Show")."</a> ");
 } else {
-    printf("Es ist ein Fehler aufgetreten.");
+    printf(_t("An error occurred."));
 }
 
 ?>

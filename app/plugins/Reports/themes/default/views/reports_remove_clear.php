@@ -7,9 +7,9 @@ require_once(__CA_APP_DIR__ . "/plugins/Reports/models/functions.php");
 $func = new Functions();
 
 if ($func->clearRemoveList() == true) {
-    echo 'Die Aussonderungsliste wurde erfolgreich gelöscht.';
+    echo _t("List successfully deleted");
 } else {
-    echo 'Es ist ein Fehler aufgetreten.';
+    echo _t("An error occurred");
 }
 
 ?>

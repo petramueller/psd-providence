@@ -46,8 +46,8 @@ $labels = $this->getVar("labels");
 		<input type="hidden" name="form_timestamp" id="form_timestamp" value="caPrintLabelsForm"/>
 		<input type="hidden" name="label_form" value="_pdf_tud_all_copies"/>
 		<input type="hidden" name="download" value="1"/>
-	<input type="button" id="printButton" value="Print Labels"/>
-	<input type="submit" id="deleteButton" value="Delete from Queue"/>
+		<input type="button" id="printButton" value="<?php _p("Print Labels"); ?>"/>
+		<input type="submit" id="deleteButton" value="<?php _p("Delete From Queue"); ?>"/>
 	</form>
 	<iframe style="display: none;" id="hiddenIFrame" name="hiddenIFrame">
 

@@ -4,7 +4,7 @@
 
 require_once(__CA_APP_DIR__ . "/plugins/Reports/models/functions.php");
 
-echo "<b>Aussonderungsliste</b><br><br>";
+echo "<b>"._t("Sort out list")."</b><br><br>";
 $func = new Functions();
 
 $IDs = $func->getRemoveIDs();
@@ -14,8 +14,8 @@ $inventory = $func->getUnused();
 $sizeofInventory = count($inventory);
 
 if ($IDs == false || $inventory == false) {
-    echo 'Es sind keine Medien in der Aussonderungsliste oder es ist ein Fehler aufgetreten.<br><br>
-            <a href=' . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/unused >ungenutzte Medien anzeigen</a>";
+    echo _("There are not items to be sorted out") . '<br><br>
+            <a href=' . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/unused >"._("Show unused media")."</a>";
 } else {
     //print list, if remove_list and inventory list aren't empty
     if ($sizeofIDs != 0 || $sizeofInventory != 0) {
@@ -25,28 +25,28 @@ if ($IDs == false || $inventory == false) {
                 <thead>
                 <tr>
                     <th>
-                        Autoren
+                        <?php _p("Authors"); ?>
                     </th>
                     <th>
-                        Titel
+						<?php _p("Title"); ?>
                     </th>
                     <th>
-                        Verlag
+						<?php _p("Publisher"); ?>
                     </th>
                     <th>
-                        Jahr
+						<?php _p("Year"); ?>
                     </th>
                     <th>
-                        Medientyp
+						<?php _p("Item Type"); ?>
                     </th>
                     <th>
-                        Signatur
+						<?php _p("Shelf Mark"); ?>
                     </th>
                     <th>
-                        Barcode
+						<?php _p("Bar Code"); ?>
                     </th>
                     <th>
-                        ungenutzt in Tagen
+						<?php _p("Unused for Days"); ?>
                     </th>
 
                 </tr>
@@ -71,9 +71,9 @@ if ($IDs == false || $inventory == false) {
             <?php
             //print links
             if ($sizeofIDs != 0 || $sizeofInventory != 0) {
-                printf(" <a href=" . __CA_URL_ROOT__ . "/service.php/Reports/Service/remove_dl >Liste herunterladen</a> /
-                        <a href=" . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/remove_clear >Liste verwerfen</a> /
-                        <a href=" . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/remove_delete >alle Medien löschen</a>  ");
+                printf(" <a href=" . __CA_URL_ROOT__ . "/service.php/Reports/Service/remove_dl >"._t("Download list")."</a> /
+                        <a href=" . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/remove_clear >"._t("Discard list")."</a> /
+                        <a href=" . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/remove_delete >"._t("Delete all items")."</a>  ");
             }
 
             ?>
@@ -83,7 +83,7 @@ if ($IDs == false || $inventory == false) {
     <?php
 
     } else {
-        echo 'Es sind keine Medien in der Aussonderungsliste.';
+        echo _t("No items to be sorted out");
     }
 
 }

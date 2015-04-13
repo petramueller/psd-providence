@@ -8,7 +8,6 @@
  *
  *  ----------------------------------------------------------------------
  */
-
 $checkouts = $this->getVar('checkouts');
 ?>
 <style type="text/css">
@@ -105,7 +104,7 @@ $checkouts = $this->getVar('checkouts');
 	} else {
 		?>
 <div class="tud-clearfix">
-			<em class="tud-message">You do not have any checkouts.</em>
+			<em class="tud-message"><?php _p("You do not have any items checke out."); ?></em>
 </div>
 <?php
 	}

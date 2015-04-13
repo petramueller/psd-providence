@@ -6,9 +6,9 @@ require_once(__CA_APP_DIR__ . "/plugins/Reports/models/functions.php");
 $error = $this->getVar("error");
 
 if ($error != NULL) {
-    echo "Es ist ein Fehler aufgetreten.";
+	echo _t("An error occurred");
 } else {
-    echo "Alle ausgewählten Medien wurden erfolgreich gelöscht.";
+	echo _t("All selected items successfully deleted");
 }
 
 

@@ -6,7 +6,7 @@ require_once(__CA_APP_DIR__ . "/plugins/Reports/models/functions.php");
 
 if (!isset($_POST['days']) /*|| !is_int($_POST['days']) */ || $_POST['days'] < 0) {
 
-    echo 'bitte geben sie eine Zeitspanne an <br> <a href="' . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/unused" . '">zurück</a>';
+    echo _t("Please specify a date range") + '<br> <a href="' . substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/")) . "/unused" . '">'._t("back").'</a>';
 
 } else {
 
@@ -37,31 +37,31 @@ if ($sizeofInventory != 0) {
                 <thead>
                 <tr>
                     <th>
-                        Kategorie
+                        <?php _p("Category"); ?>
                     </th>
                     <th>
-                        Autoren
+						<?php _p("Authors"); ?>
                     </th>
                     <th>
-                        Titel
+						<?php _p("Title"); ?>
                     </th>
                     <th>
-                        Jahr
+						<?php _p("Year"); ?>
                     </th>
                     <th>
-                        Medientyp
+						<?php _p("Item Type"); ?>
                     </th>
                     <th>
-                        Signatur
+						<?php _p("Shelf Mark"); ?>
                     </th>
                     <th>
-                        Barcode
+						<?php _p("Bar Code"); ?>
                     </th>
                     <th>
-                        ungenutzt in Tagen
+						<?php _p("Unused for Days"); ?>
                     </th>
                     <th>
-                        Aussortieren
+						<?php _p("Sort Out"); ?>
                     </th>
 
                 </tr>
@@ -89,12 +89,12 @@ if ($sizeofInventory != 0) {
             </table>
             <?php
 
-            print ('<p align="right"><input type="checkbox" onClick="toggle(this)" /> Alle auswählen</p>
-                        <p align="left"><input type="submit" name="submit" value="in Aussonderungsliste speichern" /></p>
-                        <a href="' . __CA_URL_ROOT__ . '/service.php/Reports/Service/unused_dl?days=' . $days . '" >Liste herunterladen</a>  </p>');
+            print ('<p align="right"><input type="checkbox" onClick="toggle(this)" /> '._t("Select All").'</p>
+                        <p align="left"><input type="submit" name="submit" value="'._t("Save for sort out").'" /></p>
+                        <a href="' . __CA_URL_ROOT__ . '/service.php/Reports/Service/unused_dl?days=' . $days . '" >'._t("Download list").'</a>  </p>');
 
             } else {
-                print '<td colspan="3" align="center">Es gibt keine Medien die ' . $days . ' Tage nicht genutzt wurden.</td>';
+                print '<td colspan="3" align="center">' . _t("There are not items that haven not been used for") . ' ' . $days . ' '. _t("days.") .'</td>';
             }
 
             ?>

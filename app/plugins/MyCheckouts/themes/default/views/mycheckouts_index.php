@@ -1,9 +1,8 @@
 <?php
 require_once(__CA_APP_DIR__ . "/plugins/MyCheckouts/models/Checkout.php");
-$checkouts = $this->getVar("checkouts");
 ?>
 <div class="sectionBox">
-	<table id="tudCheckoutList" class="listtable" width="100%" border="0" cellpadding="0" cellspacing="1">
+	<table id="tudCheckoutList"  data-hide-note="<?php _p("Hide Note"); ?>" data-unsaved-changes="<?php _p("Unsaved changes."); ?>" data-saving-failed="<?php _p("Saving failed..."); ?>" data-changes-saved="<?php _p("Changes saved..."); ?>" data-saving-changes="<?php _p("Saving changes..."); ?>" data-show-note="<?php _p("Show Note"); ?>" class="listtable" width="100%" border="0" cellpadding="0" cellspacing="1">
 		<thead>
 		<tr>
 			<th>
@@ -58,7 +57,7 @@ $checkouts = $this->getVar("checkouts");
 						?>
 					</td>
 					<td>
-						<a href="#" class="note-form-edit" data-tud-id="<?php echo $i; ?>">Show Note</a>
+						<a href="#" class="note-form-edit" data-tud-id="<?php echo $i; ?>"><?php _p("Show Note"); ?></a>
 					</td>
 				</tr>
 				<tr class="tud-note-form-row" id="tudNoteFormRow<?php echo $i; ?>">
@@ -67,27 +66,27 @@ $checkouts = $this->getVar("checkouts");
 							<div>
 							<input type="hidden" name="checkout_id" value="<?php echo $checkout->getCheckoutId();?>"/>
 							<div>
-								<label for="prename<?php echo $i;?>">Vorname</label>
-								<input type="text" name="prename" placeholder="Vorname" value="<?php echo $checkout->getPrename(); ?>" class="prename" id="prename<?php echo $i;?>"/>
+								<label for="prename<?php echo $i;?>"><?php _p("Prename"); ?></label>
+								<input type="text" name="prename" placeholder="<?php _p("Prename"); ?>" value="<?php echo $checkout->getPrename(); ?>" class="prename" id="prename<?php echo $i;?>"/>
 							</div>
 							<div>
-								<label for="surname<?php echo $i;?>">Nachname</label>
-								<input type="text" name="surname" placeholder="Nachname"  value="<?php echo $checkout->getSurname(); ?>" class="surname" id="surname<?php echo $i;?>"/>
+								<label for="surname<?php echo $i;?>"><?php _p("Surname"); ?></label>
+								<input type="text" name="surname" placeholder="<?php _p("Surname"); ?>"  value="<?php echo $checkout->getSurname(); ?>" class="surname" id="surname<?php echo $i;?>"/>
 							</div>
 							<div>
 								<label for="email<?php echo $i;?>">E-Mail</label>
-								<input type="email" name="email" placeholder="E-Mail-Adresse"  value="<?php echo $checkout->getEmail(); ?>" class="email" id="email<?php echo $i;?>"/>
+								<input type="email" name="email" placeholder="<?php _p("Email Address"); ?>"  value="<?php echo $checkout->getEmail(); ?>" class="email" id="email<?php echo $i;?>"/>
 							</div>
 							<div>
-								<label for="duedate<?php echo $i;?>">Fällig</label>
+								<label for="duedate<?php echo $i;?>"><?php _p("Due date"); ?></label>
 								<input type="date" name="due_date" value="<?php echo $student_due_date->format("Y-m-d"); ?>" data-date='{"startView": 2, "openOnMouseFocus": true}' placeholder="dd.mm.jjjj" class="due-date-human" id="due-date<?php echo $i;?>"/>
 							</div>
 							</div>
 							<div class="tud-note">
-								<textarea placeholder="Anmerkung" name="note" rows="3"><?php echo $checkout->getNote(); ?></textarea>
+								<textarea placeholder="<?php _p("Remark"); ?>" name="note" rows="3"><?php echo $checkout->getNote(); ?></textarea>
 							</div>
 							<div class="tud-submit">
-								<input type="submit" class="tud-note-submit" value="Speichern" id="submit<?php echo $i;?>">
+								<input type="submit" class="tud-note-submit" value="<?php _p("Save"); ?>" id="submit<?php echo $i;?>">
 								<span class="tud-ajax-state"></span>
 							</div>
 						</form>
