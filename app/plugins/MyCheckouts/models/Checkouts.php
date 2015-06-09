@@ -66,6 +66,37 @@ class Checkouts {
 	}
 
 	/**
+	 * Gets all overdue checkouts, regardless of the user.
+	 * @param $dueDate int Due date
+	 * @return array Query result (array of Checkout objects)
+	 */
+	public function getOverdueCheckouts($dueDate){
+		try {
+			$con = new PDO(sprintf("mysql:host=%s;dbname=%s", __CA_DB_HOST__, __CA_DB_DATABASE__), __CA_DB_USER__, __CA_DB_PASSWORD__);
+			$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+			$cmd = $con->prepare("SELECT lbl.name as shelfmark, plbl.name AS `name`, co.checkout_id, co.object_id, co.checkout_date, co.return_date, co.due_date, u.fname as prename, u.lname as surname, u.email
+									FROM ca_object_checkouts AS co
+										INNER JOIN ca_objects AS obj ON co.object_id = obj.object_id
+										INNER JOIN ca_object_labels AS lbl ON obj.object_id = lbl.object_id
+										INNER JOIN ca_object_labels AS plbl ON obj.parent_id = plbl.object_id
+										INNER JOIN ca_users AS u ON co.user_id = u.user_id
+									WHERE lbl.is_preferred = 1 AND co.checkout_date IS NOT NULL AND co.return_date IS NULL AND co.due_date <= :dueDate
+									ORDER by co.due_date ASC, lbl.name ASC;");
+
+			$cmd->bindParam(":dueDate", $dueDate, PDO::PARAM_INT);
+			$cmd->execute();
+			$result = $cmd->fetchAll(PDO::FETCH_CLASS, "Checkout");
+			$con = null;
+		}
+		catch (PDOException $e) {
+			$con = null;
+			throw $e;
+		}
+		return $result;
+	}
+
+	/**
 	 * Gets the currently checked out items of a user
 	 * @param $userId int User ID
 	 * @param $page int Page number
@@ -110,11 +141,7 @@ class Checkouts {
 	 * @return array Checkout objects
 	 */
 	private function getCheckouts($selectionMode, $userId, $page, $pageSize){
-		$pageOffset = $pageSize * ($page - 1);
-		$selectionModeClause = array(0 => "AND co.return_date IS NULL", 1 => "AND co.return_date IS NOT NULL", 2 => "");
-
 		try {
-			//TODO: Use table locks
 			$con = new PDO(sprintf("mysql:host=%s;dbname=%s", __CA_DB_HOST__, __CA_DB_DATABASE__), __CA_DB_USER__, __CA_DB_PASSWORD__);
 			$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -128,15 +155,13 @@ class Checkouts {
 									ORDER by co.due_date ASC, lbl.name ASC;");
 
 			$cmd->bindParam(":userId", $userId, PDO::PARAM_INT);
-			//$cmd->bindParam(":pageOffset", $pageOffset, PDO::PARAM_INT);
-			//$cmd->bindParam(":pageSize", $pageSize, PDO::PARAM_INT);
 			$cmd->execute();
 			$result = $cmd->fetchAll(PDO::FETCH_CLASS, "Checkout");
 			$con = null;
 		}
 		catch (PDOException $e) {
-			echo "There was an error! " . $e->getMessage();
-			exit;
+			$con = null;
+			throw $e;
 		}
 		return $result;
 	}

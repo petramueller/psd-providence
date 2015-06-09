@@ -61,7 +61,7 @@ class MyCheckoutsPlugin extends BaseApplicationPlugin
 				if (isset($pa_menu_bar['MyCheckouts'])){
 					unset($pa_menu_bar['MyCheckouts']);
 				}
-				return true;
+				return $pa_menu_bar;
 			}
 
 			if (isset($pa_menu_bar['MyCheckouts'])) {
